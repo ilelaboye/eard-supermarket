@@ -1,0 +1,22 @@
+* {
+  font-family: "Onest", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  color: #343434;
+}
+span {
+  font-size: 14px;
+}
+
+p {
+  font-size: 14px;
+}
+
+input::placeholder {
+  color: rgb(180, 175, 175);
+  font-size: 12px;
+}
+label {
+  font-size: 15px;
+}

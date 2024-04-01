@@ -7,20 +7,20 @@
         </div>
         <div class="hero-text">
           <h3 class="head-text">Reset Password</h3>
-          <span class="head-span" style="font-size: 14px">
+          <span class="head-span">
             Kindly enter your new password for your account</span
           >
 
           <form @submit.prevent="login()" class="form mt-4">
             <div class="mb-3">
-              <label for="email" class="fw-bold mb-2">Email Address</label>
+              <label for="email" class="mb-2">Email Address</label>
               <div>
                 <input
                   v-model="email"
                   type="email"
                   placeholder="Enter your email address "
                   class="form-control"
-                  style="height: 36px"
+                  style="height: 40px"
                 />
               </div>
               <div
@@ -33,17 +33,17 @@
             </div>
 
             <div class="mb-3">
-              <label for="password" class="fw-bold mb-2">Password</label>
+              <label for="password" class="mb-2">Password</label>
               <div class="password-container">
                 <input
                   v-model="password"
                   :type="showPassword ? 'text' : 'password'"
                   placeholder="Enter your password"
                   class="form-control"
-                  style="height: 36px"
+                  style="height: 40px"
                 />
                 <span
-                  @click="togglePassword"
+                  @click="togglePassword()"
                   class="show-password text-primary fw-bold"
                   >{{ showPassword ? "Hide" : "Show" }}</span
                 >
@@ -57,19 +57,17 @@
               </div>
             </div>
             <div class="mb-3">
-              <label for="password" class="fw-bold mb-2"
-                >Confirm Password</label
-              >
+              <label for="password" class="mb-2">Confirm Password</label>
               <div class="password-container">
                 <input
                   v-model="cpassword"
                   :type="showPassword ? 'text' : 'password'"
                   placeholder="Enter your password"
                   class="form-control"
-                  style="height: 36px"
+                  style="height: 40px"
                 />
                 <span
-                  @click="toggleCpassword"
+                  @click="togglePassword()"
                   class="show-password text-primary fw-bold"
                   >{{ showPassword ? "Hide" : "Show" }}</span
                 >
@@ -85,8 +83,8 @@
             <div class="d-grid mt-4">
               <button
                 type="submit"
-                class="btn fw-bold btn-primary rounded-pill"
-                style="height: 36px"
+                class="btn btn-primary rounded-pill"
+                style="height: 40px"
               >
                 Reset Password
               </button>
@@ -112,9 +110,6 @@ const cpassword = ref("");
 const showPassword = ref(false);
 
 const togglePassword = () => {
-  showPassword.value = !showPassword.value;
-};
-const toggleCpassword = () => {
   showPassword.value = !showPassword.value;
 };
 

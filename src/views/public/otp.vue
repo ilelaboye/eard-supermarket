@@ -16,7 +16,7 @@
             </router-link>
           </div>
 
-          <h3 class="head-text fw-bold">OTP Authentication</h3>
+          <h3 class="head-text">OTP Authentication</h3>
           <span class="head-span" style="font-size: 15px"
             >Enter the 6-digit code we sent to your email address to reset your
             password</span
@@ -24,49 +24,49 @@
 
           <form @submit.prevent="login()" class="form mt-4">
             <div class="mb-3">
-              <label for="email" class="fw-bold mb-2">Enter Code</label>
+              <label for="email" class="mb-2">Enter Code</label>
 
               <div class="row text-center">
                 <div class="col">
                   <input
                     type="number"
                     v-model="codes.box1"
-                    class="form-control text-center"
+                    class="form-control box text-center"
                   />
                 </div>
                 <div class="col">
                   <input
                     v-model="codes.box2"
                     type="number"
-                    class="form-control text-center"
+                    class="form-control box text-center"
                   />
                 </div>
                 <div class="col">
                   <input
                     v-model="codes.box3"
                     type="number"
-                    class="form-control text-center"
+                    class="form-control box text-center"
                   />
                 </div>
                 <div class="col">
                   <input
                     v-model="codes.box4"
                     type="number"
-                    class="form-control text-center"
+                    class="form-control box text-center"
                   />
                 </div>
                 <div class="col">
                   <input
                     v-model="codes.box5"
                     type="number"
-                    class="form-control text-center"
+                    class="form-control box text-center"
                   />
                 </div>
                 <div class="col">
                   <input
                     v-model="codes.box6"
                     type="number"
-                    class="form-control text-center"
+                    class="form-control box text-center"
                   />
                 </div>
               </div>
@@ -83,8 +83,8 @@
             <div class="d-grid mt-5">
               <button
                 type="submit"
-                class="btn fw-bold btn-primary rounded-pill"
-                style="height: 36px"
+                class="btn btn-primary rounded-pill"
+                style="height: 40px"
               >
                 Submit
               </button>
@@ -92,9 +92,7 @@
             <div class="mt-3 text-center">
               <p style="font-size: 15px">
                 Didn't get the code?
-                <span class="text-primary fw-bold" style="font-size: 15px"
-                  >Resend in 01:58
-                </span>
+                <span class="text-primary fw-bold">Resend in 01:58 </span>
               </p>
             </div>
           </form>

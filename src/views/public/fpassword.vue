@@ -6,7 +6,7 @@
           <img src="@/assets/images/logo.svg" alt="" />
         </div>
         <div class="hero-text">
-          <h3 class="head-text f-w-bold">Forgot Password</h3>
+          <h3 class="head-text">Forgot Password</h3>
           <span class="head-span" style="font-size: 15px"
             >Kindly input the email address linked to your account in order to
             reset your password.</span
@@ -14,14 +14,14 @@
 
           <form @submit.prevent="login()" class="form mt-4">
             <div class="mb-3">
-              <label for="email" class="fw-bold mb-2">Email Address</label>
+              <label for="email" class="mb-2">Email Address</label>
               <div>
                 <input
                   v-model="email"
                   type="email"
                   placeholder="Enter your email address "
                   class="form-control"
-                  style="height: 36px"
+                  style="height: 40px"
                 />
               </div>
               <div
@@ -36,8 +36,8 @@
             <div class="d-grid mt-5">
               <button
                 type="submit"
-                class="btn fw-bold btn-primary rounded-pill"
-                style="height: 36px"
+                class="btn btn-primary rounded-pill"
+                style="height: 40px"
               >
                 Submit
               </button>

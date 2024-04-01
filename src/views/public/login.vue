@@ -13,34 +13,34 @@
 
           <form @submit.prevent="login()" class="form mt-4">
             <div class="mb-3">
-              <label for="email" class="fw-bold mb-2">Email Address</label>
+              <label for="email" class="mb-2">Email Address</label>
               <div>
                 <input
                   v-model="email"
                   type="email"
                   placeholder="Enter your email address "
                   class="form-control"
-                  style="height: 36px"
+                  style="height: 40px"
                 />
               </div>
               <div
                 v-if="errors.email"
                 class="error-msg text-danger ms-2"
-                style="font-size: 11px"
+                style="font-size: 12px"
               >
                 {{ eMsg.email }}
               </div>
             </div>
 
             <div class="mb-3">
-              <label for="password" class="fw-bold mb-2">Password</label>
+              <label for="password" class="mb-2">Password</label>
               <div class="password-container">
                 <input
                   v-model="password"
                   :type="showPassword ? 'text' : 'password'"
                   placeholder="Enter your password"
                   class="form-control"
-                  style="height: 36px"
+                  style="height: 40px"
                 />
                 <span
                   @click="togglePassword"
@@ -51,18 +51,26 @@
               <div
                 v-if="errors.password"
                 class="error-msg text-danger ms-2 mb-3"
-                style="font-size: 11px"
+                style="font-size: 12px"
               >
                 {{ eMsg.password }}
               </div>
             </div>
 
-            <p class="text-primary fw-bold mb-2">Forgot password?</p>
+            <router-link
+              :to="{ name: 'F_password' }"
+              class="text-decoration-none"
+            >
+              <p class="text-primary fw-bold mb-2">
+                Forgot password?
+              </p></router-link
+            >
+
             <div class="d-grid mt-4">
               <button
                 type="submit"
-                class="btn fw-bold btn-primary rounded-pill"
-                style="height: 36px"
+                class="btn btn-primary rounded-pill"
+                style="height: 40px"
               >
                 Login
               </button>

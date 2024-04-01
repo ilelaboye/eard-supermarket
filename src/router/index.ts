@@ -11,8 +11,8 @@ const routes: Array<RouteRecordRaw> = [
     component: Login,
   },
   {
-    path: "/fpassword",
-    name: "Fpassword",
+    path: "/f_password",
+    name: "F_password",
     component: Fpassword,
   },
   {
