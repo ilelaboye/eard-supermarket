@@ -69,7 +69,7 @@
                   style="height: 36px"
                 />
                 <span
-                  @click="togglePassword"
+                  @click="toggleCpassword"
                   class="show-password text-primary fw-bold"
                   >{{ showPassword ? "Hide" : "Show" }}</span
                 >
@@ -112,6 +112,9 @@ const cpassword = ref("");
 const showPassword = ref(false);
 
 const togglePassword = () => {
+  showPassword.value = !showPassword.value;
+};
+const toggleCpassword = () => {
   showPassword.value = !showPassword.value;
 };
 
