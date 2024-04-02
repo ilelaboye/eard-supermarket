@@ -3,6 +3,7 @@ import Login from "@/views/public/login.vue";
 import Fpassword from "@/views/public/fpassword.vue";
 import Otp from "@/views/public/otp.vue";
 import Reset from "@/views/public/reset.vue";
+import Layout from "@/views/dashboard/layout.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -24,6 +25,11 @@ const routes: Array<RouteRecordRaw> = [
     path: "/reset",
     name: "Reset",
     component: Reset,
+  },
+  {
+    path: "/layout",
+    name: "Layout",
+    component: Layout,
   },
 ];
 

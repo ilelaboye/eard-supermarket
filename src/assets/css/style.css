@@ -7,6 +7,13 @@
 .btn-primary {
   background-color: #251b6c !important;
 }
+.bg-primary {
+  background-color: #251b6c !important;
+}
+.bg-primary-light {
+  background-color: #f5f4ff !important;
+}
+
 .box {
   height: 50px;
   width: 50px;

@@ -1,0 +1,3 @@
+<template>
+  <div class="sidebar-wrapper"></div>
+</template>

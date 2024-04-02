@@ -61,15 +61,15 @@
               <div class="password-container">
                 <input
                   v-model="cpassword"
-                  :type="showPassword ? 'text' : 'password'"
+                  :type="seePassword ? 'text' : 'password'"
                   placeholder="Enter your password"
                   class="form-control"
                   style="height: 40px"
                 />
                 <span
-                  @click="togglePassword()"
+                  @click="displayPassword()"
                   class="show-password text-primary fw-bold"
-                  >{{ showPassword ? "Hide" : "Show" }}</span
+                  >{{ seePassword ? "Hide" : "Show" }}</span
                 >
               </div>
               <div
@@ -108,9 +108,13 @@ const email = ref("");
 const password = ref("");
 const cpassword = ref("");
 const showPassword = ref(false);
+const seePassword = ref(false);
 
 const togglePassword = () => {
   showPassword.value = !showPassword.value;
+};
+const displayPassword = () => {
+  seePassword.value = !seePassword.value;
 };
 
 const errors = ref({
@@ -118,6 +122,7 @@ const errors = ref({
   password: false,
   cpassword: false,
 });
+
 const eMsg = ref({
   email: "This field is required",
   password: "This field is required",
