@@ -85,8 +85,6 @@
   </div>
 </template>
 
-<style lang="scss"></style>
-
 <script setup lang="ts">
 import { ref } from "vue";
 

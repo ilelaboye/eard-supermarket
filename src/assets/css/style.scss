@@ -1,0 +1,95 @@
+.text-primary {
+  color: #251b6c !important;
+}
+.btn {
+  font-size: 14px;
+  border: none !important;
+}
+.btn-primary {
+  background-color: #251b6c !important;
+}
+.bg-primary {
+  background-color: #251b6c !important;
+}
+.bg-primary-light {
+  background-color: #f5f4ff !important;
+}
+
+.box {
+  height: 50px;
+  width: 50px;
+  margin-bottom: 10px;
+}
+
+.text-decoration-none {
+  text-decoration: none;
+}
+
+.background {
+  height: 100vh;
+  width: 100%;
+
+  .wrapper {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 30px;
+
+    .col-1 {
+      width: 53%;
+      padding-top: 30px;
+
+      .logo {
+        img {
+          height: 55px;
+          width: 47px;
+        }
+      }
+
+      .hero-text {
+        height: calc(100vh - 92px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .password-container {
+          position: relative;
+
+          .show-password {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    .col-2 {
+      height: 100%;
+      width: 47%;
+      padding-left: 20px;
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: top;
+        border-radius: 12px;
+      }
+    }
+  }
+}
+
+.password-container {
+  position: relative;
+
+  .show-password {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+}

@@ -1,36 +1,21 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
-import Login from "@/views/public/login.vue";
-import Fpassword from "@/views/public/fpassword.vue";
-import Otp from "@/views/public/otp.vue";
-import Reset from "@/views/public/reset.vue";
-import Layout from "@/views/dashboard/layout.vue";
+import publicRoutes from "./public";
+import dashboardRoutes from "./dashboard";
+
+
+
+
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
-    name: "Login",
-    component: Login,
+    children: [...publicRoutes]
   },
   {
-    path: "/f_password",
-    name: "F_password",
-    component: Fpassword,
+    path: "/",
+    children: [...dashboardRoutes]
   },
-  {
-    path: "/otp",
-    name: "Otp",
-    component: Otp,
-  },
-  {
-    path: "/reset",
-    name: "Reset",
-    component: Reset,
-  },
-  {
-    path: "/layout",
-    name: "Layout",
-    component: Layout,
-  },
+
 ];
 
 const router = createRouter({
