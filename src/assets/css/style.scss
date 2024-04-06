@@ -93,3 +93,63 @@
     cursor: pointer;
   }
 }
+
+.orders,
+.profile {
+  .nav-pills .nav-link.active {
+    background-color: #251b6c;
+    border: none;
+  }
+  .nav-link {
+    color: #6d6d6d;
+    padding: 7px 29px;
+    border-radius: 20px !important;
+    font-size: 13px;
+  }
+  .nav-link:hover {
+    color: #6d6d6d;
+  }
+}
+
+.main-content {
+  background: #fff;
+  height: 100%;
+  width: 100%;
+  .search-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .search-input {
+      position: relative;
+
+      .search-icon {
+        position: absolute;
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        width: 60px;
+      }
+    }
+    .filter {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 40px;
+      width: 150px;
+      background: #eeeeee;
+      border-radius: 7px;
+      color: #343434;
+      font-size: 13px;
+      .filter-icon {
+        svg {
+          width: 16px;
+        }
+      }
+      .dropdown-icon svg {
+        width: 16px;
+      }
+    }
+  }
+}

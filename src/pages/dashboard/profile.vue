@@ -1,8 +1,7 @@
 <template>
-  
-    <!--buttton nav starts-->
-    <div class="button-nav-wrapper ps-3">
-      <ul class="nav nav-pills" id="pills-tab" role="tablist">
+  <!--buttton nav starts-->
+  <div class="profile ps-3">
+    <ul class="nav nav-pills" id="pills-tab" role="tablist">
       <li class="nav-item" role="presentation">
         <button
           class="nav-link active btn"
@@ -32,45 +31,41 @@
         </button>
       </li>
     </ul>
-      
+  </div>
+  <!--buttton nav ends-->
+
+  <!--search  nav and table starts-->
+
+  <div class="tab-content" id="pills-tabContent">
+    <div
+      class="tab-pane fade show active"
+      id="pills-home"
+      role="tabpanel"
+      aria-labelledby="pills-home-tab"
+    >
+      <basicInfo></basicInfo>
     </div>
-    <!--buttton nav ends-->
-
-    <!--search  nav and table starts-->
-
-    
-    <div class="tab-content" id="pills-tabContent">
-      <div
-        class="tab-pane fade show active"
-        id="pills-home"
-        role="tabpanel"
-        aria-labelledby="pills-home-tab"
-      >
-        <basicInfo></basicInfo>
-      </div>
-      <div
-        class="tab-pane fade"
-        id="pills-profile"
-        role="tabpanel"
-        aria-labelledby="pills-profile-tab"
-      >
-        <changePassword></changePassword>
-      </div>
+    <div
+      class="tab-pane fade"
+      id="pills-profile"
+      role="tabpanel"
+      aria-labelledby="pills-profile-tab"
+    >
+      <changePassword></changePassword>
     </div>
+  </div>
 
-    <!--search  nav and table ends-->
- 
+  <!--search  nav and table ends-->
 </template>
 
 <script lang="ts" setup>
-import basicInfo from "@/components/profile/basic_info.vue";
+  import basicInfo from "@/components/profile/basic_info.vue";
 
-import changePassword from "@/components/profile/change_password.vue";
+  import changePassword from "@/components/profile/change_password.vue";
 </script>
 
 <style lang="scss" scoped>
-
-  .button-nav-wrapper {
+  .profile {
     width: 100%;
     height: 60px;
     background-color: #fff;
@@ -78,8 +73,5 @@ import changePassword from "@/components/profile/change_password.vue";
     justify-content: start;
     align-items: center;
     margin-bottom: 13px;
-
-    
   }
-
 </style>

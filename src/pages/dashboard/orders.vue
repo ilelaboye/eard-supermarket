@@ -1,8 +1,7 @@
 <template>
-  
-    <!--buttton nav starts-->
-    <div class="button-nav-wrapper ps-3">
-      <ul class="nav nav-pills" id="pills-tab" role="tablist">
+  <!--buttton nav starts-->
+  <div class="button-nav-wrapper orders ps-3">
+    <ul class="nav nav-pills" id="pills-tab" role="tablist">
       <li class="nav-item" role="presentation">
         <button
           class="nav-link active btn"
@@ -14,7 +13,7 @@
           aria-controls="pills-home"
           aria-selected="true"
         >
-          Incoming
+          Incoming Orders
         </button>
       </li>
       <li class="nav-item" role="presentation">
@@ -28,48 +27,44 @@
           aria-controls="pills-profile"
           aria-selected="false"
         >
-          Completed
+          Completed Orders
         </button>
       </li>
     </ul>
-      
+  </div>
+  <!--buttton nav ends-->
+
+  <!--search  nav and table starts-->
+
+  <div class="tab-content" id="pills-tabContent">
+    <div
+      class="tab-pane fade show active"
+      id="pills-home"
+      role="tabpanel"
+      aria-labelledby="pills-home-tab"
+    >
+      <incoming></incoming>
     </div>
-    <!--buttton nav ends-->
-
-    <!--search  nav and table starts-->
-
-    
-    <div class="tab-content" id="pills-tabContent">
-      <div
-        class="tab-pane fade show active"
-        id="pills-home"
-        role="tabpanel"
-        aria-labelledby="pills-home-tab"
-      >
-        <incoming></incoming>
-      </div>
-      <div
-        class="tab-pane fade"
-        id="pills-profile"
-        role="tabpanel"
-        aria-labelledby="pills-profile-tab"
-      >
-        <completed></completed>
-      </div>
+    <div
+      class="tab-pane fade"
+      id="pills-profile"
+      role="tabpanel"
+      aria-labelledby="pills-profile-tab"
+    >
+      <completed></completed>
     </div>
+  </div>
 
-    <!--search  nav and table ends-->
- 
+  <!--search  nav and table ends-->
 </template>
 
 <script lang="ts" setup>
-import completed from "@/components/orders/completed_orders.vue";
-import incoming from "@/components/orders/incoming_orders.vue";
+  import completed from "@/components/orders/completed_orders.vue";
+  import incoming from "@/components/orders/incoming_orders.vue";
 </script>
 
 <style lang="scss" scoped>
-
-  .button-nav-wrapper {
+  .orders {
     width: 100%;
     height: 60px;
     background-color: #fff;
@@ -77,8 +72,5 @@ import incoming from "@/components/orders/incoming_orders.vue";
     justify-content: start;
     align-items: center;
     margin-bottom: 13px;
-
-    
   }
-
 </style>

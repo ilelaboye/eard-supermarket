@@ -98,8 +98,8 @@
           <td>Bank Transfer</td>
           <td>
             <div class="status">
-            <div class="circle"></div>
-            <div class="text">Successful</div>
+              <div class="circle"></div>
+              <div class="text">Successful</div>
             </div>
           </td>
           <td class="action-icon">
@@ -139,8 +139,8 @@
           <td>Bank Transfer</td>
           <td>
             <div class="status">
-            <div class="circle"></div>
-            <div class="text">Successful</div>
+              <div class="circle"></div>
+              <div class="text">Successful</div>
             </div>
           </td>
           <td class="action-icon">
@@ -180,8 +180,8 @@
           <td>Bank Transfer</td>
           <td>
             <div class="status">
-            <div class="circle"></div>
-            <div class="text">Successful</div>
+              <div class="circle"></div>
+              <div class="text">Successful</div>
             </div>
           </td>
           <td class="action-icon">
@@ -221,8 +221,8 @@
           <td>Bank Transfer</td>
           <td>
             <div class="status">
-            <div class="circle"></div>
-            <div class="text">Successful</div>
+              <div class="circle"></div>
+              <div class="text">Successful</div>
             </div>
           </td>
           <td class="action-icon">
@@ -262,8 +262,8 @@
           <td>Bank Transfer</td>
           <td>
             <div class="status">
-            <div class="circle"></div>
-            <div class="text">Successful</div>
+              <div class="circle"></div>
+              <div class="text">Successful</div>
             </div>
           </td>
           <td class="action-icon">
@@ -303,8 +303,8 @@
           <td>Bank Transfer</td>
           <td>
             <div class="status">
-            <div class="circle"></div>
-            <div class="text">Successful</div>
+              <div class="circle"></div>
+              <div class="text">Successful</div>
             </div>
           </td>
           <td class="action-icon">
@@ -344,8 +344,8 @@
           <td>Bank Transfer</td>
           <td>
             <div class="status">
-            <div class="circle"></div>
-            <div class="text">Successful</div>
+              <div class="circle"></div>
+              <div class="text">Successful</div>
             </div>
           </td>
           <td class="action-icon">
@@ -385,8 +385,8 @@
           <td>Bank Transfer</td>
           <td>
             <div class="status">
-            <div class="circle"></div>
-            <div class="text">Successful</div>
+              <div class="circle"></div>
+              <div class="text">Successful</div>
             </div>
           </td>
           <td class="action-icon">
@@ -426,8 +426,8 @@
           <td>Bank Transfer</td>
           <td>
             <div class="status">
-            <div class="circle"></div>
-            <div class="text">Successful</div>
+              <div class="circle"></div>
+              <div class="text">Successful</div>
             </div>
           </td>
           <td class="action-icon">
@@ -467,8 +467,8 @@
           <td>Bank Transfer</td>
           <td>
             <div class="status">
-            <div class="circle"></div>
-            <div class="text">Successful</div>
+              <div class="circle"></div>
+              <div class="text">Successful</div>
             </div>
           </td>
           <td class="action-icon">
@@ -508,8 +508,8 @@
           <td>Bank Transfer</td>
           <td>
             <div class="status">
-            <div class="circle"></div>
-            <div class="text">Successful</div>
+              <div class="circle"></div>
+              <div class="text">Successful</div>
             </div>
           </td>
           <td class="action-icon">
@@ -541,9 +541,6 @@
             </svg>
           </td>
         </tr>
-
-
-        
       </table>
     </div>
 
@@ -554,60 +551,27 @@
 </template>
 
 <style lang="scss">
-.main-content {
-  padding: 20px;
-  background: #fff;
-  height: 100%;
-  width: 100%;
+  .main-content {
+    padding: 20px;
+    .table {
+      tr {
+        .status {
+          display: flex;
+          align-items: center;
+          justify-items: center;
 
-  .search-nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    .search-input {
-      position: relative;
-
-      .search-icon {
-        position: absolute;
-        left: 20px;
-        top: 50%;
-        transform: translateY(-50%);
-        cursor: pointer;
-        width: 60px;
+          .circle {
+            height: 10px;
+            margin-right: 10px;
+            width: 10px;
+            border-radius: 50%;
+            background: green;
+          }
+          .text {
+            color: green;
+          }
+        }
       }
-    }
-    .filter {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 40px;
-      width: 150px;
-      background: #eeeeee;
-      border-radius: 7px;
     }
   }
-  .table {
-    tr{
-    .status {
-      display: flex;
-      align-items: center;
-      justify-items: center;
-      
-
-      .circle {
-        height: 10px;
-        margin-right:10px;
-        width: 10px;
-        border-radius: 50%;
-        background: green;
-        
-      }
-      .text {
-        color: green;
-      }
-    }
-     }
-  }
-}
 </style>

@@ -69,46 +69,46 @@
             :to="{ name: 'Product' }"
             :class="{ active: $route.name === 'Product' }"
           >
-          <svg
-            class="icon"
-            width="23"
-            height="23"
-            viewBox="0 0 23 23"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M11.4953 15.982V13.5507"
-              stroke="#6D6D6D"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M17.4319 5.10815C19.0515 5.10815 20.3548 6.42107 20.3548 8.04065V11.3373C17.9973 12.7173 14.8828 13.5511 11.4903 13.5511C8.09775 13.5511 4.99275 12.7173 2.63525 11.3373V8.03107C2.63525 6.41149 3.94817 5.10815 5.56775 5.10815H17.4319Z"
-              stroke="#6D6D6D"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <path
-              d="M14.8494 5.10392V4.75317C14.8494 3.584 13.9007 2.63525 12.7315 2.63525H10.259C9.08986 2.63525 8.14111 3.584 8.14111 4.75317V5.10392"
-              stroke="#6D6D6D"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <path
-              d="M2.65869 14.8379L2.83982 17.2423C2.96248 18.8629 4.31277 20.1154 5.93715 20.1154H17.0529C18.6772 20.1154 20.0275 18.8629 20.1502 17.2423L20.3313 14.8379"
-              stroke="#6D6D6D"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-          <span>Product/Inventory</span>
+            <svg
+              class="icon"
+              width="23"
+              height="23"
+              viewBox="0 0 23 23"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M11.4953 15.982V13.5507"
+                stroke="#6D6D6D"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M17.4319 5.10815C19.0515 5.10815 20.3548 6.42107 20.3548 8.04065V11.3373C17.9973 12.7173 14.8828 13.5511 11.4903 13.5511C8.09775 13.5511 4.99275 12.7173 2.63525 11.3373V8.03107C2.63525 6.41149 3.94817 5.10815 5.56775 5.10815H17.4319Z"
+                stroke="#6D6D6D"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M14.8494 5.10392V4.75317C14.8494 3.584 13.9007 2.63525 12.7315 2.63525H10.259C9.08986 2.63525 8.14111 3.584 8.14111 4.75317V5.10392"
+                stroke="#6D6D6D"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M2.65869 14.8379L2.83982 17.2423C2.96248 18.8629 4.31277 20.1154 5.93715 20.1154H17.0529C18.6772 20.1154 20.0275 18.8629 20.1502 17.2423L20.3313 14.8379"
+                stroke="#6D6D6D"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <span>Product/Inventory</span>
           </router-link>
         </li>
         <li class="each-item">
@@ -117,34 +117,34 @@
             :to="{ name: 'Profile' }"
             :class="{ active: $route.name === 'Profile' }"
           >
-          <svg
-            width="23"
-            height="23"
-            viewBox="0 0 23 23"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M11.4855 14.7068C7.77901 14.7068 4.61377 15.2672 4.61377 17.5115C4.61377 19.7558 7.75893 20.3363 11.4855 20.3363C15.1919 20.3363 18.3563 19.775 18.3563 17.5316C18.3563 15.2882 15.212 14.7068 11.4855 14.7068Z"
-              stroke="#6D6D6D"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M11.4853 11.5057C13.9176 11.5057 15.889 9.53338 15.889 7.10104C15.889 4.66869 13.9176 2.69727 11.4853 2.69727C9.05293 2.69727 7.08059 4.66869 7.08059 7.10104C7.07238 9.52516 9.03103 11.4975 11.4542 11.5057H11.4853Z"
-              stroke="#6D6D6D"
-              stroke-width="1.42857"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
+            <svg
+              width="23"
+              height="23"
+              viewBox="0 0 23 23"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M11.4855 14.7068C7.77901 14.7068 4.61377 15.2672 4.61377 17.5115C4.61377 19.7558 7.75893 20.3363 11.4855 20.3363C15.1919 20.3363 18.3563 19.775 18.3563 17.5316C18.3563 15.2882 15.212 14.7068 11.4855 14.7068Z"
+                stroke="#6D6D6D"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M11.4853 11.5057C13.9176 11.5057 15.889 9.53338 15.889 7.10104C15.889 4.66869 13.9176 2.69727 11.4853 2.69727C9.05293 2.69727 7.08059 4.66869 7.08059 7.10104C7.07238 9.52516 9.03103 11.4975 11.4542 11.5057H11.4853Z"
+                stroke="#6D6D6D"
+                stroke-width="1.42857"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
 
-          <span> Profile </span>
+            <span> Profile </span>
           </router-link>
         </li>
       </ul>
@@ -155,54 +155,56 @@
 <script lang="ts" setup></script>
 
 <style lang="scss" scoped>
-.sidebar-wrapper {
-  padding: 20px;
-  width: 280px;
-  min-height: 100vh;
-  background: white;
+  .sidebar-wrapper {
+    padding: 20px;
+    width: 280px;
+    min-height: 100vh;
+    background: white;
 
-  .sidebar-brand {
-    height: 80px;
-    width: 100%;
-    border-bottom: 2px solid rgb(236, 234, 234);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+    .sidebar-brand {
+      height: 80px;
+      width: 100%;
+      border-bottom: 2px solid rgb(236, 234, 234);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-  .list-wrapper {
-    width: 100%;
-    padding-top: 30px;
-    .nav-items {
-      padding: 0;
-      .each-item {
-        list-style: none;
-        width: 100%;
-        .nav-link {
-          padding: 10px 15px;
-          height: 45px;
-          margin-bottom: 20px;
-          color: #6d6d6d !important;
-
-          span {
-            margin-left: 15px;
-            color: #6d6d6d;
-          }
-        }
-        .active {
-          background: #f5f4ff;
-          border-left: 4px solid #251b6c;
-          border-radius: 5px;
-          font-weight: 700;
+    .list-wrapper {
+      width: 100%;
+      padding-top: 30px;
+      .nav-items {
+        padding: 0;
+        .each-item {
+          list-style: none;
           width: 100%;
-
-          span {
-            color: #251b6c;
+          svg {
+            width: 30px;
           }
-          
+          .nav-link {
+            padding: 10px 15px;
+            height: 45px;
+            margin-bottom: 20px;
+            color: #6d6d6d !important;
+
+            span {
+              margin-left: 15px;
+              color: #6d6d6d;
+            }
+          }
+          .active {
+            background: #f5f4ff;
+            border-left: 4px solid #251b6c;
+            border-radius: 5px;
+            font-weight: 500;
+            width: 100%;
+
+            span {
+              color: #251b6c;
+            }
+          }
         }
       }
     }
   }
-}
 </style>

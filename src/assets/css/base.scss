@@ -4,7 +4,6 @@
   box-sizing: border-box;
   font-family: "Onest", sans-serif;
   font-optical-sizing: auto;
-  font-weight: weight;
   font-style: normal;
   color: #343434;
 }
@@ -36,28 +35,27 @@ p {
   margin-top: 0;
   margin-bottom: 0;
 }
-input{
-  height:45px;
+input {
+  height: 45px;
 }
 
-input:focus{
-  box-shadow:none;
-  outline:none;
-}
-
-.btn:focus{
+input:focus {
   box-shadow: none;
   outline: none;
 }
 
+.btn:focus {
+  box-shadow: none;
+  outline: none;
+}
 
 .form-select {
-  height:45px;
+  height: 45px;
   color: #bbbbbb !important;
   font-size: 13px;
 }
 
-input::placeholder{
+input::placeholder {
   color: #bbbbbb !important;
   font-size: 13px;
 }
@@ -74,12 +72,10 @@ li {
   list-style: none;
 }
 
-
-.table{
+.table {
   th,
   td {
     font-size: 13px;
     padding: 16px;
   }
 }
-
