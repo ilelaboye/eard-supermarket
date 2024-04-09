@@ -59,18 +59,10 @@
 </template>
 
 <script lang="ts" setup>
-  import completed from "@/components/orders/completed_orders.vue";
-  import incoming from "@/components/orders/incoming_orders.vue";
+  import completed from "@/components/orders/cashier/completed_orders.vue";
+  import incoming from "@/components/orders/cashier/incoming_orders.vue";
 </script>
 
 <style lang="scss" scoped>
-  .orders {
-    width: 100%;
-    height: 60px;
-    background-color: #fff;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    margin-bottom: 13px;
-  }
+  
 </style>

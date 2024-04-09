@@ -1,6 +1,14 @@
+
 <template>
-  <!--buttton nav starts-->
-  <div class="profile ps-3">
+  <!--search nav starts-->
+
+  <div>
+   <staffNav></staffNav> 
+  </div>
+  <!--search nav ends-->
+
+   <!--buttton nav starts-->
+   <div class="button-nav-wrapper mt-3 orders ps-3">
     <ul class="nav nav-pills" id="pills-tab" role="tablist">
       <li class="nav-item" role="presentation">
         <button
@@ -13,7 +21,7 @@
           aria-controls="pills-home"
           aria-selected="true"
         >
-          Basic Info
+          All Staff
         </button>
       </li>
       <li class="nav-item" role="presentation">
@@ -27,14 +35,13 @@
           aria-controls="pills-profile"
           aria-selected="false"
         >
-          Change Password
+          Invites
         </button>
       </li>
     </ul>
   </div>
-  <!--buttton nav ends-->
 
-  <!--search  nav and table starts-->
+  <!--buttton nav ends-->
 
   <div class="tab-content" id="pills-tabContent">
     <div
@@ -43,7 +50,7 @@
       role="tabpanel"
       aria-labelledby="pills-home-tab"
     >
-      <basicInfo></basicInfo>
+      <allstaff></allstaff>
     </div>
     <div
       class="tab-pane fade"
@@ -51,27 +58,17 @@
       role="tabpanel"
       aria-labelledby="pills-profile-tab"
     >
-      <changePassword></changePassword>
+      <invites></invites>
     </div>
-  </div>
+  </div>  
 
-  <!--search  nav and table ends-->
 </template>
 
 <script lang="ts" setup>
-  import basicInfo from "@/components/profile/basic_info.vue";
 
-  import changePassword from "@/components/profile/change_password.vue";
+import staffNav from '@/components/search-nav/staff-nav.vue';
+
+import allstaff from "@/components/staff/allstaff.vue"
+
+import invites from '@/components/staff/invites.vue';
 </script>
-
-<style lang="scss" scoped>
-  .profile {
-    width: 100%;
-    height: 60px;
-    background-color: #fff;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    margin-bottom: 13px;
-  }
-</style>

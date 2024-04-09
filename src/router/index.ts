@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import publicRoutes from "./public";
-import dashboardRoutes from "./dashboard";
+import cashierRoutes from "./cashier";
+import managerRoutes from "./manager";
 
 
 
@@ -13,7 +14,11 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: "/",
-    children: [...dashboardRoutes]
+    children: [...cashierRoutes]
+  },
+  {
+    path: "/",
+    children: [...managerRoutes]
   },
 
 ];

@@ -66,8 +66,8 @@
         <li class="each-item">
           <router-link
             class="nav-link"
-            :to="{ name: 'Product' }"
-            :class="{ active: $route.name === 'Product' }"
+            to="/c_inventory"
+            :class="{ active: $route.name === 'Inventory' }"
           >
             <svg
               class="icon"
@@ -108,7 +108,7 @@
                 stroke-linejoin="round"
               />
             </svg>
-            <span>Product/Inventory</span>
+            <span>Inventory</span>
           </router-link>
         </li>
         <li class="each-item">

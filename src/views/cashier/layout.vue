@@ -18,8 +18,9 @@
 </template>
 
 <script lang="ts" setup>
-import sidebar from "@/components/public/sidebar.vue";
-import navbar from "@/components/public/navbar.vue";
+import sidebar from "@/components/public/cashier/sidebar.vue";
+
+import navbar from "@/components/public/cashier/navbar.vue";
 
 </script>
 

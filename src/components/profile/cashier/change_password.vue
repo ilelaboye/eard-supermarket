@@ -26,7 +26,7 @@
                 class="error-msg text-danger ms-2 mb-3"
                 style="font-size: 12px"
               >
-                {{ eMsg.password }}
+                {{ eMsg.Password }}
               </div>
         </div>
         <div class="mb-3">
@@ -113,7 +113,7 @@ import { ref } from "vue";
 
 const password = ref("");
 const Npassword = ref("");
-const cpassword = ref("");
+const Cpassword = ref("");
 const showPassword = ref(false);
 const seePassword = ref(false);
 
@@ -128,13 +128,13 @@ const errors = ref({
  
   password: false,
   Npassword: false,
-  cpassword: false,
+  Cpassword: false,
 });
 
 const eMsg = ref({
   Npassword: "This field is required",
-  password: "This field is required",
-  cpassword: "This field is required",
+  Password: "This field is required",
+  Cpassword: "This field is required",
 });
 
 const login = () => {
@@ -154,15 +154,15 @@ const login = () => {
     errors.value.Npassword = false;
   }
 
-  if (cpassword.value == "") {
-    errors.value.cpassword = true;
+  if (Cpassword.value == "") {
+    errors.value.Cpassword = true;
     return;
-  } else if (password.value !== cpassword.value) {
-    errors.value.cpassword = true;
-    eMsg.value.cpassword = "Password does not match";
+  } else if (password.value !== Cpassword.value) {
+    errors.value.Cpassword = true;
+    eMsg.value.Cpassword = "Password does not match";
     return;
   } else {
-    errors.value.cpassword = false;
+    errors.value.Cpassword = false;
   }
   window.location.href = "/";
 };
