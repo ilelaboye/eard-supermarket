@@ -1,6 +1,18 @@
 .text-primary {
   color: #251b6c !important;
 }
+.fs-12 {
+  font-size: 12px;
+}
+.fs-13 {
+  font-size: 13px;
+}
+.fs-14 {
+  font-size: 14px;
+}
+.fs-15 {
+  font-size: 15px;
+}
 .btn {
   font-size: 14px;
 }
@@ -13,17 +25,17 @@
 .bg-primary-light {
   background-color: #f5f4ff !important;
 }
-.bg-success-light{
-  background-color: #E9fff2;
+.bg-success-light {
+  background-color: #e9fff2;
 }
-.text-success{
-color: #27AE60;
+.text-success {
+  color: #27ae60;
 }
-.bg-info{
-background-color: #00BCD6;
+.bg-info {
+  background-color: #00bcd6;
 }
-.bg-success{
-  background-color: #00B05B;
+.bg-success {
+  background-color: #00b05b;
 }
 
 .box {
@@ -143,8 +155,9 @@ background-color: #00BCD6;
         width: 60px;
       }
     }
-    
-    .filter,.button {
+
+    .filter,
+    .button {
       display: flex;
       align-items: center;
       justify-content: space-evenly;
@@ -154,7 +167,8 @@ background-color: #00BCD6;
       border-radius: 7px;
       color: #343434;
       font-size: 13px;
-      .filter-icon, .add-icon {
+      .filter-icon,
+      .add-icon {
         svg {
           width: 16px;
         }
@@ -172,26 +186,26 @@ background-color: #00BCD6;
   justify-content: space-between;
   height: 40px;
   width: 130px;
-  border:1px solid #eeeeee;
+  border: 1px solid #eeeeee;
   border-radius: 7px;
   color: #343434;
   font-size: 13px;
-  
+
   .dropdown-icon svg {
     width: 16px;
   }
 }
-.view-records{
+.view-records {
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 40px;
   width: 70px;
-  border:1px solid #eeeeee;
+  border: 1px solid #eeeeee;
   border-radius: 7px;
   color: #343434;
   font-size: 13px;
-  
+
   .dropdown-icon svg {
     width: 16px;
   }
@@ -216,84 +230,78 @@ background-color: #00BCD6;
   margin-bottom: 5px;
 }
 
-
-
-.table{
-tr{
-  th{
-
-    font-size: 13px;
-    font-weight: 400;
-    vertical-align: middle;
-
-  }
-
-  
-
-  td {
-    font-weight: 300;
-    padding: 13px;
-    font-size:13px;
-    vertical-align: middle;
-
-    .checkbox {
-      height: 23px;
-      width: 23px;
-    }
-    
-    .active {
-      background: #e2ffee;
-      color: #343434;
-      padding: 5px 10px;
-      border-radius: 14px;
+.table {
+  tr {
+    th {
+      font-size: 13px;
       font-weight: 400;
-      font-size: 12px;
-    }
-    
-    .deactive {
-      color: #fff;
-      background-color: #d22424;
-      padding: 5px 10px;
-      border-radius: 14px;
-      font-weight: 400;
-      font-size: 12px;
-    }
-    .inactive{
-      background: #ffeaea;
-      color: #343434;
-      padding: 5px 10px;
-      border-radius: 14px;
-      font-weight: 400;
-      font-size: 12px;
-    }
-    .invite {
-      color: #fff;
-      background: #251b6c;
-      padding: 5px 10px;
-      border-radius: 14px;
-      font-weight: 400;
-      font-size: 12px;
-    }
-    .out-of-stock {
-      background: #fff2f2;
-      color: #d22424;
-      padding: 5px 10px;
-      border-radius: 14px;
-      font-weight: 400;
-      font-size: 12px;
+      vertical-align: middle;
     }
 
-    .counter {
-      display: flex;
-      justify-content: space-evenly;
-      align-items: center;
-      border: 1px solid #eeeeee;
-      height: 40px;
-      width:120px;
-      border-radius: 22px;
+    td {
+      font-weight: 300;
+      padding: 13px;
+      font-size: 13px;
+      vertical-align: middle;
+
+      .checkbox {
+        height: 17px;
+        width: 17px;
+      }
+
+      .active {
+        background: #e2ffee;
+        color: #343434;
+        padding: 5px 10px;
+        border-radius: 14px;
+        font-weight: 400;
+        font-size: 12px;
+      }
+
+      .deactive {
+        color: #fff;
+        background-color: #d22424;
+        padding: 5px 10px;
+        border-radius: 14px;
+        font-weight: 400;
+        font-size: 12px;
+      }
+      .inactive {
+        background: #ffeaea;
+        color: #343434;
+        padding: 5px 10px;
+        border-radius: 14px;
+        font-weight: 400;
+        font-size: 12px;
+      }
+      .invite {
+        color: #fff;
+        background: #251b6c;
+        padding: 5px 10px;
+        border-radius: 14px;
+        font-weight: 400;
+        font-size: 12px;
+      }
+      .out-of-stock {
+        background: #fff2f2;
+        color: #d22424;
+        padding: 5px 10px;
+        border-radius: 14px;
+        font-weight: 400;
+        font-size: 12px;
+      }
+
+      .counter {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        border: 1px solid #eeeeee;
+        height: 40px;
+        width: 120px;
+        border-radius: 22px;
+      }
     }
   }
-}
 }
 
 .status {
@@ -310,12 +318,11 @@ tr{
   }
   .text {
     color: green;
+    font-size: 13px;
   }
 }
-.radio{
+.radio {
   height: 25px;
-  width:25px;
+  width: 25px;
   color: #251b6c !important;
 }
-
-

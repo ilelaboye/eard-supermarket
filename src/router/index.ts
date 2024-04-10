@@ -3,24 +3,19 @@ import publicRoutes from "./public";
 import cashierRoutes from "./cashier";
 import managerRoutes from "./manager";
 
-
-
-
-
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
-    children: [...publicRoutes]
+    children: [...publicRoutes],
   },
   {
     path: "/",
-    children: [...cashierRoutes]
+    children: [...cashierRoutes],
   },
   {
     path: "/",
-    children: [...managerRoutes]
+    children: [...managerRoutes],
   },
-
 ];
 
 const router = createRouter({

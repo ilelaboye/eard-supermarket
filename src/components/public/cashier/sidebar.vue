@@ -66,7 +66,7 @@
         <li class="each-item">
           <router-link
             class="nav-link"
-            to="/c_inventory"
+            to="/inventory"
             :class="{ active: $route.name === 'Inventory' }"
           >
             <svg
