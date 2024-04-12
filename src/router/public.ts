@@ -4,7 +4,6 @@ import F_password from "@/views/public/fpassword.vue";
 import Otp from "@/views/public/otp.vue";
 import Reset from "@/views/public/reset.vue";
 
-
 const publicRoutes: Array<RouteRecordRaw> = [
   {
     path: "/",
@@ -27,7 +26,5 @@ const publicRoutes: Array<RouteRecordRaw> = [
     component: Reset,
   },
 ];
-
-
 
 export default publicRoutes;
