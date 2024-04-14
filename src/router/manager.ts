@@ -1,13 +1,13 @@
 import { RouteRecordRaw } from "vue-router";
-import Layout from "@/views/manager/layout.vue";
-import Transactions from "@/views/manager/transactions.vue";
-import Staff from "@/views/manager/staff.vue";
-import M_Profile from "@/views/manager/profile.vue";
-import Each_Staff from "@/views/manager/eachstaff.vue";
+import Layout from "@/views/dashboard/layout.vue";
+import Transactions from "@/views/dashboard/manager/transactions.vue";
+import Staff from "@/views/dashboard/manager/staff.vue";
+import M_Profile from "@/views/dashboard/manager/profile.vue";
+import Each_Staff from "@/views/dashboard/manager/eachstaff.vue";
 
 const managerRoutes: Array<RouteRecordRaw> = [
   {
-    path: "/m-layout",
+    path: "/",
     component: Layout,
     children: [
       {

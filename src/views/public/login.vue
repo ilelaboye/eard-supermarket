@@ -71,9 +71,11 @@
                 <button
                   type="submit"
                   class="btn btn-primary rounded-pill"
-                  style="height: 40px"
+                  style="height: 40px;'"
+                  :disabled="loading"
                 >
-                  Login
+                  <span v-if="loading">loading...</span>
+                  <span v-else>Login</span>
                 </button>
               </div>
             </form>
@@ -89,9 +91,11 @@
 
 <script setup lang="ts">
   import { ref } from "vue";
+  import { useStore } from "vuex";
 
-  const email = ref("");
-  const password = ref("");
+  const store = useStore();
+  const email = ref("abra@gmail.com");
+  const password = ref("3902ndsnduisndu");
   const showPassword = ref(false);
 
   const togglePassword = () => {
@@ -106,6 +110,8 @@
     email: "This field is required",
     password: "This field is required",
   });
+
+  const loading = ref(false);
 
   const login = () => {
     if (email.value == "") {
@@ -129,6 +135,33 @@
     } else {
       errors.value.password = false;
     }
-    window.location.href = "/orders";
+    loading.value = true;
+    store
+      .dispatch("post", {
+        endpoint: "/organization/login",
+        details: { email: email.value, password: password.value },
+      })
+      .then((resp) => {
+        loading.value = false;
+        console.log(resp);
+        store.commit("setUser", resp.data.data.data);
+        console.log(store.state.user);
+        if (store.state.user.role == "STAFF") {
+          window.location.href = "/orders";
+        } else {
+          window.location.href = "/transactions";
+        }
+      })
+      .catch((err) => {
+        loading.value = false;
+        console.log(err);
+      });
   };
 </script>
+<style scoped lang="scss">
+  .btn {
+    span {
+      color: #fff;
+    }
+  }
+</style>
