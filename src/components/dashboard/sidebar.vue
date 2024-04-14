@@ -3,13 +3,22 @@
     <div class="sidebar-brand">
       <div class="brand-logo">
         <img src="@/assets/images/logo.png" alt="" />
-        <span class="text-primary ms-3 fw-bold">CASHIER PORTAL</span>
+        <span class="text-primary ms-3 fw-bold"
+          >{{
+            user.role == "STAFF"
+              ? "CASHIER"
+              : user.role == "OWNER"
+              ? "OWNER"
+              : "MANAGER"
+          }}
+          PORTAL</span
+        >
       </div>
     </div>
 
     <div class="list-wrapper">
       <ul class="nav-items">
-        <li class="each-item">
+        <li class="each-item" v-if="user.role == 'STAFF'">
           <router-link
             class="nav-link"
             :to="{ name: 'Orders' }"
@@ -63,6 +72,63 @@
             <span> Orders</span>
           </router-link>
         </li>
+        <li
+          class="each-item"
+          v-if="user.role == 'MANAGER' || user.role == 'OWNER'"
+        >
+          <router-link
+            class="nav-link"
+            :to="{ name: 'Transactions' }"
+            :class="{ active: $route.name === 'Transactions' }"
+          >
+            <svg
+              width="23"
+              height="23"
+              viewBox="0 0 23 23"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M2.875 6.22917C2.875 3.71334 2.90194 2.875 6.22917 2.875C9.5564 2.875 9.58333 3.71334 9.58333 6.22917C9.58333 8.745 9.59394 9.58333 6.22917 9.58333C2.86439 9.58333 2.875 8.745 2.875 6.22917Z"
+                stroke="#6D6D6D"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M13.4165 6.22917C13.4165 3.71334 13.4434 2.875 16.7707 2.875C20.0979 2.875 20.1248 3.71334 20.1248 6.22917C20.1248 8.745 20.1354 9.58333 16.7707 9.58333C13.4059 9.58333 13.4165 8.745 13.4165 6.22917Z"
+                stroke="#6D6D6D"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M2.875 16.7708C2.875 14.255 2.90194 13.4166 6.22917 13.4166C9.5564 13.4166 9.58333 14.255 9.58333 16.7708C9.58333 19.2866 9.59394 20.125 6.22917 20.125C2.86439 20.125 2.875 19.2866 2.875 16.7708Z"
+                stroke="#6D6D6D"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M13.4165 16.7708C13.4165 14.255 13.4434 13.4166 16.7707 13.4166C20.0979 13.4166 20.1248 14.255 20.1248 16.7708C20.1248 19.2866 20.1354 20.125 16.7707 20.125C13.4059 20.125 13.4165 19.2866 13.4165 16.7708Z"
+                stroke="#6D6D6D"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+
+            <span> Transactions</span>
+          </router-link>
+        </li>
         <li class="each-item">
           <router-link
             class="nav-link"
@@ -111,6 +177,72 @@
             <span>Inventory</span>
           </router-link>
         </li>
+        <li
+          class="each-item"
+          v-if="user.role == 'MANAGER' || user.role == 'OWNER'"
+        >
+          <router-link
+            class="nav-link"
+            :to="{ name: 'Staffs' }"
+            :class="{ active: $route.name === 'Staffs' }"
+          >
+            <svg
+              width="23"
+              height="23"
+              viewBox="0 0 23 23"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M17.1421 10.4424C18.479 10.2546 19.5082 9.10841 19.5111 7.71979C19.5111 6.35129 18.5135 5.21662 17.2053 5.00195"
+                stroke="#6D6D6D"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M18.9062 13.6562C20.201 13.8498 21.1047 14.3031 21.1047 15.2375C21.1047 15.8805 20.6792 16.2984 19.9911 16.561"
+                stroke="#6D6D6D"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M11.3914 14.0527C8.31129 14.0527 5.68066 14.5194 5.68066 16.3834C5.68066 18.2464 8.295 18.7265 11.3914 18.7265C14.4715 18.7265 17.1011 18.2646 17.1011 16.3997C17.1011 14.5348 14.4877 14.0527 11.3914 14.0527Z"
+                stroke="#6D6D6D"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M11.3913 11.3925C13.4125 11.3925 15.0512 9.75471 15.0512 7.73263C15.0512 5.7115 13.4125 4.07275 11.3913 4.07275C9.37022 4.07275 7.73147 5.7115 7.73147 7.73263C7.72381 9.74705 9.3501 11.3858 11.3645 11.3925H11.3913Z"
+                stroke="#6D6D6D"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M5.63951 10.4424C4.30167 10.2546 3.27338 9.10841 3.27051 7.71979C3.27051 6.35129 4.26813 5.21662 5.57626 5.00195"
+                stroke="#6D6D6D"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M3.87517 13.6562C2.58047 13.8498 1.67676 14.3031 1.67676 15.2375C1.67676 15.8805 2.10226 16.2984 2.79034 16.561"
+                stroke="#6D6D6D"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <span>Staff</span>
+          </router-link>
+        </li>
         <li class="each-item">
           <router-link
             class="nav-link"
@@ -152,7 +284,13 @@
   </div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+  import { useStore } from "vuex";
+
+  const store = useStore();
+  const user = store.state.user;
+  console.log(user);
+</script>
 
 <style lang="scss" scoped>
   .sidebar-wrapper {

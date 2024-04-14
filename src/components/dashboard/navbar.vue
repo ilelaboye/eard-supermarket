@@ -6,11 +6,21 @@
       </div>
       <div class="nav-profile">
         <div class="initials">
-          <h5 class="initials-text">AB</h5>
+          <h5 class="initials-text">
+            {{ user.firstname[0] }}{{ user.lastname[0] }}
+          </h5>
         </div>
         <div class="profile-name">
-          <h6 class="text-primary">Abike Balogun</h6>
-          <span class="text-primary">Cashier</span>
+          <h6 class="text-primary text-capitalize">
+            {{ user.firstname }} {{ user.lastname }}
+          </h6>
+          <span class="text-primary">{{
+            user.role == "STAFF"
+              ? "Cashier"
+              : user.role == "OWNER"
+              ? "Owner"
+              : "Manager"
+          }}</span>
         </div>
         <div class="dropdown-icon">
           <svg
@@ -37,8 +47,12 @@
 <script setup lang="ts">
   // import router from '@/router';
   import { useRoute } from "vue-router";
+  import { useStore } from "vuex";
   const route = useRoute();
   console.log(route.name);
+
+  const store = useStore();
+  const user = store.state.user;
 </script>
 
 <style lang="scss" scoped>
@@ -74,6 +88,7 @@
 
           .initials-text {
             color: #fff;
+            text-transform: uppercase;
           }
         }
 

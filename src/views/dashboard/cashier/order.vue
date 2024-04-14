@@ -802,9 +802,17 @@
               <p>Bank Transfer</p>
             </div>
 
-            <div class="mt-5">
+            <div class="mt-4">
               <button
                 class="button btn-primary btn text-white border-0"
+                type="button"
+                style="height: 45px; width: 100%; border-radius: 30px"
+              >
+                Confirm Payment
+              </button>
+
+              <button
+                class="button btn-primary btn text-white border-0 mt-2"
                 type="button"
                 style="height: 45px; width: 100%; border-radius: 30px"
               >

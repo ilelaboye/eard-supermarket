@@ -12,6 +12,7 @@
               type="text"
               class="form-control"
               placeholder="Enter your first name"
+              v-model="user.firstname"
             />
           </div>
           <div class="col-6 each-field mb-3">
@@ -20,6 +21,7 @@
               type="text"
               class="form-control"
               placeholder="Enter your last name"
+              v-model="user.lastname"
             />
           </div>
         </div>
@@ -28,14 +30,20 @@
           <label class="mb-2" for="email">Email Address</label>
           <input
             type="email"
+            v-model="user.email"
             class="form-control"
             placeholder="Enter your email address"
+            disabled
           />
         </div>
         <div class="each-field mb-3">
           <label class="mb-2" for="number">Phone number</label>
           <img src="" alt="" />
-          <input type="number" class="form-control input-group" />
+          <input
+            type="number"
+            v-model="user.phone_number"
+            class="form-control input-group"
+          />
         </div>
         <div class="each-field mb-3">
           <label class="mb-2" for="address">Home Address</label>
@@ -43,36 +51,18 @@
             type="text"
             class="form-control"
             placeholder="Enter your home address"
+            v-model="user.home_address"
           />
-        </div>
-        <div class="row">
-          <div class="col-6 each-field mb-3">
-            <label class="mb-2" for="name">City</label>
-            <input
-              type="text"
-              class="form-control"
-              placeholder="Enter your city"
-            />
-          </div>
-          <div class="col-6 each-field mb-3">
-            <label class="mb-2" for="name">State</label>
-            <select
-              aria-label="true"
-              class="form-select"
-            >
-            <option value="Select State ">Select state</option>
-            <option value="lagos ">lagos</option>
-            <option value="Ibadan">Ibadan</option>
-            <option value="Ekiti">Ekiti</option>
-            <option value="Osun">Osun</option>
-            <option value="Ogun">Ogun</option>
-            </select>
-          </div>
         </div>
 
         <div class="each-field mt-3">
-          <button class="button btn btn-primary text-white border-0" type="submit">
-            Save Changes
+          <button
+            class="button btn btn-primary text-white border-0"
+            type="submit"
+            @click.prevent="updateUser()"
+          >
+            <span v-if="loading" style="color: #fff">Loading...</span>
+            <span v-else style="color: #fff">Save Changes</span>
           </button>
         </div>
       </form>
@@ -80,20 +70,42 @@
   </div>
 </template>
 
+<script lang="ts" setup>
+  import { ref } from "vue";
+  import { useStore } from "vuex";
+
+  const store = useStore();
+  const user = ref(store.state.user);
+  const loading = ref(false);
+
+  const updateUser = () => {
+    loading.value = true;
+    store
+      .dispatch("patch", {
+        endpoint: "/organization/profile",
+        details: user.value,
+      })
+      .then((resp) => {
+        loading.value = false;
+        console.log(resp);
+      });
+  };
+</script>
+
 <style lang="scss" scoped>
-.content-wrapper {
-  padding: 20px;
-  background: #fff;
-  min-height: 100vh;
-}
-
-.info-page {
-  width: 50%;
-
-  .button {
-    height: 45px;
-    width: 200px;
-    border-radius: 30px;
+  .content-wrapper {
+    padding: 20px;
+    background: #fff;
+    min-height: 100vh;
   }
-}
+
+  .info-page {
+    width: 50%;
+
+    .button {
+      height: 45px;
+      width: 200px;
+      border-radius: 30px;
+    }
+  }
 </style>

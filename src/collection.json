@@ -1,0 +1,421 @@
+{
+  "collection": {
+    "info": {
+      "_postman_id": "14fa6703-7f1e-4c20-b945-700ab9520a77",
+      "name": "Organisation and Staff and Admin",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+      "updatedAt": "2024-04-11T03:41:21.000Z",
+      "uid": "16947617-14fa6703-7f1e-4c20-b945-700ab9520a77",
+      "createdAt": null,
+      "lastUpdatedBy": null
+    },
+    "item": [
+      {
+        "name": "Auth",
+        "item": [
+          {
+            "name": "Manager",
+            "item": [
+              {
+                "name": "SignUp",
+                "id": "e528d2bb-99c7-428e-a6e8-edf31918a058",
+                "protocolProfileBehavior": { "disableBodyPruning": true },
+                "request": {
+                  "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                      {
+                        "key": "token",
+                        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MTU2NGFlZjEyNDM1NGFhNGVhNDViMCIsImNsaWVudElkIjoiT1dORVIiLCJpYXQiOjE3MTI2Nzg0NDcsImV4cCI6MTcxMzU0MjQ0N30.CXEY8KCB1akW5xFJqo1V8HH_E9zuVHH7oj_qNWpe9zo",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "method": "POST",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json",
+                      "type": "text"
+                    }
+                  ],
+                  "body": {
+                    "mode": "raw",
+                    "raw": "{\r\n          \"firstname\": \"messironaldoabraham@gmail.com\",\r\n          \"lastname\": \"messironaldoabraham@gmail.com\",\r\n          \"email\": \"johnabraham@gmail.coms\",\r\n          \"phone_number\": 790697067,\r\n          \"pre_phone_number\": 234,\r\n          \"home_address\": \"johnabraham@gmail.com\",\r\n          \"city\": \"Lagos\",\r\n          \"name\":\"super\",\r\n          \"password\": \"BUTId6Bs9B#\",\r\n          \"supermart_id\":\"66153b71ceda31caac0568e8\"\r\n        }",
+                    "options": { "raw": { "language": "json" } }
+                  },
+                  "url": {
+                    "raw": "{{BASE_URL}}organization",
+                    "host": ["{{BASE_URL}}organization"]
+                  }
+                },
+                "response": [],
+                "uid": "16947617-e528d2bb-99c7-428e-a6e8-edf31918a058"
+              }
+            ],
+            "id": "417f7d65-cb64-4a5a-b051-47c0a9695f48",
+            "uid": "16947617-417f7d65-cb64-4a5a-b051-47c0a9695f48"
+          },
+          {
+            "name": "Staff",
+            "item": [
+              {
+                "name": "SignUp Copy",
+                "id": "d0591144-0e9f-4176-826b-729fd2e0e914",
+                "protocolProfileBehavior": { "disableBodyPruning": true },
+                "request": {
+                  "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                      {
+                        "key": "token",
+                        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MTU2NGFlZjEyNDM1NGFhNGVhNDViMCIsImNsaWVudElkIjoiT1dORVIiLCJpYXQiOjE3MTI2Nzg0NDcsImV4cCI6MTcxMzU0MjQ0N30.CXEY8KCB1akW5xFJqo1V8HH_E9zuVHH7oj_qNWpe9zo",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "method": "POST",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json",
+                      "type": "text"
+                    }
+                  ],
+                  "body": {
+                    "mode": "raw",
+                    "raw": "{\r\n          \"firstname\": \"messironaldoabraham@gmail.com\",\r\n          \"lastname\": \"messironaldoabraham@gmail.com\",\r\n          \"email\": \"johnabraham@gmail.coms\",\r\n          \"phone_number\": 790697067,\r\n          \"pre_phone_number\": 234,\r\n          \"home_address\": \"johnabraham@gmail.com\",\r\n          \"city\": \"Lagos\",\r\n          \"name\":\"super\",\r\n          \"password\": \"BUTId6Bs9B#\",\r\n          \"supermart_id\":\"66153b71ceda31caac0568e8\"\r\n        }",
+                    "options": { "raw": { "language": "json" } }
+                  },
+                  "url": {
+                    "raw": "{{BASE_URL}}organization/staff",
+                    "host": ["{{BASE_URL}}organization"],
+                    "path": ["staff"]
+                  }
+                },
+                "response": [],
+                "uid": "16947617-d0591144-0e9f-4176-826b-729fd2e0e914"
+              }
+            ],
+            "id": "1535d72b-0d4f-42a7-9c9b-8cd45630e89d",
+            "uid": "16947617-1535d72b-0d4f-42a7-9c9b-8cd45630e89d"
+          },
+          {
+            "name": "LogIn",
+            "id": "323a547b-ccfe-48ce-a9ff-1f7a91536d12",
+            "protocolProfileBehavior": { "disableBodyPruning": true },
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\r\n \"email\": \"abra@gmail.com\",\r\n \"password\": \"3902ndsnduisndu\"\r\n}",
+                "options": { "raw": { "language": "json" } }
+              },
+              "url": {
+                "raw": "organization/login",
+                "host": ["organization"],
+                "path": ["login"],
+                "query": [
+                  { "key": "", "value": null, "type": "text", "disabled": true }
+                ]
+              }
+            },
+            "response": [],
+            "uid": "16947617-323a547b-ccfe-48ce-a9ff-1f7a91536d12"
+          }
+        ],
+        "id": "27c35f71-884d-44cb-b56d-b7cc7bf23368",
+        "uid": "16947617-27c35f71-884d-44cb-b56d-b7cc7bf23368"
+      },
+      {
+        "name": "Admin Supermarket",
+        "item": [
+          {
+            "name": "Create supermarket",
+            "id": "f4c18812-6375-46fa-abc3-5fa71b2500fb",
+            "protocolProfileBehavior": { "disableBodyPruning": true },
+            "request": {
+              "method": "POST",
+              "header": [],
+              "body": {
+                "mode": "raw",
+                "raw": "{\r\n    \"firstname\": \"messironaldoabraham@gmail.com\",\r\n    \"lastname\": \"messironaldoabraham@gmail.com\",\r\n    \"email\": \"messironaldoabraham@gmail.com\",\r\n    \"phone_number\": \"0790697067\",\r\n    \"pre_phone_number\": \"234\",\r\n    \"home_address\": \"messironaldoabraham@gmail.coms\",\r\n    \"city\": \"Lagos\",\r\n    \"state\": \"Lagos\",\r\n    \"name\": \"nameds\"\r\n}",
+                "options": { "raw": { "language": "json" } }
+              },
+              "url": {
+                "raw": "{{BASE_URL}}organization/supermarket",
+                "host": ["{{BASE_URL}}organization"],
+                "path": ["supermarket"]
+              }
+            },
+            "response": [],
+            "uid": "16947617-f4c18812-6375-46fa-abc3-5fa71b2500fb"
+          },
+          {
+            "name": "Get all Organization",
+            "id": "b01363b2-94c3-4e79-9119-169a8a8ae803",
+            "protocolProfileBehavior": { "disableBodyPruning": true },
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "{{BASE_URL}}organization/search?limit=10&role=OWNER&search=",
+                "host": ["{{BASE_URL}}organization"],
+                "path": ["search"],
+                "query": [
+                  { "key": "limit", "value": "10" },
+                  { "key": "role", "value": "OWNER" },
+                  { "key": "search", "value": "" }
+                ]
+              }
+            },
+            "response": [],
+            "uid": "16947617-b01363b2-94c3-4e79-9119-169a8a8ae803"
+          },
+          {
+            "name": "Get all supermarket",
+            "id": "c2b6e345-75e3-4db8-9936-ff73f400c61b",
+            "protocolProfileBehavior": { "disableBodyPruning": true },
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "{{BASE_URL}}organization/supermarket/search?limit=10&role=OWNER&search=",
+                "host": ["{{BASE_URL}}organization"],
+                "path": ["supermarket", "search"],
+                "query": [
+                  { "key": "limit", "value": "10" },
+                  { "key": "role", "value": "OWNER" },
+                  { "key": "search", "value": "" }
+                ]
+              }
+            },
+            "response": [],
+            "uid": "16947617-c2b6e345-75e3-4db8-9936-ff73f400c61b"
+          }
+        ],
+        "id": "66b216b2-6639-4594-876f-e537f53eeacd",
+        "uid": "16947617-66b216b2-6639-4594-876f-e537f53eeacd"
+      },
+      {
+        "name": "OWNER",
+        "item": [
+          {
+            "name": "Transfer_Ownership",
+            "id": "6a9ad641-9640-4f21-815a-bcf3521d64a9",
+            "protocolProfileBehavior": { "disableBodyPruning": true },
+            "request": {
+              "auth": {
+                "type": "bearer",
+                "bearer": [
+                  {
+                    "key": "token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MTU2NGFlZjEyNDM1NGFhNGVhNDViMCIsImNsaWVudElkIjoiT1dORVIiLCJpYXQiOjE3MTI2Nzg0NDcsImV4cCI6MTcxMzU0MjQ0N30.CXEY8KCB1akW5xFJqo1V8HH_E9zuVHH7oj_qNWpe9zo",
+                    "type": "string"
+                  }
+                ]
+              },
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\r\n           \"firstname\": \"messironaldoabraham@gmail.com\",\r\n          \"lastname\": \"messironaldoabraham@gmail.com\",\r\n          \"email\": \"messironaldoabraham@gmail.com\",\r\n          \"phone_number\": \"0790697067\",\r\n          \"pre_phone_number\": \"234\",\r\n          \"home_address\": \"messironaldoabraham@gmail.coms\",\r\n          \"city\": \"Lagos\",\r\n          \"state\": \"Lagos\",\r\n          \"name\": \"nameds\",\r\n          \"transfer_id\": \"66153b71ceda31caac0568e8\"\r\n          }",
+                "options": { "raw": { "language": "json" } }
+              },
+              "url": {
+                "raw": "{{BASE_URL}}organization/transfer_ownership",
+                "host": ["{{BASE_URL}}organization"],
+                "path": ["transfer_ownership"]
+              }
+            },
+            "response": [],
+            "uid": "16947617-6a9ad641-9640-4f21-815a-bcf3521d64a9"
+          }
+        ],
+        "id": "5c2819d4-1130-4709-be73-b1380e5983c6",
+        "uid": "16947617-5c2819d4-1130-4709-be73-b1380e5983c6"
+      },
+      {
+        "name": "Profile",
+        "item": [
+          {
+            "name": "update profile",
+            "id": "5d207411-ebd1-4ae2-a548-f2f0bfa8b15d",
+            "protocolProfileBehavior": { "disableBodyPruning": true },
+            "request": {
+              "method": "PATCH",
+              "header": [],
+              "body": {
+                "mode": "raw",
+                "raw": "{\r\n          \"firstname\": \"messironaldoabraham@gmail.com\",\r\n          \"lastname\": \"messironaldoabraham@gmail.com\",\r\n          \"email\": \"johnabraham@gmail.coms\",\r\n          \"phone_number\": 790697067,\r\n          \"pre_phone_number\": 234,\r\n          \"home_address\": \"johnabraham@gmail.com\",\r\n          \"city\": \"Lagos\"\r\n        }",
+                "options": { "raw": { "language": "json" } }
+              },
+              "url": {
+                "raw": "{{BASE_URL}}organization/profile",
+                "host": ["{{BASE_URL}}organization"],
+                "path": ["profile"]
+              }
+            },
+            "response": [],
+            "uid": "16947617-5d207411-ebd1-4ae2-a548-f2f0bfa8b15d"
+          }
+        ],
+        "id": "7ed14cfb-e279-466b-a1ef-d26c6b86fa09",
+        "uid": "16947617-7ed14cfb-e279-466b-a1ef-d26c6b86fa09"
+      },
+      {
+        "name": "Invite",
+        "item": [
+          {
+            "name": "create invite",
+            "id": "51b3e8d0-d225-4340-a90d-869f10092fa3",
+            "protocolProfileBehavior": { "disableBodyPruning": true },
+            "request": {
+              "method": "POST",
+              "header": [],
+              "body": {
+                "mode": "raw",
+                "raw": "{\r\n          \"email\": \"messironaldoabraham@gmail.com\",\r\n          \"name\": \"nameds\",\r\n          \"supermarket_id\": \"66153b71ceda31caac0568e8\"\r\n}",
+                "options": { "raw": { "language": "json" } }
+              },
+              "url": {
+                "raw": "{{BASE_URL}}organization/invite",
+                "host": ["{{BASE_URL}}organization"],
+                "path": ["invite"]
+              }
+            },
+            "response": [],
+            "uid": "16947617-51b3e8d0-d225-4340-a90d-869f10092fa3"
+          },
+          {
+            "name": "get all invite",
+            "id": "576e7a40-5b31-49ea-b8c2-0596645b8562",
+            "protocolProfileBehavior": { "disableBodyPruning": true },
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "{{BASE_URL}}organization/invite/search?limit=10&search=",
+                "host": ["{{BASE_URL}}organization"],
+                "path": ["invite", "search"],
+                "query": [
+                  { "key": "limit", "value": "10" },
+                  { "key": "search", "value": "" }
+                ]
+              }
+            },
+            "response": [],
+            "uid": "16947617-576e7a40-5b31-49ea-b8c2-0596645b8562"
+          },
+          {
+            "name": "Resend invite",
+            "id": "02617bf5-3cc5-441d-8492-f2fb40d7dccc",
+            "protocolProfileBehavior": { "disableBodyPruning": true },
+            "request": {
+              "method": "GET",
+              "header": [],
+              "body": {
+                "mode": "raw",
+                "raw": "{\r\n          \"email\": \"messironaldoabraham@gmail.com\",\r\n          \"name\": \"nameds\",\r\n          \"supermarket_id\": \"66153b71ceda31caac0568e8\"\r\n}",
+                "options": { "raw": { "language": "json" } }
+              },
+              "url": {
+                "raw": "{{BASE_URL}}organization/invite/resend",
+                "host": ["{{BASE_URL}}organization"],
+                "path": ["invite", "resend"]
+              }
+            },
+            "response": [],
+            "uid": "16947617-02617bf5-3cc5-441d-8492-f2fb40d7dccc"
+          }
+        ],
+        "id": "3eb8191a-8f23-401e-b7f4-d048184eef1f",
+        "uid": "16947617-3eb8191a-8f23-401e-b7f4-d048184eef1f"
+      },
+      {
+        "name": "Cashier API",
+        "item": [
+          {
+            "name": "get all ORDER",
+            "id": "e32defb1-438e-4cd5-bb98-ecb551e9a78a",
+            "protocolProfileBehavior": { "disableBodyPruning": true },
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "{{BASE_URL}}order/organisation/search?supermarket_id=dfjkdnfjk&limit=10&search=",
+                "host": ["{{BASE_URL}}order"],
+                "path": ["organisation", "search"],
+                "query": [
+                  { "key": "supermarket_id", "value": "dfjkdnfjk" },
+                  { "key": "limit", "value": "10" },
+                  { "key": "search", "value": "" }
+                ]
+              }
+            },
+            "response": [],
+            "uid": "16947617-e32defb1-438e-4cd5-bb98-ecb551e9a78a"
+          },
+          {
+            "name": "confirm payement",
+            "id": "b181dee0-d189-4a5c-bba6-a249aec05521",
+            "protocolProfileBehavior": { "disableBodyPruning": true },
+            "request": {
+              "method": "PATCH",
+              "header": [],
+              "url": {
+                "raw": "{{BASE_URL}}order/payment",
+                "host": ["{{BASE_URL}}order"],
+                "path": ["payment"]
+              }
+            },
+            "response": [],
+            "uid": "16947617-b181dee0-d189-4a5c-bba6-a249aec05521"
+          }
+        ],
+        "id": "9043a43e-5358-4237-be4e-402fb5549f48",
+        "uid": "16947617-9043a43e-5358-4237-be4e-402fb5549f48"
+      }
+    ],
+    "event": [
+      {
+        "listen": "prerequest",
+        "script": {
+          "id": "2fab58c0-f24a-4ae8-9942-9c39a5d3138c",
+          "type": "text/javascript",
+          "packages": {},
+          "exec": [""]
+        }
+      },
+      {
+        "listen": "test",
+        "script": {
+          "id": "b63e3fcd-8fc3-4fb7-a497-4d3bdc7b8acb",
+          "type": "text/javascript",
+          "packages": {},
+          "exec": [""]
+        }
+      }
+    ],
+    "variable": [
+      {
+        "key": "BASE_URL",
+        "value": "https://eard-api-v0wa.onrender.com/api/v1/",
+        "type": "string"
+      }
+    ]
+  }
+}
