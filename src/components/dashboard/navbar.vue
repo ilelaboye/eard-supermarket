@@ -1,12 +1,23 @@
 <template>
   <div class="navbar-wrapper">
     <div class="navbar-items">
+      <div class="d-flex align-items-center">
+        <div
+        class="toggleClose btn-toggle me-4"
+        v-if="!showSidebar"
+        @click.prevent="toggleSidebar()"
+      >
+        <i class="fa fa-bars text-primary"></i>
+      </div>
       <div class="nav-text">
         <p class="fs-5">{{ route.name }}</p>
       </div>
+      </div>
+      
+
       <div class="nav-profile">
         <div class="initials">
-          <h5 class="initials-text">
+          <h5 class="initials-text text-uppercase">
             {{ user.firstname[0] }}{{ user.lastname[0] }}
           </h5>
         </div>
@@ -24,8 +35,8 @@
         </div>
         <div class="dropdown-icon">
           <svg
-            width="24"
-            height="24"
+            width="18"
+            height="18"
             viewBox="0 0 24 24"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -45,61 +56,16 @@
 </template>
 
 <script setup lang="ts">
-  // import router from '@/router';
-  import { useRoute } from "vue-router";
-  import { useStore } from "vuex";
-  const route = useRoute();
-  console.log(route.name);
+// import router from '@/router';
+import { useRoute } from "vue-router";
+import { useStore } from "vuex";
+const route = useRoute();
+console.log(route.name);
 
-  const store = useStore();
-  const user = store.state.user;
+const store = useStore();
+const user = store.state.user;
+
+
 </script>
 
-<style lang="scss" scoped>
-  .navbar-wrapper {
-    width: calc(100vw - 280px);
-    height: 80px;
-    background: white;
-    padding: 10px 23px;
-
-    .navbar-items {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      .nav-profile {
-        background-color: #f5f4ff;
-        padding: 15px;
-        width: 265px;
-        height: 60px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-radius: 30px;
-
-        .initials {
-          height: 45px;
-          width: 45px;
-          background-color: #251b6c;
-          border-radius: 50%;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-
-          .initials-text {
-            color: #fff;
-            text-transform: uppercase;
-          }
-        }
-
-        .profile-name {
-          color: #251b6c !important;
-
-          span {
-            color: #251b6c;
-          }
-        }
-      }
-    }
-  }
-</style>
+<style lang="scss" scoped></style>

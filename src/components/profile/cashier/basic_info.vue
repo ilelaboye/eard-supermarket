@@ -1,10 +1,10 @@
 <template>
-  <div class="content-wrapper">
+  <div class="profile-wrapper">
     <div class="info-page">
       <div class="head-text my-3">
         <h6>Basic Information</h6>
       </div>
-      <form action="">
+      <form>
         <div class="row">
           <div class="col-6 each-field mb-3">
             <label class="mb-2" for="name">First name</label>
@@ -93,19 +93,5 @@
 </script>
 
 <style lang="scss" scoped>
-  .content-wrapper {
-    padding: 20px;
-    background: #fff;
-    min-height: 100vh;
-  }
-
-  .info-page {
-    width: 50%;
-
-    .button {
-      height: 45px;
-      width: 200px;
-      border-radius: 30px;
-    }
-  }
+ 
 </style>

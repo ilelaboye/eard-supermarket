@@ -1,6 +1,7 @@
 <template>
-  <div class="order-id bg-white ps-4">
+  <div class="id-nav bg-white ps-4">
     <div class="icon me-2">
+      <router-link to="/staff">
       <svg
         width="24"
         height="24"
@@ -23,11 +24,12 @@
           stroke-linejoin="round"
         />
       </svg>
+    </router-link>
     </div>
     <p>Daniel Balogun</p>
   </div>
    <!--buttton nav starts-->
-   <div class="button-nav-wrapper mt-3 orders ps-3">
+   <div class="button-nav-wrapper mt-3 ps-3">
     <ul class="nav nav-pills" id="pills-tab" role="tablist">
       <li class="nav-item" role="presentation">
         <button

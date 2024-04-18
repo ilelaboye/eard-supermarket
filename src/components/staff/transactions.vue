@@ -7,8 +7,8 @@
 
   <div class="cards my-3 p-4 bg-white">
     <div class="row">
-      <div class="col-lg-5">
-        <div class="each-card border rounded px-4 py-3">
+      <div class="col-lg-5 col-md-5">
+        <div class="each-card border mb-3 rounded px-4 py-3">
           <div class="value d-flex align-items-center">
             <div
               class="value-icon me-2 bg-success rounded-circle d-flex justify-content-center align-items-center"
@@ -31,14 +31,14 @@
               <p>Total Transactions in Value</p>
             </div>
           </div>
-          <p class="my-3 fs-4">NGN 5,609,190</p>
+          <p class="my-3 total-numb fs-4">NGN 5,609,190</p>
 
           
         </div>
       </div>
 
-      <div class="col-lg-5">
-        <div class="each-card border rounded px-4 py-3">
+      <div class="col-lg-5 col-md-5 mb-3">
+        <div class="each-card border rounded px-4 py-3 mb-3">
           <div class="value d-flex align-items-center">
             <div
               class="value-icon me-2 bg-info rounded-circle d-flex justify-content-center align-items-center"
@@ -87,7 +87,7 @@
               <p>Total Transactions in Volume</p>
             </div>
           </div>
-          <p class="my-3 fs-4">50,678</p>
+          <p class="my-3 total-numb fs-4">50,678</p>
 
          
         </div>

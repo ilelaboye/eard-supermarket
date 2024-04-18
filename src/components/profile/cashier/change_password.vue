@@ -1,10 +1,10 @@
 <template>
-  <div class="content-wrapper">
+  <div class="profile-wrapper">
     <div class="info-page">
       <div class="head-text my-3">
         <h6>Change Password</h6>
       </div>
-      <form action="">
+      <form>
         <div class="mb-3">
           <label for="password" class="mb-2">Current Password</label>
           <div class="password-container">
@@ -13,7 +13,7 @@
               :type="showPassword ? 'text' : 'password'"
               placeholder="Enter cuurent password"
               class="form-control"
-              style="height: 40px"
+             
             />
             <span
               @click="togglePassword"
@@ -34,15 +34,15 @@
           <div class="password-container">
             <input
               v-model="Npassword"
-              :type="showPassword ? 'text' : 'password'"
+              :type="seePassword ? 'text' : 'password'"
               placeholder="Enter new password"
               class="form-control"
-              style="height: 40px"
+             
             />
             <span
-              @click="togglePassword"
+              @click="displayPassword"
               class="show-password text-primary fw-bold"
-              >{{ showPassword ? "Hide" : "Show" }}</span
+              >{{ seePassword ? "Hide" : "Show" }}</span
             >
           </div>
           <div
@@ -58,15 +58,15 @@
           <div class="password-container">
             <input
               v-model="Cpassword"
-              :type="showPassword ? 'text' : 'password'"
+              :type="seemyPassword ? 'text' : 'password'"
               placeholder="confirm  password"
               class="form-control"
-              style="height: 40px"
+              
             />
             <span
-              @click="togglePassword"
+              @click="displaymyPassword()"
               class="show-password text-primary fw-bold"
-              >{{ showPassword ? "Hide" : "Show" }}</span
+              >{{ seemyPassword ? "Hide" : "Show" }}</span
             >
           </div>
           <div
@@ -88,22 +88,7 @@
 </template>
 
 <style lang="scss" >
-.content-wrapper {
-  padding: 20px;
-  background: #fff;
-  min-height: 100vh;
-}
 
-.info-page {
-  width: 50%;
-
-  .button {
-    height: 45px;
-    width: 200px;
-    border-radius: 30px;
-    margin-top:20px;
-  }
-}
 </style>
 
 
@@ -115,13 +100,18 @@ const password = ref("");
 const Npassword = ref("");
 const Cpassword = ref("");
 const showPassword = ref(false);
+const seemyPassword = ref(false);
 const seePassword = ref(false);
+
 
 const togglePassword = () => {
   showPassword.value = !showPassword.value;
 };
 const displayPassword = () => {
   seePassword.value = !seePassword.value;
+};
+const displaymyPassword = () => {
+  seemyPassword.value = !seemyPassword.value;
 };
 
 const errors = ref({

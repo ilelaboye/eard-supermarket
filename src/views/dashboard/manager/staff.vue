@@ -8,7 +8,7 @@
   <!--search nav ends-->
 
    <!--buttton nav starts-->
-   <div class="button-nav-wrapper mt-3 orders ps-3">
+   <div class="button-nav-wrapper mt-3 ps-3">
     <ul class="nav nav-pills" id="pills-tab" role="tablist">
       <li class="nav-item" role="presentation">
         <button

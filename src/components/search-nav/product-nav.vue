@@ -5,7 +5,6 @@
         <input
           type="search"
           class="input-field form-control ps-5"
-          style="width: 280px; height: 47px"
           placeholder="Search by Product ID"
         />
         <div class="search-icon">
@@ -35,7 +34,7 @@
           </svg>
         </div>
       </div>
-      <div class="filter px-3">
+      <!-- <div class="filter px-3">
         <div class="filter-icon">
           <svg
             width="17"
@@ -73,7 +72,7 @@
             />
           </svg>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
   

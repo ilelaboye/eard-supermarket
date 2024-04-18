@@ -1,8 +1,8 @@
 <template>
-  <div class="background">
+  <div class="whole-page">
     <div class="container-fluid bg-white wrapper">
-      <div class="col-1" style="display: flex; justify-content: center">
-        <div class="lg-wrap" style="min-width: 35em">
+      <div class="col-1" >
+        <div class="lg-wrap form-page" >
           <div class="logo">
             <img src="@/assets/images/logo.svg" alt="" />
           </div>

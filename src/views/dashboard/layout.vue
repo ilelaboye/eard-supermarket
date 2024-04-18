@@ -24,13 +24,5 @@
 </script>
 
 <style lang="scss" scoped>
-  .layout-wrapper {
-    display: flex;
-    min-height: 100vh;
-    width: 100%;
-    background: rgba(247, 247, 247, 0.959);
-    .other-page {
-      padding: 15px;
-    }
-  }
+ 
 </style>

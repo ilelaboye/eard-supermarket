@@ -36,7 +36,7 @@
           </svg>
         </div>
       </div>
-      <div class="filter px-3">
+      <!-- <div class="filter px-3">
         <div class="filter-icon">
           <svg
             width="17"
@@ -74,7 +74,7 @@
             />
           </svg>
         </div>
-      </div>
+      </div> -->
     </div>
     <!--search nav ends-->
 
@@ -95,8 +95,5 @@ import Completed_table from '@/components/tables/completed-table.vue'
 
 
 <style lang="scss">
-  .main-content {
-    padding: 20px;
-    
-  }
+ 
 </style>

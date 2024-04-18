@@ -5,7 +5,6 @@
         <input
           type="search"
           class="input-field form-control ps-5"
-          style="width: 280px; height: 47px"
           placeholder="Search by Product ID"
         />
         <div class="search-icon">
@@ -38,7 +37,7 @@
 
       <!-- Button trigger modal -->
       <div
-        class="button btn btn-primary rounded-pill"
+        class="button btn modal-btn btn-primary rounded-pill ms-2"
         data-bs-toggle="modal"
         data-bs-target="#staticBackdrop"
       >
@@ -58,7 +57,7 @@
             fill="white"
           />
         </svg>
-        <p class="text-white fs-6">Add Staff</p>
+        <p class="text-white ms-2">Add Staff</p>
       </div>
 
       <!-- Modal -->

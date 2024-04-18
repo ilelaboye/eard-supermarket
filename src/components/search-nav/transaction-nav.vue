@@ -5,8 +5,7 @@
         <input
           type="search"
           class="input-field form-control ps-5"
-          style="width: 280px; height: 47px"
-          placeholder="Search by Customer ID, Order ID"
+          placeholder="Search by Order ID"
         />
         <div class="search-icon">
           <svg
@@ -35,13 +34,19 @@
           </svg>
         </div>
       </div>
-      <div class="d-flex">
-        <div class="this-week px-3 me-3">
-          <div class="this-text">This week</div>
-          <div class="dropdown-icon">
+      <div class="dropdowns d-flex">
+        <div class="dropdown ">
+      <button
+        class="btn dropdown bg-white border d-flex justify-content-evenly align-items-center"
+        type="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        This week
+        <div class="dropdown-icon">
             <svg
-              width="24"
-              height="24"
+              width="18"
+              height="18"
               viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -55,8 +60,15 @@
               />
             </svg>
           </div>
-        </div>
-        <div class="filter px-3">
+      </button>
+      
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">This week</a></li>
+        <li><a class="dropdown-item" href="#">This month</a></li>
+        <li><a class="dropdown-item" href="#">This year</a></li>
+      </ul>
+    </div>
+        <!-- <div class="filter px-3">
           <div class="filter-icon">
             <svg
               width="17"
@@ -94,7 +106,7 @@
               />
             </svg>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
     <!--search nav ends-->

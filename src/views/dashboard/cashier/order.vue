@@ -1,6 +1,7 @@
 <template>
-  <div class="order-id bg-white ps-4">
+  <div class="id-nav bg-white ps-4">
     <div class="icon me-2">
+      <router-link to="/orders">
       <svg
         width="24"
         height="24"
@@ -23,6 +24,7 @@
           stroke-linejoin="round"
         />
       </svg>
+    </router-link>
     </div>
     <p>#23478C45908</p>
   </div>

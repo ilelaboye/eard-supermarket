@@ -1,5 +1,9 @@
 import { useToast } from "vue-toast-notification";
 
+export const toggleSidebar = (state: any, data:boolean)=>{
+  state.user.showSidebar = data
+}
+
 export const setUser = (state: any, user: any) => {
   state.user = user.profile;
   state.token = user.token;

@@ -1,95 +1,97 @@
 <template>
-  <div class="background">
+  <div class="whole-page">
     <div class="container-fluid bg-white wrapper">
       <div class="col-1">
-        <div class="logo">
-          <img src="@/assets/images/logo.svg" alt="" />
-        </div>
-        <div class="hero-text">
-          <h3 class="head-text">Reset Password</h3>
-          <span class="head-span">
-            Kindly enter your new password for your account</span
-          >
+        <div class="lg-wrap form-page">
+          <div class="logo">
+            <img src="@/assets/images/logo.svg" alt="" />
+          </div>
+          <div class="hero-text">
+            <h3 class="head-text">Reset Password</h3>
+            <span class="head-span">
+              Kindly enter your new password for your account</span
+            >
 
-          <form @submit.prevent="login()" class="form mt-4">
-            <div class="mb-3">
-              <label for="email" class="mb-2">Email Address</label>
-              <div>
-                <input
-                  v-model="email"
-                  type="email"
-                  placeholder="Enter your email address "
-                  class="form-control"
-                  style="height: 40px"
-                />
+            <form @submit.prevent="login()" class="form mt-4">
+              <div class="mb-3">
+                <label for="email" class="mb-2">Email Address</label>
+                <div>
+                  <input
+                    v-model="email"
+                    type="email"
+                    placeholder="Enter your email address "
+                    class="form-control"
+                    style="height: 40px"
+                  />
+                </div>
+                <div
+                  v-if="errors.email"
+                  class="error-msg text-danger ms-2"
+                  style="font-size: 11px"
+                >
+                  {{ eMsg.email }}
+                </div>
               </div>
-              <div
-                v-if="errors.email"
-                class="error-msg text-danger ms-2"
-                style="font-size: 11px"
-              >
-                {{ eMsg.email }}
-              </div>
-            </div>
 
-            <div class="mb-3">
-              <label for="password" class="mb-2">Password</label>
-              <div class="password-container">
-                <input
-                  v-model="password"
-                  :type="showPassword ? 'text' : 'password'"
-                  placeholder="Enter your password"
-                  class="form-control"
-                  style="height: 40px"
-                />
-                <span
-                  @click="togglePassword()"
-                  class="show-password text-primary fw-bold"
-                  >{{ showPassword ? "Hide" : "Show" }}</span
+              <div class="mb-3">
+                <label for="password" class="mb-2">Password</label>
+                <div class="password-container">
+                  <input
+                    v-model="password"
+                    :type="showPassword ? 'text' : 'password'"
+                    placeholder="Enter your password"
+                    class="form-control"
+                    style="height: 40px"
+                  />
+                  <span
+                    @click="togglePassword()"
+                    class="show-password text-primary fw-bold"
+                    >{{ showPassword ? "Hide" : "Show" }}</span
+                  >
+                </div>
+                <div
+                  v-if="errors.password"
+                  class="error-msg text-danger ms-2 mb-3"
+                  style="font-size: 11px"
                 >
+                  {{ eMsg.password }}
+                </div>
               </div>
-              <div
-                v-if="errors.password"
-                class="error-msg text-danger ms-2 mb-3"
-                style="font-size: 11px"
-              >
-                {{ eMsg.password }}
-              </div>
-            </div>
-            <div class="mb-3">
-              <label for="password" class="mb-2">Confirm Password</label>
-              <div class="password-container">
-                <input
-                  v-model="cpassword"
-                  :type="seePassword ? 'text' : 'password'"
-                  placeholder="Enter your password"
-                  class="form-control"
-                  style="height: 40px"
-                />
-                <span
-                  @click="displayPassword()"
-                  class="show-password text-primary fw-bold"
-                  >{{ seePassword ? "Hide" : "Show" }}</span
+              <div class="mb-3">
+                <label for="password" class="mb-2">Confirm Password</label>
+                <div class="password-container">
+                  <input
+                    v-model="cpassword"
+                    :type="seePassword ? 'text' : 'password'"
+                    placeholder="Enter your password"
+                    class="form-control"
+                    style="height: 40px"
+                  />
+                  <span
+                    @click="displayPassword()"
+                    class="show-password text-primary fw-bold"
+                    >{{ seePassword ? "Hide" : "Show" }}</span
+                  >
+                </div>
+                <div
+                  v-if="errors.cpassword"
+                  class="error-msg text-danger ms-2 mb-3"
+                  style="font-size: 11px"
                 >
+                  {{ eMsg.cpassword }}
+                </div>
               </div>
-              <div
-                v-if="errors.cpassword"
-                class="error-msg text-danger ms-2 mb-3"
-                style="font-size: 11px"
-              >
-                {{ eMsg.cpassword }}
+              <div class="d-grid mt-4">
+                <button
+                  type="submit"
+                  class="btn btn-primary rounded-pill"
+                  style="height: 40px"
+                >
+                  Reset Password
+                </button>
               </div>
-            </div>
-            <div class="d-grid mt-4">
-              <button
-                type="submit"
-                class="btn btn-primary rounded-pill"
-                style="height: 40px"
-              >
-                Reset Password
-              </button>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
       </div>
       <div class="col-2">

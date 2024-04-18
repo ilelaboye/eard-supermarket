@@ -1,57 +1,62 @@
 <template>
-  <div class="background">
+  <div class="whole-page">
     <div class="container-fluid bg-white wrapper">
       <div class="col-1">
-        <div class="logo">
-          <img src="@/assets/images/logo.svg" alt="" />
-        </div>
-        <div class="hero-text">
-          <h3 class="head-text">Forgot Password</h3>
-          <span class="head-span" style="font-size: 15px"
-            >Kindly input the email address linked to your account in order to
-            reset your password.</span
-          >
+        <div class="lg-wrap form-page">
+          <div class="logo">
+            <img src="@/assets/images/logo.svg" alt="" />
+          </div>
+          <div class="hero-text">
+            <h3 class="head-text">Forgot Password</h3>
+            <span class="head-span" style="font-size: 15px"
+              >Kindly input the email address linked to your account in order to
+              reset your password.</span
+            >
 
-          <form @submit.prevent="login()" class="form mt-4">
-            <div class="mb-3">
-              <label for="email" class="mb-2">Email Address</label>
-              <div>
-                <input
-                  v-model="email"
-                  type="email"
-                  placeholder="Enter your email address "
-                  class="form-control"
+            <form @submit.prevent="login()" class="form mt-4">
+              <div class="mb-3">
+                <label for="email" class="mb-2">Email Address</label>
+                <div>
+                  <input
+                    v-model="email"
+                    type="email"
+                    placeholder="Enter your email address "
+                    class="form-control"
+                    style="height: 40px"
+                  />
+                </div>
+                <div
+                  v-if="errors.email"
+                  class="error-msg text-danger ms-2"
+                  style="font-size: 11px"
+                >
+                  {{ eMsg.email }}
+                </div>
+              </div>
+
+              <div class="d-grid mt-5">
+                <button
+                  type="submit"
+                  class="btn btn-primary rounded-pill"
                   style="height: 40px"
-                />
+                >
+                  Submit
+                </button>
               </div>
-              <div
-                v-if="errors.email"
-                class="error-msg text-danger ms-2"
-                style="font-size: 11px"
-              >
-                {{ eMsg.email }}
+              <div class="mt-4 text-center">
+                <router-link
+                  :to="{ name: 'Login' }"
+                  class="text-decoration-none"
+                >
+                  <i
+                    class="fa fa-arrow-left me-1 text-primary"
+                    aria-hidden="true"
+                  ></i
+                  ><span class="text-primary fw-bold">Go back to Login</span>
+                </router-link>
               </div>
-            </div>
-
-            <div class="d-grid mt-5">
-              <button
-                type="submit"
-                class="btn btn-primary rounded-pill"
-                style="height: 40px"
-              >
-                Submit
-              </button>
-            </div>
-            <div class="mt-4 text-center">
-              <router-link :to="{ name: 'Login' }" class="text-decoration-none">
-                <i
-                  class="fa fa-arrow-left me-1 text-primary"
-                  aria-hidden="true"
-                ></i
-                ><span class="text-primary fw-bold">Go back to Login</span>
-              </router-link>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
       </div>
       <div class="col-2">

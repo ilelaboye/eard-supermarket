@@ -13,7 +13,7 @@
   </div>
 </template>
 
-<script setup>
+<script lang="ts" setup>
   import product_nav from "@/components/search-nav/product-nav.vue";
   import product_table from "@/components/tables/product_table.vue";
 </script>

@@ -14,6 +14,7 @@
           PORTAL</span
         >
       </div>
+      
     </div>
 
     <div class="list-wrapper">
@@ -285,64 +286,24 @@
 </template>
 
 <script lang="ts" setup>
-  import { useStore } from "vuex";
+import { useStore } from "vuex";
 
-  const store = useStore();
-  const user = store.state.user;
-  console.log(user);
+const store = useStore();
+const user = store.state.user;
+console.log(user);
 </script>
 
 <style lang="scss" scoped>
-  .sidebar-wrapper {
-    padding: 20px;
-    width: 280px;
-    min-height: 100vh;
-    background: white;
+// @media only screen and (max-width: 767px) {
+//   .small-screen {
+//     display: none;
+//   }
+// }
 
-    .sidebar-brand {
-      height: 80px;
-      width: 100%;
-      border-bottom: 2px solid rgb(236, 234, 234);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .list-wrapper {
-      width: 100%;
-      padding-top: 30px;
-      .nav-items {
-        padding: 0;
-        .each-item {
-          list-style: none;
-          width: 100%;
-          svg {
-            width: 30px;
-          }
-          .nav-link {
-            padding: 10px 15px;
-            height: 45px;
-            margin-bottom: 20px;
-            color: #6d6d6d !important;
-
-            span {
-              margin-left: 15px;
-              color: #6d6d6d;
-            }
-          }
-          .active {
-            background: #f5f4ff;
-            border-left: 4px solid #251b6c;
-            border-radius: 5px;
-            font-weight: 500;
-            width: 100%;
-
-            span {
-              color: #251b6c;
-            }
-          }
-        }
-      }
-    }
+@media only screen and (max-width: 992px) {
+  .sidebar-wrapper{
+    display: none;
   }
+}
+
 </style>

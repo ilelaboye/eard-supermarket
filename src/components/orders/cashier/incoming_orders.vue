@@ -6,8 +6,7 @@
         <input
           type="search"
           class="input-field form-control ps-5"
-          style="width: 280px; height: 47px"
-          placeholder="Search by Customer ID, Order ID"
+          placeholder="Search by Order ID"
         />
         <div class="search-icon">
           <svg
@@ -36,7 +35,7 @@
           </svg>
         </div>
       </div>
-      <div class="filter px-3">
+      <!-- <div class="filter px-3">
         <div class="filter-icon">
           <svg
             width="17"
@@ -74,7 +73,7 @@
             />
           </svg>
         </div>
-      </div>
+      </div> -->
     </div>
     <!--search nav ends-->
 
@@ -400,7 +399,5 @@
 </template>
 
 <style lang="scss" scoped>
-  .main-content {
-    padding: 20px;
-  }
+  
 </style>

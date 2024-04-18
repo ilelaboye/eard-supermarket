@@ -1,6 +1,6 @@
 <template>
   <!--buttton nav starts-->
-  <div class="button-nav-wrapper orders ps-3">
+  <div class="button-nav-wrapper ps-3">
     <ul class="nav nav-pills" id="pills-tab" role="tablist">
       <li class="nav-item" role="presentation">
         <button
