@@ -78,7 +78,7 @@
     <!--search nav ends-->
 
     <!--table starts-->
-    <div class="table-responsive mt-3">
+    <div class="table-responsive mt-3 text-nowrap">
       <table class="table">
         <thead>
           <tr>
@@ -92,10 +92,10 @@
         </thead>
         <tbody>
           <tr>
-            <td>12-02-2024 02:34PM</td>
+            <td>12-02-2024 02:34pm</td>
             <td>#25661C980790</td>
             <td>24 Items</td>
-            <td>#64,300</td>
+            <td>₦64,300.00</td>
             <td>Bank Transfer</td>
             <td class="action-icon">
               <router-link to="/order/100">
@@ -129,10 +129,10 @@
             </td>
           </tr>
           <tr>
-            <td>12-02-2024 02:34PM</td>
+            <td>12-02-2024 02:34pm</td>
             <td>#25661C980790</td>
             <td>24 Items</td>
-            <td>#64,300</td>
+            <td>₦64,300.00</td>
             <td>Bank Transfer</td>
             <td class="action-icon">
               <router-link to="/order/100">
@@ -166,10 +166,10 @@
             </td>
           </tr>
           <tr>
-            <td>12-02-2024 02:34PM</td>
+            <td>12-02-2024 02:34pm</td>
             <td>#25661C980790</td>
             <td>24 Items</td>
-            <td>#64,300</td>
+            <td>₦64,300.00</td>
             <td>Bank Transfer</td>
             <td class="action-icon">
               <router-link to="/order/100">
@@ -203,10 +203,10 @@
             </td>
           </tr>
           <tr>
-            <td>12-02-2024 02:34PM</td>
+            <td>12-02-2024 02:34pm</td>
             <td>#25661C980790</td>
             <td>24 Items</td>
-            <td>#64,300</td>
+            <td>₦64,300.00</td>
             <td>Bank Transfer</td>
             <td class="action-icon">
               <router-link to="/order/100">
@@ -240,10 +240,10 @@
             </td>
           </tr>
           <tr>
-            <td>12-02-2024 02:34PM</td>
+            <td>12-02-2024 02:34pm</td>
             <td>#25661C980790</td>
             <td>24 Items</td>
-            <td>#64,300</td>
+            <td>₦64,300.00</td>
             <td>Bank Transfer</td>
             <td class="action-icon">
               <router-link to="/order/100">
@@ -277,10 +277,10 @@
             </td>
           </tr>
           <tr>
-            <td>12-02-2024 02:34PM</td>
+            <td>12-02-2024 02:34pm</td>
             <td>#25661C980790</td>
             <td>24 Items</td>
-            <td>#64,300</td>
+            <td>₦64,300.00</td>
             <td>Bank Transfer</td>
             <td class="action-icon">
               <router-link to="/order/100">
@@ -314,10 +314,10 @@
             </td>
           </tr>
           <tr>
-            <td>12-02-2024 02:34PM</td>
+            <td>12-02-2024 02:34pm</td>
             <td>#25661C980790</td>
             <td>24 Items</td>
-            <td>#64,300</td>
+            <td>₦64,300.00</td>
             <td>Bank Transfer</td>
             <td class="action-icon">
               <router-link to="/order/100">
@@ -352,10 +352,10 @@
           </tr>
 
           <tr>
-            <td>12-02-2024 02:34PM</td>
+            <td>12-02-2024 02:34pm</td>
             <td>#25661C980790</td>
             <td>24 Items</td>
-            <td>#64,300</td>
+            <td>₦64,300.00</td>
             <td>Bank Transfer</td>
             <td class="action-icon">
               <router-link to="/order/100">

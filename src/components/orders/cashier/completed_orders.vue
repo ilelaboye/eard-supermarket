@@ -7,7 +7,7 @@
           type="search"
           class="input-field form-control ps-5"
           style="width: 280px; height: 47px"
-          placeholder="Search by Customer ID, Order ID"
+          placeholder="Search by Order ID"
         />
         <div class="search-icon">
           <svg

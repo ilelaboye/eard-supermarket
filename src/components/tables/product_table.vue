@@ -1,6 +1,6 @@
 <template>
   <!--table starts-->
-  <div class="table-responsive mt-3">
+  <div class="table-responsive mt-3 text-nowrap">
     <table class="table">
       <thead>
         <tr>

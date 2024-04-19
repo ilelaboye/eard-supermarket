@@ -1,5 +1,5 @@
 <template>
-  <div class="table-responsive mt-3">
+  <div class="table-responsive mt-3 text-nowrap">
     <table class="table">
       <tr>
         <th class="thead text-primary bg-primary-light">DATE AND TIME</th>

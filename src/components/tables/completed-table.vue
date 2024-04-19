@@ -1,7 +1,7 @@
 <template>
    <!--table starts-->
    <div class="bg-white p-3">
-    <div class="table-responsive">
+    <div class="table-responsive text-nowrap">
       <table class="table">
         <tr>
           <th class="thead text-primary bg-primary-light">DATE AND TIME</th>
@@ -13,10 +13,10 @@
           <th class="thead text-primary bg-primary-light">ACTION</th>
         </tr>
         <tr>
-          <td>12-02-2024 02:34PM</td>
+          <td>12-02-2024 02:34pm</td>
           <td>#25661C980790</td>
           <td>24 Items</td>
-          <td>#64,300</td>
+          <td>₦64,300.00</td>
           <td>Bank Transfer</td>
           <td>
             <div class="status">
@@ -54,10 +54,10 @@
           </td>
         </tr>
         <tr>
-          <td>12-02-2024 02:34PM</td>
+          <td>12-02-2024 02:34pm</td>
           <td>#25661C980790</td>
           <td>24 Items</td>
-          <td>#64,300</td>
+          <td>₦64,300.00</td>
           <td>Bank Transfer</td>
           <td>
             <div class="status">
@@ -95,10 +95,10 @@
           </td>
         </tr>
         <tr>
-          <td>12-02-2024 02:34PM</td>
+          <td>12-02-2024 02:34pm</td>
           <td>#25661C980790</td>
           <td>24 Items</td>
-          <td>#64,300</td>
+          <td>₦64,300.00</td>
           <td>Bank Transfer</td>
           <td>
             <div class="status">
@@ -136,10 +136,10 @@
           </td>
         </tr>
         <tr>
-          <td>12-02-2024 02:34PM</td>
+          <td>12-02-2024 02:34pm</td>
           <td>#25661C980790</td>
           <td>24 Items</td>
-          <td>#64,300</td>
+          <td>₦64,300.00</td>
           <td>Bank Transfer</td>
           <td>
             <div class="status">
@@ -177,10 +177,10 @@
           </td>
         </tr>
         <tr>
-          <td>12-02-2024 02:34PM</td>
+          <td>12-02-2024 02:34pm</td>
           <td>#25661C980790</td>
           <td>24 Items</td>
-          <td>#64,300</td>
+          <td>₦64,300.00</td>
           <td>Bank Transfer</td>
           <td>
             <div class="status">
@@ -218,10 +218,10 @@
           </td>
         </tr>
         <tr>
-          <td>12-02-2024 02:34PM</td>
+          <td>12-02-2024 02:34pm</td>
           <td>#25661C980790</td>
           <td>24 Items</td>
-          <td>#64,300</td>
+          <td>₦64,300.00</td>
           <td>Bank Transfer</td>
           <td>
             <div class="status">
@@ -259,10 +259,10 @@
           </td>
         </tr>
         <tr>
-          <td>12-02-2024 02:34PM</td>
+          <td>12-02-2024 02:34pm</td>
           <td>#25661C980790</td>
           <td>24 Items</td>
-          <td>#64,300</td>
+          <td>₦64,300.00</td>
           <td>Bank Transfer</td>
           <td>
             <div class="status">
@@ -300,10 +300,10 @@
           </td>
         </tr>
         <tr>
-          <td>12-02-2024 02:34PM</td>
+          <td>12-02-2024 02:34pm</td>
           <td>#25661C980790</td>
           <td>24 Items</td>
-          <td>#64,300</td>
+          <td>₦64,300.00</td>
           <td>Bank Transfer</td>
           <td>
             <div class="status">
@@ -341,10 +341,10 @@
           </td>
         </tr>
         <tr>
-          <td>12-02-2024 02:34PM</td>
+          <td>12-02-2024 02:34pm</td>
           <td>#25661C980790</td>
           <td>24 Items</td>
-          <td>#64,300</td>
+          <td>₦64,300.00</td>
           <td>Bank Transfer</td>
           <td>
             <div class="status">
@@ -382,10 +382,10 @@
           </td>
         </tr>
         <tr>
-          <td>12-02-2024 02:34PM</td>
+          <td>12-02-2024 02:34pm</td>
           <td>#25661C980790</td>
           <td>24 Items</td>
-          <td>#64,300</td>
+          <td>₦64,300.00</td>
           <td>Bank Transfer</td>
           <td>
             <div class="status">
@@ -423,10 +423,10 @@
           </td>
         </tr>
         <tr>
-          <td>12-02-2024 02:34PM</td>
+          <td>12-02-2024 02:34pm</td>
           <td>#25661C980790</td>
           <td>24 Items</td>
-          <td>#64,300</td>
+          <td>₦64,300.00</td>
           <td>Bank Transfer</td>
           <td>
             <div class="status">
