@@ -5,25 +5,25 @@
         <p class="text-primary bg-primary-light p-2">PERSONAL DETAILS</p>
       </div>
       <div class="row">
-        <div class="col-6">
+        <div class="col-lg-6 col-md-12 col-sm-12">
           <div class="staff-details p-3">
             <div class="row mb-4">
-              <div class="col-6">
+              <div class="col-lg-6 col-md-6 col-sm-12 gy-2 ">
                 <p class="mb-3 fw-lighter">FIRST NAME</p>
                 <p class="mb-3 fw-600">Daniel</p>
               </div>
-              <div class="col-6">
+              <div class="col-lg-6 col-md-6 col-sm-12 gy-2">
                 <p class="mb-3 fw-lighter">LAST NAME</p>
                 <p class="mb-3 fw-600">Balogun</p>
               </div>
             </div>
 
             <div class="row mb-3">
-              <div class="col-6">
+              <div class="col-lg-6 col-md-6 col-sm-12 gy-2">
                 <p class="mb-3 fw-lighter">EMAIL ADDRESS</p>
                 <p class="mb-3 fw-600">danielbalogun@gmail.com</p>
               </div>
-              <div class="col-6">
+              <div class="col-lg-6 col-md-6 col-sm-12 gy-2">
                 <p class="mb-3 fw-lighter">PHONE NUMBER</p>
                 <p class="mb-3 fw-600">
                   <svg
@@ -51,25 +51,25 @@
         <p class="text-primary bg-primary-light p-2">PERSONAL DETAILS</p>
       </div>
       <div class="row">
-        <div class="col-6">
+        <div class="col-lg-6 col-md-12 col-sm-12 ">
           <div class="staff-details p-3">
             <div class="row mb-3">
-              <div class="col-6">
+              <div class="col-lg-6 col-md-6 col-sm-12 gy-2">
                 <p class="mb-3 fw-lighter">CITY</p>
                 <p class="mb-3 fw-600">Lagos</p>
               </div>
-              <div class="col-6">
+              <div class="col-lg-6 col-md-6 col-sm-12 gy-2">
                 <p class="mb-3 fw-lighter">STATE</p>
                 <p class="mb-3 fw-600">Lagos</p>
               </div>
             </div>
 
             <div class="row mb-4">
-              <div class="col-6">
+              <div class="col-lg-6 col-md-6 col-sm-12 gy-2">
                 <p class="mb-3 fw-lighter">COUNTRY</p>
                 <p class="mb-3 fw-600">Nigeria</p>
               </div>
-              <div class="col-6">
+              <div class="col-lg-6 col-md-6 col-sm-12 gy-2">
                 <p class="mb-3 fw-lighter">POSTAL CODE</p>
                 <p class="mb-3 fw-600">N/A</p>
               </div>

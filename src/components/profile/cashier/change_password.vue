@@ -5,7 +5,8 @@
         <h6>Change Password</h6>
       </div>
       <form>
-        <div class="mb-3">
+        
+        <div class="mb-3 each-field">
           <label for="password" class="mb-2">Current Password</label>
           <div class="password-container">
             <input
@@ -29,7 +30,7 @@
                 {{ eMsg.Password }}
               </div>
         </div>
-        <div class="mb-3">
+        <div class="mb-3 each-field">
           <label for="password" class="mb-2">New Password</label>
           <div class="password-container">
             <input
@@ -53,7 +54,7 @@
                 {{ eMsg.Npassword }}
               </div>
         </div>
-        <div class="mb-3">
+        <div class="mb-3 each-field">
           <label for="Cpassword" class="mb-2">Confirm Password</label>
           <div class="password-container">
             <input
