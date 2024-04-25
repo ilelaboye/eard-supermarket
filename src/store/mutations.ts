@@ -1,8 +1,8 @@
 import { useToast } from "vue-toast-notification";
 
-export const toggleSidebar = (state: any, data:boolean)=>{
-  state.user.showSidebar = data
-}
+export const toggleSidebar = (state: any, data: boolean) => {
+  state.user.showSidebar = data;
+};
 
 export const setUser = (state: any, user: any) => {
   state.user = user.profile;
@@ -16,15 +16,19 @@ export const getUser = (state: any) => {
     var js = JSON.parse(decodeURIComponent(data));
     state.user = js.profile;
     state.token = js.token;
-    console.log(state);
+    // console.log(state);
   } else {
     useToast().error("Token expired, please login again");
   }
-  console.log("state", state);
+  // console.log("state", state);
 };
 export const logout = (state: any) => {
   window.localStorage.removeItem("eard");
   state.user = null;
   state.token = null;
   window.location.href = "/";
+};
+
+export const setLoader = (state: any, data: boolean) => {
+  state.loader = data;
 };

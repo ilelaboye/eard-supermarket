@@ -3,5 +3,6 @@ export default {
   user: null,
   token: null,
   refresh_token: null,
-  showSidebar: true
+  showSidebar: true,
+  loader: false,
 };

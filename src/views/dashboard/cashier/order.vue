@@ -1,838 +1,360 @@
 <template>
-  <div class="id-nav bg-white ps-4">
-    <div class="icon me-2">
-      <router-link to="/orders">
-      <svg
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M4.25 12.2744L19.25 12.2744"
-          stroke="#14213C"
-          stroke-width="1.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-        <path
-          d="M10.2998 18.2988L4.2498 12.2748L10.2998 6.24976"
-          stroke="#14213C"
-          stroke-width="1.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </svg>
-    </router-link>
-    </div>
-    <p>#23478C45908</p>
-  </div>
-  <div class="main-content">
-    <div class="row order-table">
-      <!--table starts-->
-      <div class="col-lg-8 col-md-12 col-sm-12 ">
-        <div class="table-responsive text-nowrap mt-3">
-          <table class="table">
-            <tr>
-              <th class="thead text-primary bg-primary-light"></th>
-              <th class="thead text-primary bg-primary-light">PRODUCTS</th>
-              <th class="thead text-primary bg-primary-light">QTY</th>
-              <th class="thead text-primary bg-primary-light">UNIT PRICE(₦)</th>
-
-              <th class="thead text-primary bg-primary-light">TOTAL PRICE(₦)</th>
-              <th class="thead text-primary bg-primary-light">ACTIONS</th>
-              <th class="thead text-primary bg-primary-light"></th>
-            </tr>
-
-            <tr>
-              <td>
-                <input type="checkbox" class="checkbox" />
-              </td>
-              <td>Golden Morn (B/S)</td>
-              <td>2</td>
-              <td>6,300.00</td>
-              <td>25,000.00</td>
-              <td>
-                <div class="counter">
-                  <p class="minus-icon counter-icon">
-                    <svg
-                      width="14"
-                      height="2"
-                      viewBox="0 0 14 2"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M13.3 1.7998H0.7C0.3136 1.7998 0 1.4638 0 1.0498C0 0.635805 0.3136 0.299805 0.7 0.299805H13.3C13.6864 0.299805 14 0.635805 14 1.0498C14 1.4638 13.6864 1.7998 13.3 1.7998Z"
-                        fill="#6D6D6D"
-                      />
-                    </svg>
-                  </p>
-                  <p class="counter-numb">2</p>
-                  <p class="plus-icon counter-icon ">
-                    <svg
-                      width="14"
-                      height="14"
-                      viewBox="0 0 14 14"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M13.3 7.70005H0.7C0.3136 7.70005 0 7.38645 0 7.00005C0 6.61365 0.3136 6.30005 0.7 6.30005H13.3C13.6864 6.30005 14 6.61365 14 7.00005C14 7.38645 13.6864 7.70005 13.3 7.70005Z"
-                        fill="#343434"
-                      />
-                      <path
-                        d="M7.00005 14C6.61365 14 6.30005 13.6864 6.30005 13.3V0.7C6.30005 0.3136 6.61365 0 7.00005 0C7.38645 0 7.70005 0.3136 7.70005 0.7V13.3C7.70005 13.6864 7.38645 14 7.00005 14Z"
-                        fill="#343434"
-                      />
-                    </svg>
-                  </p>
-                </div>
-              </td>
-              <td class="delete-icon">
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M19.3249 9.46826C19.3249 9.46826 18.7819 16.2033 18.4669 19.0403C18.3169 20.3953 17.4799 21.1893 16.1089 21.2143C13.4999 21.2613 10.8879 21.2643 8.27991 21.2093C6.96091 21.1823 6.13791 20.3783 5.99091 19.0473C5.67391 16.1853 5.13391 9.46826 5.13391 9.46826"
-                    stroke="#EA4435"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M20.7082 6.23975H3.75018"
-                    stroke="#EA4435"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M17.4406 6.23973C16.6556 6.23973 15.9796 5.68473 15.8256 4.91573L15.5826 3.69973C15.4326 3.13873 14.9246 2.75073 14.3456 2.75073H10.1126C9.53358 2.75073 9.02558 3.13873 8.87558 3.69973L8.63258 4.91573C8.47858 5.68473 7.80258 6.23973 7.01758 6.23973"
-                    stroke="#EA4435"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </td>
-            </tr>
-
-            <tr>
-              <td>
-                <input type="checkbox" class="checkbox" />
-              </td>
-              <td>Golden Morn (B/S)</td>
-              <td>2</td>
-              <td>6,300.000</td>
-              <td>25,000.00</td>
-              <td>
-                <div class="counter">
-                  <p class="minus-icon counter-icon">
-                    <svg
-                      width="14"
-                      height="2"
-                      viewBox="0 0 14 2"
-                      fill="non counter-icone"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M13.3 1.7998H0.7C0.3136 1.7998 0 1.4638 0 1.0498C0 0.635805 0.3136 0.299805 0.7 0.299805H13.3C13.6864 0.299805 14 0.635805 14 1.0498C14 1.4638 13.6864 1.7998 13.3 1.7998Z"
-                        fill="#6D6D6D"
-                      />
-                    </svg>
-                  </p>
-                  <p class="counter-numb">2</p>
-                  <p class="plus-icon counter-icon">
-                    <svg
-                      width="14"
-                      height="14"
-                      viewBox="0 0 14 14"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M13.3 7.70005H0.7C0.3136 7.70005 0 7.38645 0 7.00005C0 6.61365 0.3136 6.30005 0.7 6.30005H13.3C13.6864 6.30005 14 6.61365 14 7.00005C14 7.38645 13.6864 7.70005 13.3 7.70005Z"
-                        fill="#343434"
-                      />
-                      <path
-                        d="M7.00005 14C6.61365 14 6.30005 13.6864 6.30005 13.3V0.7C6.30005 0.3136 6.61365 0 7.00005 0C7.38645 0 7.70005 0.3136 7.70005 0.7V13.3C7.70005 13.6864 7.38645 14 7.00005 14Z"
-                        fill="#343434"
-                      />
-                    </svg>
-                  </p>
-                </div>
-              </td>
-              <td class="delete-icon">
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M19.3249 9.46826C19.3249 9.46826 18.7819 16.2033 18.4669 19.0403C18.3169 20.3953 17.4799 21.1893 16.1089 21.2143C13.4999 21.2613 10.8879 21.2643 8.27991 21.2093C6.96091 21.1823 6.13791 20.3783 5.99091 19.0473C5.67391 16.1853 5.13391 9.46826 5.13391 9.46826"
-                    stroke="#EA4435"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M20.7082 6.23975H3.75018"
-                    stroke="#EA4435"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M17.4406 6.23973C16.6556 6.23973 15.9796 5.68473 15.8256 4.91573L15.5826 3.69973C15.4326 3.13873 14.9246 2.75073 14.3456 2.75073H10.1126C9.53358 2.75073 9.02558 3.13873 8.87558 3.69973L8.63258 4.91573C8.47858 5.68473 7.80258 6.23973 7.01758 6.23973"
-                    stroke="#EA4435"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <input type="checkbox" class="checkbox" />
-              </td>
-              <td>Golden Morn (B/S)</td>
-              <td>2</td>
-              <td>6,300.000</td>
-              <td>25,000.00</td>
-              <td>
-                <div class="counter">
-                  <p class="minus-icon counter-icon">
-                    <svg
-                      width="14"
-                      height="2"
-                      viewBox="0 0 14 2"
-                      fill="non counter-icone"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M13.3 1.7998H0.7C0.3136 1.7998 0 1.4638 0 1.0498C0 0.635805 0.3136 0.299805 0.7 0.299805H13.3C13.6864 0.299805 14 0.635805 14 1.0498C14 1.4638 13.6864 1.7998 13.3 1.7998Z"
-                        fill="#6D6D6D"
-                      />
-                    </svg>
-                  </p>
-                  <p class="counter-numb">2</p>
-                  <p class="plus-icon counter-icon">
-                    <svg
-                      width="14"
-                      height="14"
-                      viewBox="0 0 14 14"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M13.3 7.70005H0.7C0.3136 7.70005 0 7.38645 0 7.00005C0 6.61365 0.3136 6.30005 0.7 6.30005H13.3C13.6864 6.30005 14 6.61365 14 7.00005C14 7.38645 13.6864 7.70005 13.3 7.70005Z"
-                        fill="#343434"
-                      />
-                      <path
-                        d="M7.00005 14C6.61365 14 6.30005 13.6864 6.30005 13.3V0.7C6.30005 0.3136 6.61365 0 7.00005 0C7.38645 0 7.70005 0.3136 7.70005 0.7V13.3C7.70005 13.6864 7.38645 14 7.00005 14Z"
-                        fill="#343434"
-                      />
-                    </svg>
-                  </p>
-                </div>
-              </td>
-              <td class="delete-icon">
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M19.3249 9.46826C19.3249 9.46826 18.7819 16.2033 18.4669 19.0403C18.3169 20.3953 17.4799 21.1893 16.1089 21.2143C13.4999 21.2613 10.8879 21.2643 8.27991 21.2093C6.96091 21.1823 6.13791 20.3783 5.99091 19.0473C5.67391 16.1853 5.13391 9.46826 5.13391 9.46826"
-                    stroke="#EA4435"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M20.7082 6.23975H3.75018"
-                    stroke="#EA4435"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M17.4406 6.23973C16.6556 6.23973 15.9796 5.68473 15.8256 4.91573L15.5826 3.69973C15.4326 3.13873 14.9246 2.75073 14.3456 2.75073H10.1126C9.53358 2.75073 9.02558 3.13873 8.87558 3.69973L8.63258 4.91573C8.47858 5.68473 7.80258 6.23973 7.01758 6.23973"
-                    stroke="#EA4435"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <input type="checkbox" class="checkbox" />
-              </td>
-              <td>Golden Morn (B/S)</td>
-              <td>2</td>
-              <td>6,300.000</td>
-              <td>25,000.00</td>
-              <td>
-                <div class="counter">
-                  <p class="minus-icon counter-icon">
-                    <svg
-                      width="14"
-                      height="2"
-                      viewBox="0 0 14 2"
-                      fill="non counter-icone"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M13.3 1.7998H0.7C0.3136 1.7998 0 1.4638 0 1.0498C0 0.635805 0.3136 0.299805 0.7 0.299805H13.3C13.6864 0.299805 14 0.635805 14 1.0498C14 1.4638 13.6864 1.7998 13.3 1.7998Z"
-                        fill="#6D6D6D"
-                      />
-                    </svg>
-                  </p>
-                  <p class="counter-numb">2</p>
-                  <p class="plus-icon counter-icon">
-                    <svg
-                      width="14"
-                      height="14"
-                      viewBox="0 0 14 14"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M13.3 7.70005H0.7C0.3136 7.70005 0 7.38645 0 7.00005C0 6.61365 0.3136 6.30005 0.7 6.30005H13.3C13.6864 6.30005 14 6.61365 14 7.00005C14 7.38645 13.6864 7.70005 13.3 7.70005Z"
-                        fill="#343434"
-                      />
-                      <path
-                        d="M7.00005 14C6.61365 14 6.30005 13.6864 6.30005 13.3V0.7C6.30005 0.3136 6.61365 0 7.00005 0C7.38645 0 7.70005 0.3136 7.70005 0.7V13.3C7.70005 13.6864 7.38645 14 7.00005 14Z"
-                        fill="#343434"
-                      />
-                    </svg>
-                  </p>
-                </div>
-              </td>
-              <td class="delete-icon">
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M19.3249 9.46826C19.3249 9.46826 18.7819 16.2033 18.4669 19.0403C18.3169 20.3953 17.4799 21.1893 16.1089 21.2143C13.4999 21.2613 10.8879 21.2643 8.27991 21.2093C6.96091 21.1823 6.13791 20.3783 5.99091 19.0473C5.67391 16.1853 5.13391 9.46826 5.13391 9.46826"
-                    stroke="#EA4435"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M20.7082 6.23975H3.75018"
-                    stroke="#EA4435"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M17.4406 6.23973C16.6556 6.23973 15.9796 5.68473 15.8256 4.91573L15.5826 3.69973C15.4326 3.13873 14.9246 2.75073 14.3456 2.75073H10.1126C9.53358 2.75073 9.02558 3.13873 8.87558 3.69973L8.63258 4.91573C8.47858 5.68473 7.80258 6.23973 7.01758 6.23973"
-                    stroke="#EA4435"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <input type="checkbox" class="checkbox" />
-              </td>
-              <td>Golden Morn (B/S)</td>
-              <td>2</td>
-              <td>6,300.000</td>
-              <td>25,000.00</td>
-              <td>
-                <div class="counter">
-                  <p class="minus-icon counter-icon">
-                    <svg
-                      width="14"
-                      height="2"
-                      viewBox="0 0 14 2"
-                      fill="non counter-icone"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M13.3 1.7998H0.7C0.3136 1.7998 0 1.4638 0 1.0498C0 0.635805 0.3136 0.299805 0.7 0.299805H13.3C13.6864 0.299805 14 0.635805 14 1.0498C14 1.4638 13.6864 1.7998 13.3 1.7998Z"
-                        fill="#6D6D6D"
-                      />
-                    </svg>
-                  </p>
-                  <p class="counter-numb">2</p>
-                  <p class="plus-icon counter-icon">
-                    <svg
-                      width="14"
-                      height="14"
-                      viewBox="0 0 14 14"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M13.3 7.70005H0.7C0.3136 7.70005 0 7.38645 0 7.00005C0 6.61365 0.3136 6.30005 0.7 6.30005H13.3C13.6864 6.30005 14 6.61365 14 7.00005C14 7.38645 13.6864 7.70005 13.3 7.70005Z"
-                        fill="#343434"
-                      />
-                      <path
-                        d="M7.00005 14C6.61365 14 6.30005 13.6864 6.30005 13.3V0.7C6.30005 0.3136 6.61365 0 7.00005 0C7.38645 0 7.70005 0.3136 7.70005 0.7V13.3C7.70005 13.6864 7.38645 14 7.00005 14Z"
-                        fill="#343434"
-                      />
-                    </svg>
-                  </p>
-                </div>
-              </td>
-              <td class="delete-icon">
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M19.3249 9.46826C19.3249 9.46826 18.7819 16.2033 18.4669 19.0403C18.3169 20.3953 17.4799 21.1893 16.1089 21.2143C13.4999 21.2613 10.8879 21.2643 8.27991 21.2093C6.96091 21.1823 6.13791 20.3783 5.99091 19.0473C5.67391 16.1853 5.13391 9.46826 5.13391 9.46826"
-                    stroke="#EA4435"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M20.7082 6.23975H3.75018"
-                    stroke="#EA4435"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M17.4406 6.23973C16.6556 6.23973 15.9796 5.68473 15.8256 4.91573L15.5826 3.69973C15.4326 3.13873 14.9246 2.75073 14.3456 2.75073H10.1126C9.53358 2.75073 9.02558 3.13873 8.87558 3.69973L8.63258 4.91573C8.47858 5.68473 7.80258 6.23973 7.01758 6.23973"
-                    stroke="#EA4435"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <input type="checkbox" class="checkbox" />
-              </td>
-              <td>Golden Morn (B/S)</td>
-              <td>2</td>
-              <td>6,300.000</td>
-              <td>25,000.00</td>
-              <td>
-                <div class="counter">
-                  <p class="minus-icon counter-icon">
-                    <svg
-                      width="14"
-                      height="2"
-                      viewBox="0 0 14 2"
-                      fill="non counter-icone"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M13.3 1.7998H0.7C0.3136 1.7998 0 1.4638 0 1.0498C0 0.635805 0.3136 0.299805 0.7 0.299805H13.3C13.6864 0.299805 14 0.635805 14 1.0498C14 1.4638 13.6864 1.7998 13.3 1.7998Z"
-                        fill="#6D6D6D"
-                      />
-                    </svg>
-                  </p>
-                  <p class="counter-numb">2</p>
-                  <p class="plus-icon counter-icon">
-                    <svg
-                      width="14"
-                      height="14"
-                      viewBox="0 0 14 14"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M13.3 7.70005H0.7C0.3136 7.70005 0 7.38645 0 7.00005C0 6.61365 0.3136 6.30005 0.7 6.30005H13.3C13.6864 6.30005 14 6.61365 14 7.00005C14 7.38645 13.6864 7.70005 13.3 7.70005Z"
-                        fill="#343434"
-                      />
-                      <path
-                        d="M7.00005 14C6.61365 14 6.30005 13.6864 6.30005 13.3V0.7C6.30005 0.3136 6.61365 0 7.00005 0C7.38645 0 7.70005 0.3136 7.70005 0.7V13.3C7.70005 13.6864 7.38645 14 7.00005 14Z"
-                        fill="#343434"
-                      />
-                    </svg>
-                  </p>
-                </div>
-              </td>
-              <td class="delete-icon">
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M19.3249 9.46826C19.3249 9.46826 18.7819 16.2033 18.4669 19.0403C18.3169 20.3953 17.4799 21.1893 16.1089 21.2143C13.4999 21.2613 10.8879 21.2643 8.27991 21.2093C6.96091 21.1823 6.13791 20.3783 5.99091 19.0473C5.67391 16.1853 5.13391 9.46826 5.13391 9.46826"
-                    stroke="#EA4435"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M20.7082 6.23975H3.75018"
-                    stroke="#EA4435"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M17.4406 6.23973C16.6556 6.23973 15.9796 5.68473 15.8256 4.91573L15.5826 3.69973C15.4326 3.13873 14.9246 2.75073 14.3456 2.75073H10.1126C9.53358 2.75073 9.02558 3.13873 8.87558 3.69973L8.63258 4.91573C8.47858 5.68473 7.80258 6.23973 7.01758 6.23973"
-                    stroke="#EA4435"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </td>
-            </tr>
-
-            <tr>
-              <td>
-                <input type="checkbox" class="checkbox" />
-              </td>
-              <td>Golden Morn (B/S)</td>
-              <td>2</td>
-              <td>6,300.000</td>
-              <td>25,000.00</td>
-              <td>
-                <div class="counter">
-                  <p class="minus-icon counter-icon">
-                    <svg
-                      width="14"
-                      height="2"
-                      viewBox="0 0 14 2"
-                      fill="non counter-icone"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M13.3 1.7998H0.7C0.3136 1.7998 0 1.4638 0 1.0498C0 0.635805 0.3136 0.299805 0.7 0.299805H13.3C13.6864 0.299805 14 0.635805 14 1.0498C14 1.4638 13.6864 1.7998 13.3 1.7998Z"
-                        fill="#6D6D6D"
-                      />
-                    </svg>
-                  </p>
-                  <p class="counter-numb">2</p>
-                  <p class="plus-icon counter-icon">
-                    <svg
-                      width="14"
-                      height="14"
-                      viewBox="0 0 14 14"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M13.3 7.70005H0.7C0.3136 7.70005 0 7.38645 0 7.00005C0 6.61365 0.3136 6.30005 0.7 6.30005H13.3C13.6864 6.30005 14 6.61365 14 7.00005C14 7.38645 13.6864 7.70005 13.3 7.70005Z"
-                        fill="#343434"
-                      />
-                      <path
-                        d="M7.00005 14C6.61365 14 6.30005 13.6864 6.30005 13.3V0.7C6.30005 0.3136 6.61365 0 7.00005 0C7.38645 0 7.70005 0.3136 7.70005 0.7V13.3C7.70005 13.6864 7.38645 14 7.00005 14Z"
-                        fill="#343434"
-                      />
-                    </svg>
-                  </p>
-                </div>
-              </td>
-              <td class="delete-icon">
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M19.3249 9.46826C19.3249 9.46826 18.7819 16.2033 18.4669 19.0403C18.3169 20.3953 17.4799 21.1893 16.1089 21.2143C13.4999 21.2613 10.8879 21.2643 8.27991 21.2093C6.96091 21.1823 6.13791 20.3783 5.99091 19.0473C5.67391 16.1853 5.13391 9.46826 5.13391 9.46826"
-                    stroke="#EA4435"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M20.7082 6.23975H3.75018"
-                    stroke="#EA4435"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M17.4406 6.23973C16.6556 6.23973 15.9796 5.68473 15.8256 4.91573L15.5826 3.69973C15.4326 3.13873 14.9246 2.75073 14.3456 2.75073H10.1126C9.53358 2.75073 9.02558 3.13873 8.87558 3.69973L8.63258 4.91573C8.47858 5.68473 7.80258 6.23973 7.01758 6.23973"
-                    stroke="#EA4435"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <input type="checkbox" class="checkbox" />
-              </td>
-              <td>Golden Morn (B/S)</td>
-              <td>2</td>
-              <td>6,300.000</td>
-              <td>25,000.00</td>
-              <td>
-                <div class="counter">
-                  <p class="minus-icon counter-icon">
-                    <svg
-                      width="14"
-                      height="2"
-                      viewBox="0 0 14 2"
-                      fill="non counter-icone"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M13.3 1.7998H0.7C0.3136 1.7998 0 1.4638 0 1.0498C0 0.635805 0.3136 0.299805 0.7 0.299805H13.3C13.6864 0.299805 14 0.635805 14 1.0498C14 1.4638 13.6864 1.7998 13.3 1.7998Z"
-                        fill="#6D6D6D"
-                      />
-                    </svg>
-                  </p>
-                  <p class="counter-numb">2</p>
-                  <p class="plus-icon counter-icon">
-                    <svg
-                      width="14"
-                      height="14"
-                      viewBox="0 0 14 14"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M13.3 7.70005H0.7C0.3136 7.70005 0 7.38645 0 7.00005C0 6.61365 0.3136 6.30005 0.7 6.30005H13.3C13.6864 6.30005 14 6.61365 14 7.00005C14 7.38645 13.6864 7.70005 13.3 7.70005Z"
-                        fill="#343434"
-                      />
-                      <path
-                        d="M7.00005 14C6.61365 14 6.30005 13.6864 6.30005 13.3V0.7C6.30005 0.3136 6.61365 0 7.00005 0C7.38645 0 7.70005 0.3136 7.70005 0.7V13.3C7.70005 13.6864 7.38645 14 7.00005 14Z"
-                        fill="#343434"
-                      />
-                    </svg>
-                  </p>
-                </div>
-              </td>
-              <td class="delete-icon">
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M19.3249 9.46826C19.3249 9.46826 18.7819 16.2033 18.4669 19.0403C18.3169 20.3953 17.4799 21.1893 16.1089 21.2143C13.4999 21.2613 10.8879 21.2643 8.27991 21.2093C6.96091 21.1823 6.13791 20.3783 5.99091 19.0473C5.67391 16.1853 5.13391 9.46826 5.13391 9.46826"
-                    stroke="#EA4435"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M20.7082 6.23975H3.75018"
-                    stroke="#EA4435"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M17.4406 6.23973C16.6556 6.23973 15.9796 5.68473 15.8256 4.91573L15.5826 3.69973C15.4326 3.13873 14.9246 2.75073 14.3456 2.75073H10.1126C9.53358 2.75073 9.02558 3.13873 8.87558 3.69973L8.63258 4.91573C8.47858 5.68473 7.80258 6.23973 7.01758 6.23973"
-                    stroke="#EA4435"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </td>
-            </tr>
-
-            <tr>
-              <td>
-                <input type="checkbox" class="checkbox" />
-              </td>
-              <td>Golden Morn (B/S)</td>
-              <td>2</td>
-              <td>6,300.000</td>
-              <td>25,000.00</td>
-              <td>
-                <div class="counter">
-                  <p class="minus-icon counter-icon">
-                    <svg
-                      width="14"
-                      height="2"
-                      viewBox="0 0 14 2"
-                      fill="non counter-icone"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M13.3 1.7998H0.7C0.3136 1.7998 0 1.4638 0 1.0498C0 0.635805 0.3136 0.299805 0.7 0.299805H13.3C13.6864 0.299805 14 0.635805 14 1.0498C14 1.4638 13.6864 1.7998 13.3 1.7998Z"
-                        fill="#6D6D6D"
-                      />
-                    </svg>
-                  </p>
-                  <p class="counter-numb">2</p>
-                  <p class="plus-icon counter-icon">
-                    <svg
-                      width="14"
-                      height="14"
-                      viewBox="0 0 14 14"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M13.3 7.70005H0.7C0.3136 7.70005 0 7.38645 0 7.00005C0 6.61365 0.3136 6.30005 0.7 6.30005H13.3C13.6864 6.30005 14 6.61365 14 7.00005C14 7.38645 13.6864 7.70005 13.3 7.70005Z"
-                        fill="#343434"
-                      />
-                      <path
-                        d="M7.00005 14C6.61365 14 6.30005 13.6864 6.30005 13.3V0.7C6.30005 0.3136 6.61365 0 7.00005 0C7.38645 0 7.70005 0.3136 7.70005 0.7V13.3C7.70005 13.6864 7.38645 14 7.00005 14Z"
-                        fill="#343434"
-                      />
-                    </svg>
-                  </p>
-                </div>
-              </td>
-              <td class="delete-icon">
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M19.3249 9.46826C19.3249 9.46826 18.7819 16.2033 18.4669 19.0403C18.3169 20.3953 17.4799 21.1893 16.1089 21.2143C13.4999 21.2613 10.8879 21.2643 8.27991 21.2093C6.96091 21.1823 6.13791 20.3783 5.99091 19.0473C5.67391 16.1853 5.13391 9.46826 5.13391 9.46826"
-                    stroke="#EA4435"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M20.7082 6.23975H3.75018"
-                    stroke="#EA4435"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M17.4406 6.23973C16.6556 6.23973 15.9796 5.68473 15.8256 4.91573L15.5826 3.69973C15.4326 3.13873 14.9246 2.75073 14.3456 2.75073H10.1126C9.53358 2.75073 9.02558 3.13873 8.87558 3.69973L8.63258 4.91573C8.47858 5.68473 7.80258 6.23973 7.01758 6.23973"
-                    stroke="#EA4435"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </td>
-            </tr>
-          </table>
-        </div>
+  <div v-if="loaded">
+    <div class="id-nav bg-white ps-4">
+      <div class="icon me-2">
+        <router-link to="/orders">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M4.25 12.2744L19.25 12.2744"
+              stroke="#14213C"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M10.2998 18.2988L4.2498 12.2748L10.2998 6.24976"
+              stroke="#14213C"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </router-link>
       </div>
-      <div class="col-lg-4 col-md-6 col-sm-12">
-        <div class="payment-comfirm mt-3">
-          <div class="headline">
-            <p class="text-primary bg-primary-light p-2">
-              PAYMENT CONFIRMATION
-            </p>
+      <p>#{{ order._id }}</p>
+    </div>
+    <div class="main-content">
+      <div class="row order-table">
+        <!--table starts-->
+        <div class="col-lg-8 col-md-12 col-sm-12">
+          <div class="table-responsive text-nowrap mt-3">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th
+                    class="thead text-primary bg-primary-light"
+                    v-if="order.status == 1"
+                  ></th>
+                  <th class="thead text-primary bg-primary-light">PRODUCTS</th>
+                  <th class="thead text-primary bg-primary-light">QTY</th>
+                  <th class="thead text-primary bg-primary-light">
+                    UNIT PRICE(₦)
+                  </th>
+
+                  <th class="thead text-primary bg-primary-light">
+                    TOTAL PRICE(₦)
+                  </th>
+                  <th
+                    class="thead text-primary bg-primary-light"
+                    v-if="order.status == 1"
+                  >
+                    ACTIONS
+                  </th>
+                  <th
+                    class="thead text-primary bg-primary-light"
+                    v-if="order.status == 1"
+                  ></th>
+                </tr>
+              </thead>
+              <tbody v-if="order.order.length > 0">
+                <tr v-for="(prod, index) in order.order" :key="index">
+                  <td v-if="order.status == 1">
+                    <input type="checkbox" class="checkbox" />
+                  </td>
+                  <td>{{ prod.name }}</td>
+                  <td>{{ prod.qty }}</td>
+                  <td>{{ formatPrice(prod.amount) }}</td>
+                  <td>{{ formatPrice(prod.qty * prod.amount) }}</td>
+                  <td v-if="order.status == 1">
+                    <div class="counter">
+                      <p
+                        class="minus-icon counter-icon"
+                        @click.prevent="updateQty(prod._id, 'minus')"
+                      >
+                        <svg
+                          width="14"
+                          height="2"
+                          viewBox="0 0 14 2"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M13.3 1.7998H0.7C0.3136 1.7998 0 1.4638 0 1.0498C0 0.635805 0.3136 0.299805 0.7 0.299805H13.3C13.6864 0.299805 14 0.635805 14 1.0498C14 1.4638 13.6864 1.7998 13.3 1.7998Z"
+                            fill="#6D6D6D"
+                          />
+                        </svg>
+                      </p>
+                      <p class="counter-numb">{{ prod.qty }}</p>
+                      <p
+                        class="plus-icon counter-icon"
+                        @click.prevent="updateQty(prod._id, 'add')"
+                      >
+                        <svg
+                          width="14"
+                          height="14"
+                          viewBox="0 0 14 14"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M13.3 7.70005H0.7C0.3136 7.70005 0 7.38645 0 7.00005C0 6.61365 0.3136 6.30005 0.7 6.30005H13.3C13.6864 6.30005 14 6.61365 14 7.00005C14 7.38645 13.6864 7.70005 13.3 7.70005Z"
+                            fill="#343434"
+                          />
+                          <path
+                            d="M7.00005 14C6.61365 14 6.30005 13.6864 6.30005 13.3V0.7C6.30005 0.3136 6.61365 0 7.00005 0C7.38645 0 7.70005 0.3136 7.70005 0.7V13.3C7.70005 13.6864 7.38645 14 7.00005 14Z"
+                            fill="#343434"
+                          />
+                        </svg>
+                      </p>
+                    </div>
+                  </td>
+                  <td class="delete-icon" v-if="order.status == 1">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      @click.prevent="removeProduct(prod._id)"
+                    >
+                      <path
+                        d="M19.3249 9.46826C19.3249 9.46826 18.7819 16.2033 18.4669 19.0403C18.3169 20.3953 17.4799 21.1893 16.1089 21.2143C13.4999 21.2613 10.8879 21.2643 8.27991 21.2093C6.96091 21.1823 6.13791 20.3783 5.99091 19.0473C5.67391 16.1853 5.13391 9.46826 5.13391 9.46826"
+                        stroke="#EA4435"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M20.7082 6.23975H3.75018"
+                        stroke="#EA4435"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M17.4406 6.23973C16.6556 6.23973 15.9796 5.68473 15.8256 4.91573L15.5826 3.69973C15.4326 3.13873 14.9246 2.75073 14.3456 2.75073H10.1126C9.53358 2.75073 9.02558 3.13873 8.87558 3.69973L8.63258 4.91573C8.47858 5.68473 7.80258 6.23973 7.01758 6.23973"
+                        stroke="#EA4435"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </td>
+                </tr>
+              </tbody>
+              <tbody v-else>
+                <tr>
+                  <td colspan="7">
+                    <p class="alert alert-info">No item in cart</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
-          <div class="payment-details p-3 border-bottom">
-            <div class="d-flex justify-content-between align-items-center mb-3">
-              <p>Customer ID:</p>
-              <p>#INVO1928930</p>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="payment-comfirm mt-3">
+            <div class="headline">
+              <p class="text-primary bg-primary-light p-2">
+                PAYMENT CONFIRMATION
+              </p>
             </div>
-            <div class="d-flex justify-content-between align-items-center">
-              <p>Status:</p>
-              <div class="status">
-                <div class="circle"></div>
-                <div class="text">Successful</div>
+            <div class="payment-details p-3 border-bottom">
+              <div
+                class="d-flex justify-content-between align-items-center mb-3"
+              >
+                <p>Customer ID:</p>
+                <p>{{ order.user_id }}</p>
+              </div>
+              <div class="d-flex justify-content-between align-items-center">
+                <p>Status:</p>
+                <div class="status" v-if="order.status == 1">
+                  <div class="circle bg-primary"></div>
+                  <div class="text text-primary">Pending</div>
+                </div>
+                <div class="status" v-else>
+                  <div class="circle"></div>
+                  <div class="text">Successful</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="payment-details p-3 border-bottom">
+              <div class="d-flex justify-content-between align-items-center">
+                <p class="mb-3">subtotal ({{ order.order.length }} Items):</p>
+                <p class="mb-3">₦{{ formatPrice(total) }}</p>
+              </div>
+
+              <div class="d-flex justify-content-between align-items-center">
+                <p class="mb-3">Discount:</p>
+                <p class="mb-3">₦0.00</p>
+              </div>
+
+              <div class="d-flex justify-content-between align-items-center">
+                <p class="mb-3">VAT:</p>
+                <p class="mb-3">₦0.00</p>
+              </div>
+
+              <div class="d-flex justify-content-between align-items-center">
+                <p class="mb-3">Estimated total:</p>
+                <p class="py-3 ps-5 mb-3 border-bottom border-top">
+                  ₦{{ formatPrice(total) }}
+                </p>
+              </div>
+            </div>
+
+            <div class="payment-details p-3">
+              <div v-if="order.status == 2">
+                <p class="">Payment method</p>
+                <p v-if="order.payment == 1">Cash</p>
+                <p v-if="order.payment == 2">POS</p>
+                <p v-if="order.payment == 3">Transfer</p>
+              </div>
+              <div v-else>
+                <p class="mb-4">Select payment method</p>
+                <div class="d-flex align-items-center mb-4">
+                  <input
+                    type="radio"
+                    name="pmethod"
+                    class="radio bg-primary me-2"
+                    :checked="order.payment == 1 ? true : false"
+                  />
+                  <p>Cash</p>
+                </div>
+
+                <div class="d-flex align-items-center mb-4">
+                  <input
+                    type="radio"
+                    name="pmethod"
+                    class="bg-primary radio me-2"
+                    :checked="order.payment == 2 ? true : false"
+                  />
+                  <p>POS</p>
+                </div>
+
+                <div class="d-flex align-items-center mb-4">
+                  <input
+                    type="radio"
+                    name="pmethod"
+                    class="radio bg-primary me-2"
+                    :checked="order.payment == 3 ? true : false"
+                  />
+                  <p>Bank Transfer</p>
+                </div>
+              </div>
+              <div class="mt-4" v-if="order.status == 1">
+                <button
+                  class="button btn-primary btn text-white border-0"
+                  type="button"
+                  style="height: 45px; width: 100%; border-radius: 30px"
+                  @click.prevent="confirmOrder()"
+                  :disabled="loading"
+                >
+                  {{ loading ? "Loading..." : "Confirm Payment" }}
+                </button>
+
+                <!-- <button
+                  class="button btn-primary btn text-white border-0 mt-2"
+                  type="button"
+                  style="height: 45px; width: 100%; border-radius: 30px"
+                >
+                  Download Receipt
+                </button> -->
               </div>
             </div>
           </div>
-
-          <div class="payment-details p-3 border-bottom">
-            <div class="d-flex justify-content-between align-items-center">
-              <p class="mb-3">subtotal (8 Items):</p>
-              <p class="mb-3">#345,300.00</p>
-            </div>
-
-            <div class="d-flex justify-content-between align-items-center">
-              <p class="mb-3">Discount:</p>
-              <p class="mb-3">#0.00</p>
-            </div>
-
-            <div class="d-flex justify-content-between align-items-center">
-              <p class="mb-3">Vat:</p>
-              <p class="mb-3">#0.00</p>
-            </div>
-
-            <div class="d-flex justify-content-between align-items-center">
-              <p class="mb-3">Estimated total:</p>
-              <p class="py-3 ps-5 mb-3 border-bottom border-top">#345,300.00</p>
-            </div>
-          </div>
-
-          <div class="payment-details p-3">
-            <p class="mb-4">Select payment method</p>
-            <div class="d-flex align-items-center mb-4">
-              <input type="radio" class="radio bg-primary me-2" />
-              <p>Cash</p>
-            </div>
-
-            <div class="d-flex align-items-center mb-4">
-              <input type="radio" class="bg-primary radio me-2" />
-              <p>POS</p>
-            </div>
-
-            <div class="d-flex align-items-center mb-4">
-              <input type="radio" name="" class="radio bg-primary me-2" />
-              <p>Bank Transfer</p>
-            </div>
-
-            <div class="mt-4">
-              <button
-                class="button btn-primary btn text-white border-0"
-                type="button"
-                style="height: 45px; width: 100%; border-radius: 30px"
-              >
-                Confirm Payment
-              </button>
-
-              <button
-                class="button btn-primary btn text-white border-0 mt-2"
-                type="button"
-                style="height: 45px; width: 100%; border-radius: 30px"
-              >
-                Download Receipt
-              </button>
-            </div>
-          </div>
         </div>
-      </div>
-      <!--table ends-->
+        <!--table ends-->
 
-      <!--search nav and table ends-->
+        <!--search nav and table ends-->
+      </div>
     </div>
   </div>
 </template>
-<style lang="scss" scoped>
-  
-  
+<script lang="ts" setup>
+  import { onMounted, ref } from "vue";
+  import { useStore } from "vuex";
+  import { formatPrice } from "@/core/utils/helpers";
+  import { useRoute } from "vue-router";
+  import { useToast } from "vue-toast-notification";
 
+  const store = useStore();
+  const order: any = ref({});
+  const loaded = ref(false);
+  const route = useRoute();
+  const total = ref(0);
+  const loading = ref(false);
 
-</style>
+  const getOrder = () => {
+    store.commit("setLoader", true);
+    store.dispatch("get", `order/byId/${route.params.id}`).then((resp) => {
+      console.log(resp);
+
+      order.value = resp.data.data.data;
+      store.commit("setLoader", false);
+      loaded.value = true;
+      order.value.order.forEach((item: any) => {
+        total.value += item.amount * item.qty;
+      });
+    });
+  };
+
+  const updateQty = (id: string, status: string) => {
+    console.log(id);
+    order.value.order.forEach((item: any, index: number) => {
+      if (item._id == id) {
+        if (status == "add") {
+          item.qty = parseFloat(item.qty) + 1;
+        } else {
+          if (item.qty > 1) {
+            item.qty = parseFloat(item.qty) - 1;
+          } else {
+            removeProduct(id);
+          }
+        }
+      }
+    });
+    console.log(order.value);
+  };
+
+  const removeProduct = (id: string) => {
+    order.value.order.forEach((item: any, index: number) => {
+      if (item._id == id) {
+        order.value.order.splice(index, 1);
+      }
+    });
+    console.log(order.value);
+  };
+
+  const confirmOrder = () => {
+    loading.value = true;
+    store
+      .dispatch("patch", { endpoint: `order/payment/${route.params.id}` })
+      .then((resp) => {
+        loading.value = false;
+        console.log(resp);
+        useToast().success("Order confirmed successfully");
+        window.setTimeout(() => {
+          window.location.reload();
+        }, 1000);
+      });
+  };
+  const updateOrder = () => {
+    store
+      .dispatch("post", { endpoint: "order/update", details: order.value })
+      .then((resp) => {
+        console.log(resp);
+      });
+  };
+  onMounted(() => {
+    getOrder();
+  });
+</script>
+
+<style lang="scss" scoped></style>

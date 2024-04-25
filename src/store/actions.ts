@@ -56,7 +56,7 @@ export const post = (context: any, data: any) => {
 };
 
 export const get = (context: any, endpoint: string) => {
-  console.log(context.state.token);
+  // console.log(context.state.token);
   return new Promise((resolve, reject) => {
     axios
       .get(`${context.state.base_url}${endpoint}`, {

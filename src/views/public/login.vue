@@ -1,8 +1,8 @@
 <template>
   <div class="whole-page">
     <div class="container-fluid bg-white wrapper">
-      <div class="col-1" >
-        <div class="lg-wrap form-page" >
+      <div class="col-1">
+        <div class="lg-wrap form-page">
           <div class="logo">
             <img src="@/assets/images/logo.svg" alt="" />
           </div>
@@ -138,7 +138,7 @@
     loading.value = true;
     store
       .dispatch("post", {
-        endpoint: "/organization/login",
+        endpoint: "organization/login",
         details: { email: email.value, password: password.value },
       })
       .then((resp) => {

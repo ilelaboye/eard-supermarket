@@ -71,7 +71,7 @@
 </template>
 
 <script lang="ts" setup>
-  import { ref } from "vue";
+  import { onMounted, ref } from "vue";
   import { useStore } from "vuex";
 
   const store = useStore();
@@ -90,8 +90,16 @@
         console.log(resp);
       });
   };
+
+  const getUser = () => {
+    store.dispatch("get", "get-profile").then((resp) => {
+      console.log(resp);
+    });
+  };
+
+  onMounted(() => {
+    getUser();
+  });
 </script>
 
-<style lang="scss" scoped>
- 
-</style>
+<style lang="scss" scoped></style>
