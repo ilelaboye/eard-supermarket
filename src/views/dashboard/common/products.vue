@@ -1,10 +1,5 @@
 <template>
   <div class="main-content">
-    <!--search nav and table starts-->
-    <!--search nav starts-->
-    <product_nav></product_nav>
-    <!--search nav ends-->
-
     <!--table starts-->
     <product_table></product_table>
     <!--table ends-->
@@ -14,7 +9,6 @@
 </template>
 
 <script lang="ts" setup>
-  import product_nav from "@/components/search-nav/product-nav.vue";
   import product_table from "@/components/tables/product_table.vue";
 </script>
 

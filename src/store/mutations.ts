@@ -1,7 +1,7 @@
 import { useToast } from "vue-toast-notification";
 
 export const toggleSidebar = (state: any, data: boolean) => {
-  state.user.showSidebar = data;
+  state.showSidebar = data;
 };
 
 export const setUser = (state: any, user: any) => {

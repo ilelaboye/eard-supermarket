@@ -1,5 +1,5 @@
 <template>
-  <div class="sidebar-wrapper">
+  <div class="sidebar-wrapper" :class="showSidebar ? 'showSB' : 'nSb'">
     <div class="sidebar-brand">
       <div class="brand-logo">
         <img src="@/assets/images/logo.png" alt="" />
@@ -14,7 +14,6 @@
           PORTAL</span
         >
       </div>
-      
     </div>
 
     <div class="list-wrapper">
@@ -286,24 +285,33 @@
 </template>
 
 <script lang="ts" setup>
-import { useStore } from "vuex";
+  import { computed } from "vue";
+  import { useStore } from "vuex";
 
-const store = useStore();
-const user = store.state.user;
-console.log(user);
+  const store = useStore();
+  const user = store.state.user;
+
+  const showSidebar = computed(() => {
+    return store.state.showSidebar;
+  });
 </script>
 
 <style lang="scss" scoped>
-// @media only screen and (max-width: 767px) {
-//   .small-screen {
-//     display: none;
-//   }
-// }
-
-@media only screen and (max-width: 992px) {
-  .sidebar-wrapper{
+  // @media only screen and (max-width: 767px) {
+  //   .small-screen {
+  //     display: none;
+  //   }
+  // }
+  .showSB {
+    display: block;
+  }
+  .nSb {
     display: none;
   }
-}
 
+  @media only screen and (min-width: 767px) {
+    .nSb {
+      display: block;
+    }
+  }
 </style>

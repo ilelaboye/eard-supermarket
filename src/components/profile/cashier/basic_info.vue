@@ -92,7 +92,7 @@
   };
 
   const getUser = () => {
-    store.dispatch("get", "get-profile").then((resp) => {
+    store.dispatch("get", "organization/profile").then((resp) => {
       console.log(resp);
     });
   };

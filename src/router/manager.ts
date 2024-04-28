@@ -27,7 +27,7 @@ const managerRoutes: Array<RouteRecordRaw> = [
       },
       {
         path: "/each-staff",
-        name: "Each_Staff",
+        name: "View Staff",
         component: Each_Staff,
       },
     ],
