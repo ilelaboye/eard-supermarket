@@ -3,22 +3,21 @@
     <div class="navbar-items">
       <div class="d-flex align-items-center">
         <div
-        class="toggleClose btn-toggle me-4"
-        v-if="!showSidebar"
-        @click.prevent="toggleSidebar()"
-      >
-        <i class="fa fa-bars text-primary"></i>
+          class="toggleClose btn-toggle me-4"
+          @click.prevent="toggleSidebar()"
+        >
+          <i class="fa fa-bars text-primary"></i>
+        </div>
+        <div class="nav-text">
+          <p class="fs-5">{{ route.name }}</p>
+        </div>
       </div>
-      <div class="nav-text">
-        <p class="fs-5">{{ route.name }}</p>
-      </div>
-      </div>
-      
 
       <div class="nav-profile">
         <div class="initials">
           <h5 class="initials-text text-uppercase">
-            {{ user.firstname[0] }}{{ user.lastname[0] }}
+            {{ user.firstname ? user.firstname[0] : ""
+            }}{{ user.lastname ? user.lastname[0] : "" }}
           </h5>
         </div>
         <div class="profile-name">
@@ -56,16 +55,29 @@
 </template>
 
 <script setup lang="ts">
-// import router from '@/router';
-import { useRoute } from "vue-router";
-import { useStore } from "vuex";
-const route = useRoute();
-console.log(route.name);
+  // import router from '@/router';
+  import { computed } from "vue";
+  import { useRoute } from "vue-router";
+  import { useStore } from "vuex";
+  const route = useRoute();
 
-const store = useStore();
-const user = store.state.user;
+  const store = useStore();
+  const user = store.state.user;
+  console.log(user);
 
-
+  const showSidebar = computed(() => {
+    return store.state.showSidebar;
+  });
+  const toggleSidebar = () => {
+    console.log(showSidebar.value);
+    store.commit("toggleSidebar", !showSidebar.value);
+  };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+  @media (min-width: 767px) {
+    .btn-toggle {
+      display: none;
+    }
+  }
+</style>

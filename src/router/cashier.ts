@@ -2,7 +2,7 @@ import { RouteRecordRaw } from "vue-router";
 import Layout from "@/views/dashboard/layout.vue";
 import Orders from "@/views/dashboard/cashier/orders.vue";
 import Order from "@/views/dashboard/cashier/order.vue";
-import Inventory from "@/views/dashboard/cashier/product.vue";
+import Inventory from "@/views/dashboard/common/products.vue";
 import Profile from "@/views/dashboard/cashier/profile.vue";
 
 const cashierRoutes: Array<RouteRecordRaw> = [
