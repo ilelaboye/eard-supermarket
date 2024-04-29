@@ -39,6 +39,12 @@
 .bg-success {
   background-color: #00b05b;
 }
+.text-gray{
+  color:#AAAAAA;
+}
+.bg-gray {
+  background-color: #AAAAAA;
+}
 
 .box {
   height: 50px;
@@ -488,9 +494,7 @@
 }
 
 @media only screen and (max-width: 776px) {
-  .layout-wrapper {
-    // padding: 10px;
-  }
+ 
   .col-1 {
     width: 100%;
     .form-page {

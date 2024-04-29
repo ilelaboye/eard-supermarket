@@ -61,47 +61,129 @@
           <td>{{ prod.name }}</td>
 
           <td>{{ prod.qty }} Item{{ prod.qty > 1 ? "s" : "" }}</td>
-          <td>#{{ formatPrice(prod.amount) }}</td>
+          <td>₦{{ formatPrice(prod.amount) }}</td>
         </tr>
       </tbody>
     </table>
   </div>
-
   <!--table ends-->
+
+  <div class="footer d-flex justify-content-between align-items-center">
+    <div class="first-side d-flex align-items-center">
+      <div class="serial-number d-flex me-2">
+      <div class="">
+        <button
+          class="btn bg-white border d-flex justify-content-evenly align-items-center"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          30
+          <div class="dropdown-icon">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M19 8.5L12 15.5L5 8.5"
+                stroke="#14213C"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+        </button>
+
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">31</a></li>
+          <li><a class="dropdown-item" href="#">32</a></li>
+          <li><a class="dropdown-item" href="#">33</a></li>
+          <li><a class="dropdown-item" href="#">34</a></li>
+          <li><a class="dropdown-item" href="#">35</a></li>
+          <li><a class="dropdown-item" href="#">36</a></li>
+          <li><a class="dropdown-item" href="#">37</a></li>
+          <li><a class="dropdown-item" href="#">38</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="serial-dispplay">
+      <p>Showing 30 of 150 records</p>
+    </div>
+    </div>
+
+    <!--Paginantion-->
+    <nav class="my-5" aria-label="...">
+      <ul class="pagination justify-content-end">
+        <li class="page-item me-2">
+          <span class="page-link text-dark bg-primary-light">Prev</span>
+        </li>
+
+        <li class="page-item active me-2">
+          <span class="page-link bg-primary">
+            1
+            <span class="sr-only">(current)</span>
+          </span>
+        </li>
+        <li class="page-item me-2">
+          <a class="page-link text-gray" href="#">2</a>
+        </li>
+        <li class="page-item me-2">
+          <a class="page-link text-gray" href="#">3</a>
+        </li>
+        <li class="page-item me-2">
+          <a class="page-link text-gray" href="#">4</a>
+        </li>
+        <li class="page-item me-2">
+          <a class="page-link text-gray" href="#">5</a>
+        </li>
+        <li class="page-item me-2">
+          <a class="page-link text-white bg-primary" href="#">Next</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
 </template>
 <script setup lang="ts">
-  import product_nav from "@/components/search-nav/product-nav.vue";
-  import { onMounted, ref } from "vue";
-  import { useStore } from "vuex";
-  import { formatPrice } from "@/core/utils/helpers";
+import product_nav from "@/components/search-nav/product-nav.vue";
+import { onMounted, ref } from "vue";
+import { useStore } from "vuex";
+import { formatPrice } from "@/core/utils/helpers";
 
-  const store = useStore();
-  const products: any = ref([]);
-  const loaded = ref(false);
-  const search = ref("");
+const store = useStore();
+const products: any = ref([]);
+const loaded = ref(false);
+const search = ref("");
 
-  const getProducts = () => {
-    store.commit("setLoader", true);
-    store
-      .dispatch("get", `order/product?search=${search.value}`)
-      .then((resp) => {
-        store.commit("setLoader", false);
-        console.log(resp);
-        products.value = resp.data.data.data;
-        loaded.value = true;
-      });
-  };
-
-  onMounted(() => {
-    getProducts();
+const getProducts = () => {
+  store.commit("setLoader", true);
+  store.dispatch("get", `order/product?search=${search.value}`).then((resp) => {
+    store.commit("setLoader", false);
+    console.log(resp);
+    products.value = resp.data.data.data;
+    loaded.value = true;
   });
+};
+
+onMounted(() => {
+  getProducts();
+});
 </script>
 <style scoped lang="scss">
-  .prod-img {
-    width: 40px;
-    height: 40px;
-    img {
-      object-fit: contain;
-    }
+.prod-img {
+  width: 40px;
+  height: 40px;
+  img {
+    object-fit: contain;
   }
+}
+
+.page-item {
+  border: 1px solid #eeeeee;
+  height: 30px;
+  font-size: 11px !important;
+}
 </style>
