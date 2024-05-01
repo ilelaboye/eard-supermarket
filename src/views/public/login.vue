@@ -74,7 +74,7 @@
                   style="height: 40px;'"
                   :disabled="loading"
                 >
-                  <span v-if="loading">loading...</span>
+                  <span v-if="loading">Loading...</span>
                   <span v-else>Login</span>
                 </button>
               </div>
@@ -94,8 +94,8 @@
   import { useStore } from "vuex";
 
   const store = useStore();
-  const email = ref("abra@gmail.com");
-  const password = ref("3902ndsnduisndu");
+  const email = ref("john@gmail.com");
+  const password = ref("john@gmail.com");
   const showPassword = ref(false);
 
   const togglePassword = () => {

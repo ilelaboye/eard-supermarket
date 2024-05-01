@@ -1,13 +1,17 @@
 <template>
-  <!--search nav starts-->
+ 
   <div class="main-content">
+     <!--search nav starts-->
     <div class="search-nav">
       <div class="search-input">
+        <form>
         <input
           type="search"
           class="input-field form-control ps-5"
           placeholder="Search by Staff"
         />
+      </form>
+        
         <div class="search-icon">
           <svg
             width="20"
@@ -208,14 +212,14 @@
 
   const store = useStore();
   const staff = ref({
-    firstname: "lekan",
-    lastname: "ilelaboye",
-    email: "ilelaboyealekan@gmail.com",
-    phone_number: "08102721331",
+    firstname: "",
+    lastname: "",
+    email: "",
+    phone_number: "",
     pre_phone_number: 234,
-    home_address: "under g",
-    city: "Lagos",
-    password: "123456",
+    home_address: "",
+    city: "",
+    password: "",
   });
   const loading = ref(false);
 

@@ -103,6 +103,6 @@
 
 <script lang="ts" setup>
 import transactionNav from '@/components/search-nav/transaction-nav.vue';
-import Completed_table from '@/components/tables/completed-table.vue'
+
 
 </script>
