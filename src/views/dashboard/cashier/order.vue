@@ -46,7 +46,6 @@
                   <th class="thead text-primary bg-primary-light">
                     UNIT PRICE(₦)
                   </th>
-
                   <th class="thead text-primary bg-primary-light">
                     TOTAL PRICE(₦)
                   </th>

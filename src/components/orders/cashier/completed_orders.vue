@@ -103,7 +103,7 @@
           </thead>
           <tbody>
             <tr v-for="(order, index) in orders" :key="index">
-              <td>{{ formatDateTime(order.createdAt) }}</td>
+              <td>{{ formatDateTime(order.createdAt) }} </td>
               <td>{{ order._id }}</td>
               <td>{{ order.order.length }} Items</td>
               <td>₦{{ formatPrice(calculateTotal(order.order)) }}</td>

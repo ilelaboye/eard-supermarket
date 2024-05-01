@@ -160,7 +160,8 @@ const search = ref("");
 
 const getProducts = () => {
   store.commit("setLoader", true);
-  store.dispatch("get", `order/product?search=${search.value}`).then((resp) => {
+  store.dispatch("get", `order/product?search=${search.value}`)
+  .then((resp) => {
     store.commit("setLoader", false);
     console.log(resp);
     products.value = resp.data.data.data;
