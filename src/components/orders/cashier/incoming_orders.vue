@@ -153,15 +153,18 @@
   const loaded = ref(false);
   const search: any = ref("");
 
-  const getOrders = () => {
-    store.commit("setLoader", true);
+  const getOrders = (refresh = false) => {
+    if (refresh) {
+      store.commit("setLoader", true);
+    }
+
     store
       .dispatch(
         "get",
         `order/incoming?supermarket_id=test&limit=10&search=${search.value}`
       )
       .then((resp) => {
-        console.log(resp);
+        // console.log(resp);
         loaded.value = true;
         orders.value = resp.data.data.data;
         store.commit("setLoader", false);
@@ -171,13 +174,18 @@
   const calculateTotal = (order: any) => {
     var total = 0;
     order.forEach((item: any) => {
-      total += item.amount;
+      total += item.amount * item.qty;
     });
     return total;
   };
 
   onMounted(() => {
-    getOrders();
+    getOrders(true);
+    // get fresh data every 60 seconds
+    window.setInterval(() => {
+      getOrders();
+    }, 60000);
+    //
   });
 </script>
 

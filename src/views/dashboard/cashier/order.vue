@@ -37,10 +37,6 @@
             <table class="table">
               <thead>
                 <tr>
-                  <th
-                    class="thead text-primary bg-primary-light"
-                    v-if="order.status == 1"
-                  ></th>
                   <th class="thead text-primary bg-primary-light">PRODUCTS</th>
                   <th class="thead text-primary bg-primary-light">QTY</th>
                   <th class="thead text-primary bg-primary-light">
@@ -64,9 +60,6 @@
               </thead>
               <tbody v-if="order.order.length > 0">
                 <tr v-for="(prod, index) in order.order" :key="index">
-                  <td v-if="order.status == 1">
-                    <input type="checkbox" class="checkbox" />
-                  </td>
                   <td>{{ prod.name }}</td>
                   <td>{{ prod.qty }}</td>
                   <td>{{ formatPrice(prod.amount) }}</td>
@@ -222,30 +215,41 @@
                   <input
                     type="radio"
                     name="pmethod"
+                    id="cash"
                     class="radio bg-primary me-2"
                     :checked="order.payment == 1 ? true : false"
+                    value="1"
+                    v-model="pmethod"
                   />
-                  <p>Cash</p>
+                  <label for="cash"> <p>Cash</p></label>
                 </div>
 
                 <div class="d-flex align-items-center mb-4">
                   <input
                     type="radio"
                     name="pmethod"
+                    id="pos"
                     class="bg-primary radio me-2"
                     :checked="order.payment == 2 ? true : false"
+                    value="2"
+                    v-model="pmethod"
                   />
-                  <p>POS</p>
+                  <label for="pos"> <p>POS</p></label>
                 </div>
 
                 <div class="d-flex align-items-center mb-4">
                   <input
                     type="radio"
                     name="pmethod"
+                    id="transfer"
                     class="radio bg-primary me-2"
                     :checked="order.payment == 3 ? true : false"
+                    value="3"
+                    v-model="pmethod"
                   />
-                  <p>Bank Transfer</p>
+                  <label for="transfer">
+                    <p>Bank Transfer</p>
+                  </label>
                 </div>
               </div>
               <div class="mt-4" v-if="order.status == 1">
@@ -290,6 +294,7 @@
   const route = useRoute();
   const total = ref(0);
   const loading = ref(false);
+  const pmethod: any = ref();
 
   const getOrder = () => {
     store.commit("setLoader", true);
@@ -302,6 +307,7 @@
       order.value.order.forEach((item: any) => {
         total.value += item.amount * item.qty;
       });
+      pmethod.value = order.value.payment;
     });
   };
 
@@ -334,15 +340,19 @@
 
   const confirmOrder = () => {
     loading.value = true;
+    console.log(pmethod.value);
     store
-      .dispatch("patch", { endpoint: `order/payment/${route.params.id}` })
+      .dispatch("patch", {
+        endpoint: `order/payment/${route.params.id}`,
+        details: { _id: route.params.id, payment: pmethod.value },
+      })
       .then((resp) => {
         loading.value = false;
         console.log(resp);
         useToast().success("Order confirmed successfully");
-        window.setTimeout(() => {
-          window.location.reload();
-        }, 1000);
+        // window.setTimeout(() => {
+        //   window.location.reload();
+        // }, 1000);
       });
   };
   const updateOrder = () => {
@@ -354,6 +364,7 @@
   };
   onMounted(() => {
     getOrder();
+    console.log(store.state.user);
   });
 </script>
 
