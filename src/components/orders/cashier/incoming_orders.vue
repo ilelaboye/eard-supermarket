@@ -161,12 +161,15 @@
     store
       .dispatch(
         "get",
-        `order/incoming?supermarket_id=test&limit=10&search=${search.value}`
+        `order/incoming?supermarket_id=${store.state.user.supermarket_id}&limit=10&search=${search.value}`
       )
       .then((resp) => {
         // console.log(resp);
         loaded.value = true;
         orders.value = resp.data.data.data;
+        store.commit("setLoader", false);
+      })
+      .catch(() => {
         store.commit("setLoader", false);
       });
   };
@@ -182,10 +185,9 @@
   onMounted(() => {
     getOrders(true);
     // get fresh data every 60 seconds
-    window.setInterval(() => {
-      getOrders();
-    }, 60000);
-    //
+    // window.setInterval(() => {
+    //   getOrders();
+    // }, 60000);
   });
 </script>
 

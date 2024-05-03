@@ -139,7 +139,11 @@
     store
       .dispatch("post", {
         endpoint: "organization/login",
-        details: { email: email.value, password: password.value },
+        details: {
+          email: email.value,
+          password: password.value,
+          supermarket_id: store.state.supermarket_id,
+        },
       })
       .then((resp) => {
         loading.value = false;

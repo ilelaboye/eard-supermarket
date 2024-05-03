@@ -1,7 +1,7 @@
 import { RouteRecordRaw } from "vue-router";
 import Layout from "@/views/dashboard/layout.vue";
 import Orders from "@/views/dashboard/cashier/orders.vue";
-import Order from "@/views/dashboard/cashier/order.vue";
+import Order from "@/views/dashboard/common/order.vue";
 import Inventory from "@/views/dashboard/common/products.vue";
 import Profile from "@/views/dashboard/cashier/profile.vue";
 

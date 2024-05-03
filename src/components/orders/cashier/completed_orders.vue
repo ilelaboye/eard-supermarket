@@ -103,7 +103,7 @@
           </thead>
           <tbody>
             <tr v-for="(order, index) in orders" :key="index">
-              <td>{{ formatDateTime(order.createdAt) }} </td>
+              <td>{{ formatDateTime(order.createdAt) }}</td>
               <td>{{ order._id }}</td>
               <td>{{ order.order.length }} Items</td>
               <td>₦{{ formatPrice(calculateTotal(order.order)) }}</td>
@@ -178,7 +178,7 @@
     store
       .dispatch(
         "get",
-        `order/completed?supermarket_id=test&limit=10&search=${search.value}`
+        `order/completed?supermarket_id=${store.state.supermarket_id}&limit=10&search=${search.value}`
       )
       .then((resp) => {
         console.log(resp);

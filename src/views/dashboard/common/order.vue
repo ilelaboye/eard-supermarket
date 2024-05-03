@@ -2,7 +2,7 @@
   <div v-if="loaded">
     <div class="id-nav bg-white ps-4">
       <div class="icon me-2">
-        <router-link to="/orders">
+        <a href="#" @click.prevent="router.go(-1)">
           <svg
             width="24"
             height="24"
@@ -25,7 +25,7 @@
               stroke-linejoin="round"
             />
           </svg>
-        </router-link>
+        </a>
       </div>
       <p>#{{ order._id }}</p>
     </div>
@@ -284,13 +284,14 @@
   import { onMounted, ref } from "vue";
   import { useStore } from "vuex";
   import { formatPrice } from "@/core/utils/helpers";
-  import { useRoute } from "vue-router";
+  import { useRoute, useRouter } from "vue-router";
   import { useToast } from "vue-toast-notification";
 
   const store = useStore();
   const order: any = ref({});
   const loaded = ref(false);
   const route = useRoute();
+  const router = useRouter();
   const total = ref(0);
   const loading = ref(false);
   const pmethod: any = ref();
