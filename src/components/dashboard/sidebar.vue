@@ -279,35 +279,73 @@
             <span> Profile </span>
           </router-link>
         </li>
+        <li class="each-item">
+          <router-link
+            class="nav-link"
+            :to="{ name: 'Login' }"
+            :class="{ active: $route.name === 'Login' }"
+          >
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M15.016 7.38948V6.45648C15.016 4.42148 13.366 2.77148 11.331 2.77148H6.45597C4.42197 2.77148 2.77197 4.42148 2.77197 6.45648V17.5865C2.77197 19.6215 4.42197 21.2715 6.45597 21.2715H11.341C13.37 21.2715 15.016 19.6265 15.016 17.5975V16.6545"
+                stroke="#14213C"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M21.8096 12.0214H9.76855"
+                stroke="#14213C"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M18.8813 9.10632L21.8093 12.0213L18.8813 14.9373"
+                stroke="#14213C"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+
+            <span> Log Out </span>
+          </router-link>
+        </li>
       </ul>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-  import { computed } from "vue";
-  import { useStore } from "vuex";
+import { computed } from "vue";
+import { useStore } from "vuex";
 
-  const store = useStore();
-  const user = store.state.user;
+const store = useStore();
+const user = store.state.user;
 
-  const showSidebar = computed(() => {
-    return store.state.showSidebar;
-  });
+const showSidebar = computed(() => {
+  return store.state.showSidebar;
+});
 </script>
 
 <style lang="scss" scoped>
- 
-  .showSB {
+.showSB {
+  display: block;
+}
+.nSb {
+  display: none;
+}
+
+@media only screen and (min-width: 767px) {
+  .nSb {
     display: block;
   }
-  .nSb {
-    display: none;
-  }
-
-  @media only screen and (min-width: 767px) {
-    .nSb {
-      display: block;
-    }
-  }
+}
 </style>
