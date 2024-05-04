@@ -8,20 +8,20 @@
         <div class="col-lg-6 col-md-12 col-sm-12">
           <div class="staff-details p-3">
             <div class="row mb-4">
-              <div class="col-lg-6 col-md-6 col-sm-12 gy-2 ">
+              <div class="col-lg-6 col-md-6 col-sm-12 gy-2">
                 <p class="mb-3 fw-lighter">FIRST NAME</p>
-                <p class="mb-3 fw-600">Daniel</p>
+                <p class="mb-3 fw-600">{{ staff.firstname }}</p>
               </div>
               <div class="col-lg-6 col-md-6 col-sm-12 gy-2">
                 <p class="mb-3 fw-lighter">LAST NAME</p>
-                <p class="mb-3 fw-600">Balogun</p>
+                <p class="mb-3 fw-600">{{ staff.lastname }}</p>
               </div>
             </div>
 
             <div class="row mb-3">
               <div class="col-lg-6 col-md-6 col-sm-12 gy-2">
                 <p class="mb-3 fw-lighter">EMAIL ADDRESS</p>
-                <p class="mb-3 fw-600">danielbalogun@gmail.com</p>
+                <p class="mb-3 fw-600">{{ staff.email }}</p>
               </div>
               <div class="col-lg-6 col-md-6 col-sm-12 gy-2">
                 <p class="mb-3 fw-lighter">PHONE NUMBER</p>
@@ -38,7 +38,7 @@
                     <path d="M9.5 19H0V0H9.5V19Z" fill="#27AE60" />
                   </svg>
 
-                  +2348023456789
+                  {{ staff.pre_phone_number }}{{ staff.phone_number }}
                 </p>
               </div>
             </div>
@@ -51,16 +51,16 @@
         <p class="text-primary bg-primary-light p-2">PERSONAL DETAILS</p>
       </div>
       <div class="row">
-        <div class="col-lg-6 col-md-12 col-sm-12 ">
+        <div class="col-lg-6 col-md-12 col-sm-12">
           <div class="staff-details p-3">
             <div class="row mb-3">
               <div class="col-lg-6 col-md-6 col-sm-12 gy-2">
                 <p class="mb-3 fw-lighter">CITY</p>
-                <p class="mb-3 fw-600">Lagos</p>
+                <p class="mb-3 fw-600">{{ staff.city }}</p>
               </div>
               <div class="col-lg-6 col-md-6 col-sm-12 gy-2">
                 <p class="mb-3 fw-lighter">STATE</p>
-                <p class="mb-3 fw-600">Lagos</p>
+                <p class="mb-3 fw-600">{{ staff.state }}</p>
               </div>
             </div>
 
@@ -70,8 +70,8 @@
                 <p class="mb-3 fw-600">Nigeria</p>
               </div>
               <div class="col-lg-6 col-md-6 col-sm-12 gy-2">
-                <p class="mb-3 fw-lighter">POSTAL CODE</p>
-                <p class="mb-3 fw-600">N/A</p>
+                <p class="mb-3 fw-lighter">Address</p>
+                <p class="mb-3 fw-600">{{ staff.home_address }}</p>
               </div>
             </div>
           </div>
@@ -84,3 +84,6 @@
     <!--search nav and table ends-->
   </div>
 </template>
+<script setup lang="ts">
+  const prop = defineProps<{ staff: any }>();
+</script>

@@ -161,8 +161,8 @@
               <div
                 class="d-flex justify-content-between align-items-center mb-3"
               >
-                <p>Customer ID:</p>
-                <p>{{ order.user_id }}</p>
+                <p>Customer:</p>
+                <p>{{ order.user_id.fullname }}</p>
               </div>
               <div class="d-flex justify-content-between align-items-center">
                 <p>Status:</p>

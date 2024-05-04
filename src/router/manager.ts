@@ -26,7 +26,7 @@ const managerRoutes: Array<RouteRecordRaw> = [
         component: M_Profile,
       },
       {
-        path: "/each-staff",
+        path: "/each-staff/:id",
         name: "View Staff",
         component: Each_Staff,
       },

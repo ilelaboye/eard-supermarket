@@ -1,35 +1,35 @@
 <template>
-  <div class="id-nav bg-white ps-4">
+  <div class="id-nav bg-white ps-4" v-if="loaded">
     <div class="icon me-2">
       <router-link to="/staff">
-      <svg
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M4.25 12.2744L19.25 12.2744"
-          stroke="#14213C"
-          stroke-width="1.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-        <path
-          d="M10.2998 18.2988L4.2498 12.2748L10.2998 6.24976"
-          stroke="#14213C"
-          stroke-width="1.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </svg>
-    </router-link>
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M4.25 12.2744L19.25 12.2744"
+            stroke="#14213C"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M10.2998 18.2988L4.2498 12.2748L10.2998 6.24976"
+            stroke="#14213C"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </router-link>
     </div>
-    <p>Daniel Balogun</p>
+    <p>{{ staff.firstname }} {{ staff.lastname }}</p>
   </div>
-   <!--buttton nav starts-->
-   <div class="button-nav-wrapper mt-3 ps-3">
+  <!--buttton nav starts-->
+  <div class="button-nav-wrapper mt-3 ps-3">
     <ul class="nav nav-pills" id="pills-tab" role="tablist">
       <li class="nav-item" role="presentation">
         <button
@@ -71,7 +71,7 @@
       role="tabpanel"
       aria-labelledby="pills-home-tab"
     >
-      <staffDetails></staffDetails>
+      <staffDetails :staff="staff"></staffDetails>
     </div>
     <div
       class="tab-pane fade"
@@ -81,21 +81,39 @@
     >
       <transactions></transactions>
     </div>
-  </div>  
-
-  
-
-
+  </div>
 </template>
 
 <script lang="ts" setup>
-import staffDetails from "@/components/staff/staff-details.vue";
+  import staffDetails from "@/components/staff/staff-details.vue";
 
-import transactions from "@/components/staff/transactions.vue";
- 
+  import transactions from "@/components/staff/transactions.vue";
+  import { onMounted, ref } from "vue";
+  import { useStore } from "vuex";
+  import { useRoute } from "vue-router";
 
- 
+  const store = useStore();
+  const route = useRoute();
+  const staff: any = ref({});
+  const loaded = ref(false);
+
+  const getStaff = () => {
+    store.commit("setLoader", true);
+    store
+      .dispatch("get", `organization/byId/${route.params.id}`)
+      .then((resp) => {
+        console.log(resp);
+        loaded.value = true;
+        staff.value = resp.data.data.data;
+        store.commit("setLoader", false);
+      })
+      .catch(() => {
+        store.commit("setLoader", false);
+      });
+  };
+
+  onMounted(() => {
+    getStaff();
+  });
 </script>
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

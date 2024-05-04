@@ -5,7 +5,7 @@
     <!--search nav ends-->
   </div>
 
-  <div class="cards my-3 p-4 bg-white">
+  <div class="cards my-3 p-4 bg-white" v-if="loaded">
     <div class="row">
       <div class="col-lg-5 col-md-5">
         <div class="each-card border mb-3 rounded px-4 py-3">
@@ -32,8 +32,6 @@
             </div>
           </div>
           <p class="my-3 total-numb fs-4">NGN 5,609,190</p>
-
-          
         </div>
       </div>
 
@@ -88,21 +86,44 @@
             </div>
           </div>
           <p class="my-3 total-numb fs-4">50,678</p>
-
-         
         </div>
       </div>
     </div>
   </div>
 
-   <!--table starts-->
-   <Completed_table></Completed_table>
-    <!--table ends-->
-
+  <!--table starts-->
+  <Completed_table></Completed_table>
+  <!--table ends-->
 </template>
 
 <script lang="ts" setup>
-import transactionNav from '@/components/search-nav/transaction-nav.vue';
+  import transactionNav from "@/components/search-nav/transaction-nav.vue";
 
+  import { onMounted, ref } from "vue";
+  import { useStore } from "vuex";
+  import { useRoute } from "vue-router";
 
+  const store = useStore();
+  const route = useRoute();
+  const transactions: any = ref({});
+  const loaded = ref(false);
+
+  const getTransactions = () => {
+    store.commit("setLoader", true);
+    store
+      .dispatch("get", `order/transactions/cashier/${route.params.id}`)
+      .then((resp) => {
+        console.log(resp);
+        loaded.value = true;
+        transactions.value = resp.data.data.data;
+        store.commit("setLoader", false);
+      })
+      .catch(() => {
+        store.commit("setLoader", false);
+      });
+  };
+
+  onMounted(() => {
+    getTransactions();
+  });
 </script>

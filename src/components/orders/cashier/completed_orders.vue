@@ -101,7 +101,7 @@
               <th class="thead text-primary bg-primary-light">ACTION</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody v-if="orders.length > 0">
             <tr v-for="(order, index) in orders" :key="index">
               <td>{{ formatDateTime(order.createdAt) }}</td>
               <td>{{ order._id }}</td>
@@ -151,6 +151,15 @@
                     />
                   </svg>
                 </router-link>
+              </td>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr>
+              <td colspan="7">
+                <p class="alert alert-primary">
+                  No completed transaction available
+                </p>
               </td>
             </tr>
           </tbody>

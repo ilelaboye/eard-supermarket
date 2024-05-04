@@ -183,11 +183,12 @@
   };
 
   onMounted(() => {
+    console.log(store.state.user.supermarket_id);
     getOrders(true);
     // get fresh data every 60 seconds
-    // window.setInterval(() => {
-    //   getOrders();
-    // }, 60000);
+    window.setInterval(() => {
+      getOrders();
+    }, 60000);
   });
 </script>
 

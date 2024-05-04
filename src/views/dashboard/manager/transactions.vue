@@ -101,10 +101,10 @@
                 <p>Total Transactions in Value</p>
               </div>
             </div>
-            <p class="my-3 total-numb fs-4">NGN 205,609,190</p>
+            <p class="my-3 total-numb fs-4">NGN 0</p>
 
             <div class="update d-flex align-items-center">
-              <div
+              <!--  <div
                 class="d-flex me-2 bg-success-light p-2 mb-2 rounded-pill update-text"
               >
                 <div class="update-icon pe-2">
@@ -122,7 +122,7 @@
                   </svg>
                 </div>
                 <p class="bg-sucess-light text-success">+3.32 than last week</p>
-              </div>
+              </div> -->
 
               <span>Updated 30 seconds ago</span>
             </div>
@@ -179,10 +179,10 @@
                 <p>Total Transactions in Volume</p>
               </div>
             </div>
-            <p class="my-3 total-numb fs-4">450,678</p>
+            <p class="my-3 total-numb fs-4">0</p>
 
             <div class="update d-flex align-items-center">
-              <div
+              <!-- <div
                 class="d-flex me-2 bg-success-light p-2 mb-2 rounded-pill update-text"
               >
                 <div class="update-icon pe-2">
@@ -200,7 +200,7 @@
                   </svg>
                 </div>
                 <p class="bg-sucess-light text-success">+3.32 than last week</p>
-              </div>
+              </div> -->
 
               <span>Updated 30 seconds ago</span>
             </div>
@@ -227,7 +227,7 @@
               <th class="thead text-primary bg-primary-light">ACTION</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody v-if="orders.length > 0">
             <tr v-for="(order, index) in orders" :key="index">
               <td>{{ formatDateTime(order.createdAt) }}</td>
               <td>{{ order._id }}</td>
@@ -280,6 +280,13 @@
               </td>
             </tr>
           </tbody>
+          <tbody v-else>
+            <tr>
+              <td colspan="7">
+                <p class="alert alert-primary">No transaction available</p>
+              </td>
+            </tr>
+          </tbody>
         </table>
       </div>
     </div>
@@ -312,7 +319,10 @@
     store.commit("setLoader", true);
     // ${store.state.user._id}
     store
-      .dispatch("get", `order/transactions/manager/662cc9a957e2a683d5c0b9cb`)
+      .dispatch(
+        "get",
+        `order/transactions/manager/${store.state.user.supermarket_id}`
+      )
       .then((resp) => {
         console.log(resp);
         store.commit("setLoader", false);
