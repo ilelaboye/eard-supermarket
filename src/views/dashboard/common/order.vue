@@ -164,6 +164,14 @@
                 <p>Customer:</p>
                 <p>{{ order.user_id.fullname }}</p>
               </div>
+              <div
+                class="d-flex justify-content-between align-items-center mb-3"
+              >
+                <p>Cashier:</p>
+                <p>
+                  {{ order.cashier.firstname }} {{ order.cashier.lastname }}
+                </p>
+              </div>
               <div class="d-flex justify-content-between align-items-center">
                 <p>Status:</p>
                 <div class="status" v-if="order.status == 1">
@@ -361,9 +369,9 @@
         loading.value = false;
         console.log(resp);
         useToast().success("Order confirmed successfully");
-        // window.setTimeout(() => {
-        //   window.location.reload();
-        // }, 1000);
+        window.setTimeout(() => {
+          window.location.reload();
+        }, 1000);
       });
   };
   const updateOrder = () => {

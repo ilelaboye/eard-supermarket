@@ -94,8 +94,8 @@
   import { useStore } from "vuex";
 
   const store = useStore();
-  const email = ref("john@gmail.com");
-  const password = ref("john@gmail.com");
+  const email = ref("");
+  const password = ref("");
   const showPassword = ref(false);
 
   const togglePassword = () => {

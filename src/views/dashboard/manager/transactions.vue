@@ -101,7 +101,9 @@
                 <p>Total Transactions in Value</p>
               </div>
             </div>
-            <p class="my-3 total-numb fs-4">NGN {{ kpi.total_order_amount }}</p>
+            <p class="my-3 total-numb fs-4">
+              NGN {{ formatPrice(kpi.total_order_amount) }}
+            </p>
 
             <div class="update d-flex align-items-center">
               <!--  <div
@@ -322,12 +324,12 @@
     store
       .dispatch(
         "get",
-        `order/transactions/manager/${store.state.user.supermarket_id}`
+        `order/transactions/manager/${store.state.user.supermarket_id._id}`
       )
       .then((resp) => {
         store.commit("setLoader", false);
         orders.value = resp.data.data.data;
-
+        console.log(resp);
         loaded.value = true;
       });
   };
@@ -335,7 +337,7 @@
   const getSupermarketKpi = () => {
     console.log("lldld");
     store
-      .dispatch("get", `supermarket/kpi/${store.state.user.supermarket_id}`)
+      .dispatch("get", `supermarket/kpi/${store.state.user.supermarket_id._id}`)
       .then((resp) => {
         console.log(resp);
         kpi.value = resp.data.data.data;

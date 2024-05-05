@@ -185,7 +185,7 @@
     store
       .dispatch(
         "get",
-        `order/completed?supermarket_id=${store.state.user.supermarket_id}&limit=10&search=${search.value}`
+        `order/completed?supermarket_id=${store.state.user.supermarket_id._id}&limit=10&search=${search.value}`
       )
       .then((resp) => {
         console.log(resp);

@@ -278,7 +278,7 @@
     home_address: "",
     city: "",
     password: "",
-    supermarket_id: store.state.user.supermarket_id,
+    supermarket_id: store.state.user.supermarket_id._id,
   });
   const loading = ref(false);
   const search = ref("");

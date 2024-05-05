@@ -1,7 +1,7 @@
 <template>
   <div class="main-content">
     <!--search nav starts-->
-    <transactionNav></transactionNav>
+    <!-- <transactionNav></transactionNav> -->
     <!--search nav ends-->
   </div>
 
