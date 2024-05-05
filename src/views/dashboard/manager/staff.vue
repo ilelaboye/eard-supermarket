@@ -221,18 +221,19 @@
               </div>
               <div class="col-sm-6">
                 <div class="mb-4">
-                  <label for="name" class="mb-2">City</label>
+                  <label for="city" class="mb-2">City</label>
                   <input
                     type="text"
                     class="form-control"
                     style="height: 45px"
+                    id="city"
                     placeholder="Enter city"
                     v-model="staff.city"
                   />
                 </div>
               </div>
             </div>
-            <div class="col-12">
+            <!-- <div class="col-12">
               <div class="mb-4">
                 <label for="name" class="mb-2">Password</label>
                 <input
@@ -243,7 +244,7 @@
                   v-model="staff.password"
                 />
               </div>
-            </div>
+            </div> -->
 
             <div class="my-5">
               <button
@@ -277,6 +278,7 @@
     home_address: "",
     city: "",
     password: "",
+    supermarket_id: store.state.user.supermarket_id,
   });
   const loading = ref(false);
   const search = ref("");

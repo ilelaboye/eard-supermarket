@@ -113,7 +113,7 @@
     store
       .dispatch("get", `order/transactions/cashier/${route.params.id}`)
       .then((resp) => {
-        console.log(resp);
+        // console.log(resp);
         loaded.value = true;
         transactions.value = resp.data.data.data;
         store.commit("setLoader", false);

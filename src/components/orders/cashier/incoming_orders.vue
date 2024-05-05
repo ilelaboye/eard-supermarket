@@ -88,7 +88,7 @@
         <thead>
           <tr>
             <th class="thead text-primary bg-primary-light">DATE AND TIME</th>
-            <th class="thead text-primary bg-primary-light">ORDER IN NUMBER</th>
+            <th class="thead text-primary bg-primary-light">CUSTOMER</th>
             <th class="thead text-primary bg-primary-light">ITEM NUMBERS</th>
             <th class="thead text-primary bg-primary-light">AMOUNT</th>
             <!-- <th class="thead text-primary bg-primary-light">PAYMENT OPTION</th> -->
@@ -98,7 +98,7 @@
         <tbody>
           <tr v-for="(order, index) in orders" :key="index">
             <td>{{ formatDateTime(order.createdAt) }}</td>
-            <td>{{ order._id }}</td>
+            <td>{{ order.user_id.fullname }}</td>
             <td>{{ order.order.length }}</td>
             <td>₦{{ formatPrice(calculateTotal(order.order)) }}</td>
             <!-- <td>Bank Transfer</td> -->
@@ -188,7 +188,7 @@
     // get fresh data every 60 seconds
     window.setInterval(() => {
       getOrders();
-    }, 60000);
+    }, 50000);
   });
 </script>
 

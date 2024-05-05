@@ -281,7 +281,7 @@
   </div>
 </template>
 <script lang="ts" setup>
-  import { onMounted, ref } from "vue";
+  import { computed, onMounted, ref } from "vue";
   import { useStore } from "vuex";
   import { formatPrice } from "@/core/utils/helpers";
   import { useRoute, useRouter } from "vue-router";
@@ -292,9 +292,16 @@
   const loaded = ref(false);
   const route = useRoute();
   const router = useRouter();
-  const total = ref(0);
+  // const total = ref(0);
   const loading = ref(false);
   const pmethod: any = ref();
+  const total = computed(() => {
+    var vt = 0;
+    order.value.order.forEach((item: any) => {
+      vt += item.amount * item.qty;
+    });
+    return vt;
+  });
 
   const getOrder = () => {
     store.commit("setLoader", true);
@@ -304,9 +311,9 @@
       order.value = resp.data.data.data;
       store.commit("setLoader", false);
       loaded.value = true;
-      order.value.order.forEach((item: any) => {
-        total.value += item.amount * item.qty;
-      });
+      // order.value.order.forEach((item: any) => {
+      //   total.value += item.amount * item.qty;
+      // });
       pmethod.value = order.value.payment;
     });
   };
@@ -343,8 +350,12 @@
     console.log(pmethod.value);
     store
       .dispatch("patch", {
-        endpoint: `order/payment/${route.params.id}`,
-        details: { _id: route.params.id, payment: pmethod.value },
+        endpoint: `order/payment`,
+        details: {
+          _id: route.params.id,
+          payment: pmethod.value,
+          order: order.value.order,
+        },
       })
       .then((resp) => {
         loading.value = false;
