@@ -40,13 +40,15 @@
                   <th class="thead text-primary bg-primary-light">PRODUCTS</th>
                   <th class="thead text-primary bg-primary-light">QTY</th>
                   <th class="thead text-primary bg-primary-light">
-                    UNIT PRICE(₦)
+                    UNIT PRICE
+                    <p class="text-center">(₦)</p>
                   </th>
                   <th class="thead text-primary bg-primary-light">
-                    TOTAL PRICE(₦)
+                    TOTAL PRICE
+                    <p class="text-center">(₦)</p>
                   </th>
                   <th
-                    class="thead text-primary bg-primary-light"
+                    class="thead text-primary bg-primary-light text-center"
                     v-if="order.status == 1"
                   >
                     ACTIONS
@@ -61,7 +63,7 @@
                 <tr v-for="(prod, index) in order.order" :key="index">
                   <td>{{ prod.name }}</td>
                   <td>{{ prod.qty }}</td>
-                  <td>{{ formatPrice(prod.amount) }}</td>
+                  <td class="text-center">{{ formatPrice(prod.amount) }}</td>
                   <td>{{ formatPrice(prod.qty * prod.amount) }}</td>
                   <td v-if="order.status == 1">
                     <div class="counter">
@@ -164,14 +166,14 @@
                 <p>Customer:</p>
                 <p>{{ order.user_id.fullname }}</p>
               </div>
-              <div
+              <!-- <div
                 class="d-flex justify-content-between align-items-center mb-3"
               >
                 <p>Cashier:</p>
                 <p>
                   {{ order.cashier.firstname }} {{ order.cashier.lastname }}
                 </p>
-              </div>
+              </div> -->
               <div class="d-flex justify-content-between align-items-center">
                 <p>Status:</p>
                 <div class="status" v-if="order.status == 1">
