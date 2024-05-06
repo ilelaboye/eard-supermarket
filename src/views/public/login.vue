@@ -90,82 +90,79 @@
 </template>
 
 <script setup lang="ts">
-  import { ref } from "vue";
-  import { useStore } from "vuex";
+import { ref } from "vue";
+import { useStore } from "vuex";
 
-  const store = useStore();
-  const email = ref("john@gmail.com");
-  const password = ref("john@gmail.com");
-  const showPassword = ref(false);
+const store = useStore();
+const email = ref("john@gmail.com");
+const password = ref("john@gmail.com");
+const showPassword = ref(false);
 
-  const togglePassword = () => {
-    showPassword.value = !showPassword.value;
-  };
+const togglePassword = () => {
+  showPassword.value = !showPassword.value;
+};
 
-  const errors = ref({
-    email: false,
-    password: false,
-  });
-  const eMsg = ref({
-    email: "This field is required",
-    password: "This field is required",
-  });
+const errors = ref({
+  email: false,
+  password: false,
+});
+const eMsg = ref({
+  email: "This field is required",
+  password: "This field is required",
+});
 
-  const loading = ref(false);
+const loading = ref(false);
 
-  const login = () => {
-    if (email.value == "") {
-      errors.value.email = true;
-      return;
-    } else if (
-      !email.value.match(
-        /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
-      )
-    ) {
-      errors.value.email = true;
-      eMsg.value.email = "Invalid Email";
-      return;
-    } else {
-      errors.value.email = false;
-    }
+const login = () => {
+  if (email.value == "") {
+    errors.value.email = true;
+    return;
+  } else if (
+    !email.value.match(
+      /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+    )
+  ) {
+    errors.value.email = true;
+    eMsg.value.email = "Invalid Email";
+    return;
+  } else {
+    errors.value.email = false;
+  }
 
-    if (password.value == "") {
-      errors.value.password = true;
-      return;
-    } else {
-      errors.value.password = false;
-    }
-    loading.value = true;
-    store
-      .dispatch("post", {
-        endpoint: "organization/login",
-        details: {
-          email: email.value,
-          password: password.value,
-          supermarket_id: store.state.supermarket_id,
-        },
-      })
-      .then((resp) => {
-        loading.value = false;
-        console.log(resp);
-        store.commit("setUser", resp.data.data.data);
-        console.log(store.state.user);
-        if (store.state.user.role == "STAFF") {
-          window.location.href = "/orders";
-        } else {
-          window.location.href = "/transactions";
-        }
-      })
-      .catch((err) => {
-        loading.value = false;
-        console.log(err);
-      });
-  };
+  if (password.value == "") {
+    errors.value.password = true;
+    return;
+  } else {
+    errors.value.password = false;
+  }
+  loading.value = true;
+  store
+    .dispatch("post", {
+      endpoint: "organization/login",
+      details: {
+        email: email.value,
+        password: password.value,
+        supermarket_id: store.state.supermarket_id,
+      },
+    })
+    .then((resp) => {
+      loading.value = false;
+      store.commit("setUser", resp.data.data.data);
+      if (store.state.user.role == "STAFF") {
+        window.location.href = "/orders";
+      } else {
+        window.location.href = "/transactions";
+      }
+    })
+    .catch((err) => {
+      loading.value = false;
+    });
+};
 </script>
 <style scoped lang="scss">
-  .btn {
-    span {
-      color: #fff;
-    }
+.btn {
+  span {
+    color: #fff;
   }
+}
 </style>
