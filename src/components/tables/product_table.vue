@@ -68,7 +68,7 @@
   </div>
   <!--table ends-->
 
-  <div class="footer d-flex justify-content-between align-items-center">
+  <!-- <div class="footer d-flex justify-content-between align-items-center">
     <div class="first-side d-flex align-items-center">
       <div class="serial-number d-flex me-2">
       <div class="">
@@ -115,7 +115,7 @@
     </div>
     </div>
 
-    <!--Paginantion-->
+   
     <nav class="my-5" aria-label="...">
       <ul class="pagination justify-content-end">
         <li class="page-item me-2">
@@ -145,46 +145,47 @@
         </li>
       </ul>
     </nav>
-  </div>
+  </div> -->
 </template>
 <script setup lang="ts">
-import product_nav from "@/components/search-nav/product-nav.vue";
-import { onMounted, ref } from "vue";
-import { useStore } from "vuex";
-import { formatPrice } from "@/core/utils/helpers";
+  import product_nav from "@/components/search-nav/product-nav.vue";
+  import { onMounted, ref } from "vue";
+  import { useStore } from "vuex";
+  import { formatPrice } from "@/core/utils/helpers";
 
-const store = useStore();
-const products: any = ref([]);
-const loaded = ref(false);
-const search = ref("");
+  const store = useStore();
+  const products: any = ref([]);
+  const loaded = ref(false);
+  const search = ref("");
 
-const getProducts = () => {
-  store.commit("setLoader", true);
-  store.dispatch("get", `order/product?search=${search.value}`)
-  .then((resp) => {
-    store.commit("setLoader", false);
-    console.log(resp);
-    products.value = resp.data.data.data;
-    loaded.value = true;
+  const getProducts = () => {
+    store.commit("setLoader", true);
+    store
+      .dispatch("get", `order/product?search=${search.value}`)
+      .then((resp) => {
+        store.commit("setLoader", false);
+        console.log(resp);
+        products.value = resp.data.data.data;
+        loaded.value = true;
+      });
+  };
+
+  onMounted(() => {
+    getProducts();
   });
-};
-
-onMounted(() => {
-  getProducts();
-});
 </script>
 <style scoped lang="scss">
-.prod-img {
-  width: 40px;
-  height: 40px;
-  img {
-    object-fit: contain;
+  .prod-img {
+    width: 40px;
+    height: 40px;
+    img {
+      object-fit: contain;
+    }
   }
-}
 
-.page-item {
-  border: 1px solid #eeeeee;
-  height: 30px;
-  font-size: 11px !important;
-}
+  .page-item {
+    border: 1px solid #eeeeee;
+    height: 30px;
+    font-size: 11px !important;
+  }
 </style>

@@ -40,13 +40,15 @@
                   <th class="thead text-primary bg-primary-light">PRODUCTS</th>
                   <th class="thead text-primary bg-primary-light">QTY</th>
                   <th class="thead text-primary bg-primary-light">
-                    UNIT PRICE(₦)
+                    UNIT PRICE
+                    <p class="text-center">(₦)</p>
                   </th>
                   <th class="thead text-primary bg-primary-light">
-                    TOTAL PRICE(₦)
+                    TOTAL PRICE
+                    <p class="text-center">(₦)</p>
                   </th>
                   <th
-                    class="thead text-primary bg-primary-light"
+                    class="thead text-primary bg-primary-light text-center"
                     v-if="order.status == 1"
                   >
                     ACTIONS
@@ -61,7 +63,7 @@
                 <tr v-for="(prod, index) in order.order" :key="index">
                   <td>{{ prod.name }}</td>
                   <td>{{ prod.qty }}</td>
-                  <td>{{ formatPrice(prod.amount) }}</td>
+                  <td class="text-center">{{ formatPrice(prod.amount) }}</td>
                   <td>{{ formatPrice(prod.qty * prod.amount) }}</td>
                   <td v-if="order.status == 1">
                     <div class="counter">
@@ -164,6 +166,14 @@
                 <p>Customer:</p>
                 <p>{{ order.user_id.fullname }}</p>
               </div>
+              <!-- <div
+                class="d-flex justify-content-between align-items-center mb-3"
+              >
+                <p>Cashier:</p>
+                <p>
+                  {{ order.cashier.firstname }} {{ order.cashier.lastname }}
+                </p>
+              </div> -->
               <div class="d-flex justify-content-between align-items-center">
                 <p>Status:</p>
                 <div class="status" v-if="order.status == 1">
@@ -281,7 +291,7 @@
   </div>
 </template>
 <script lang="ts" setup>
-  import { onMounted, ref } from "vue";
+  import { computed, onMounted, ref } from "vue";
   import { useStore } from "vuex";
   import { formatPrice } from "@/core/utils/helpers";
   import { useRoute, useRouter } from "vue-router";
@@ -292,9 +302,16 @@
   const loaded = ref(false);
   const route = useRoute();
   const router = useRouter();
-  const total = ref(0);
+  // const total = ref(0);
   const loading = ref(false);
   const pmethod: any = ref();
+  const total = computed(() => {
+    var vt = 0;
+    order.value.order.forEach((item: any) => {
+      vt += item.amount * item.qty;
+    });
+    return vt;
+  });
 
   const getOrder = () => {
     store.commit("setLoader", true);
@@ -304,9 +321,9 @@
       order.value = resp.data.data.data;
       store.commit("setLoader", false);
       loaded.value = true;
-      order.value.order.forEach((item: any) => {
-        total.value += item.amount * item.qty;
-      });
+      // order.value.order.forEach((item: any) => {
+      //   total.value += item.amount * item.qty;
+      // });
       pmethod.value = order.value.payment;
     });
   };
@@ -343,16 +360,20 @@
     console.log(pmethod.value);
     store
       .dispatch("patch", {
-        endpoint: `order/payment/${route.params.id}`,
-        details: { _id: route.params.id, payment: pmethod.value },
+        endpoint: `order/payment`,
+        details: {
+          _id: route.params.id,
+          payment: pmethod.value,
+          order: order.value.order,
+        },
       })
       .then((resp) => {
         loading.value = false;
         console.log(resp);
         useToast().success("Order confirmed successfully");
-        // window.setTimeout(() => {
-        //   window.location.reload();
-        // }, 1000);
+        window.setTimeout(() => {
+          window.location.reload();
+        }, 1000);
       });
   };
   const updateOrder = () => {

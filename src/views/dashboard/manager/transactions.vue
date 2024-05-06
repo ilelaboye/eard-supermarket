@@ -101,7 +101,9 @@
                 <p>Total Transactions in Value</p>
               </div>
             </div>
-            <p class="my-3 total-numb fs-4">NGN 0</p>
+            <p class="my-3 total-numb fs-4">
+              NGN {{ formatPrice(kpi.total_order_amount) }}
+            </p>
 
             <div class="update d-flex align-items-center">
               <!--  <div
@@ -179,7 +181,7 @@
                 <p>Total Transactions in Volume</p>
               </div>
             </div>
-            <p class="my-3 total-numb fs-4">0</p>
+            <p class="my-3 total-numb fs-4">{{ kpi.orders }}</p>
 
             <div class="update d-flex align-items-center">
               <!-- <div
@@ -306,6 +308,7 @@
   const orders: any = ref([]);
   const search: any = ref("");
   const loaded = ref(false);
+  const kpi: any = ref({});
 
   const calculateTotal = (order: any) => {
     var total = 0;
@@ -321,19 +324,30 @@
     store
       .dispatch(
         "get",
-        `order/transactions/manager/${store.state.user.supermarket_id}`
+        `order/transactions/manager/${store.state.user.supermarket_id._id}`
       )
       .then((resp) => {
-        console.log(resp);
         store.commit("setLoader", false);
         orders.value = resp.data.data.data;
-        console.log(orders.value);
+        console.log(resp);
+        loaded.value = true;
+      });
+  };
+
+  const getSupermarketKpi = () => {
+    console.log("lldld");
+    store
+      .dispatch("get", `supermarket/kpi/${store.state.user.supermarket_id._id}`)
+      .then((resp) => {
+        console.log(resp);
+        kpi.value = resp.data.data.data;
         loaded.value = true;
       });
   };
 
   onMounted(() => {
     getOrders();
+    getSupermarketKpi();
     // console.log(store.state.user);
   });
 </script>

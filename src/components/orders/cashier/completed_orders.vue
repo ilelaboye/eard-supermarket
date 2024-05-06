@@ -89,9 +89,7 @@
           <thead>
             <tr>
               <th class="thead text-primary bg-primary-light">DATE AND TIME</th>
-              <th class="thead text-primary bg-primary-light">
-                ORDER IN NUMBER
-              </th>
+              <th class="thead text-primary bg-primary-light">CUSTOMER</th>
               <th class="thead text-primary bg-primary-light">ITEM NUMBERS</th>
               <th class="thead text-primary bg-primary-light">AMOUNT</th>
               <th class="thead text-primary bg-primary-light">
@@ -104,7 +102,7 @@
           <tbody v-if="orders.length > 0">
             <tr v-for="(order, index) in orders" :key="index">
               <td>{{ formatDateTime(order.createdAt) }}</td>
-              <td>{{ order._id }}</td>
+              <td>{{ order.user_id.fullname }}</td>
               <td>{{ order.order.length }} Items</td>
               <td>₦{{ formatPrice(calculateTotal(order.order)) }}</td>
               <td>
@@ -154,7 +152,7 @@
               </td>
             </tr>
           </tbody>
-          <tbody>
+          <tbody v-else>
             <tr>
               <td colspan="7">
                 <p class="alert alert-primary">
@@ -187,7 +185,7 @@
     store
       .dispatch(
         "get",
-        `order/completed?supermarket_id=${store.state.supermarket_id}&limit=10&search=${search.value}`
+        `order/completed?supermarket_id=${store.state.user.supermarket_id._id}&limit=10&search=${search.value}`
       )
       .then((resp) => {
         console.log(resp);
@@ -200,7 +198,7 @@
   const calculateTotal = (order: any) => {
     var total = 0;
     order.forEach((item: any) => {
-      total += item.amount;
+      total += item.qty * item.amount;
     });
     return total;
   };
