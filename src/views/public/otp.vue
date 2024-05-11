@@ -19,13 +19,13 @@
 
             <h3 class="head-text">OTP Authentication</h3>
             <span class="head-span" style="font-size: 15px"
-              >Enter the 6-digit code we sent to your email address to reset
+              >Enter the 4-digit code we sent to your email address to reset
               your password</span
             >
 
             <form @submit.prevent="login()" class="form mt-4">
               <div class="mb-3">
-                <label for="email" class="mb-2">Enter Code</label>
+                <label for="email" class="mb-2 ">Enter Code</label>
 
                 <div class="text-center">
                   <input
@@ -56,7 +56,7 @@
               <div class="mt-3 text-center">
                 <p style="font-size: 15px">
                   Didn't get the code?
-                  <span class="text-primary fw-bold">Resend in 01:58 </span>
+                  <span @click="resendOTP()" :disabled="countdown > 0" class="text-primary fw-bold"> Resend in {{ countdown }}s</span>
                 </p>
               </div>
             </form>
@@ -73,7 +73,7 @@
 <style lang="scss"></style>
 
 <script setup lang="ts">
-import { ref,} from "vue";
+import { ref, watch, onMounted} from "vue";
 
 
 const box1 = ref("");
@@ -101,4 +101,31 @@ const login = () => {
 
   // window.location.href = "/reset";
 };
+
+const countdownDuration = 60;
+
+const countdown = ref(0);
+let timer : any;
+
+const updateCountdown = () => {
+  countdown.value -= 1;
+};
+
+watch(countdown, (newValue) => {
+  if (newValue === 0) {
+    clearInterval(timer);
+  }
+});
+
+const resendOTP = () => {
+  countdown.value = countdownDuration;
+
+    timer = setInterval(updateCountdown, 1500);
+};
+
+onMounted(() => {
+  countdown.value = 
+  countdownDuration;
+  timer = setInterval(updateCountdown, 1500)
+})
 </script>
