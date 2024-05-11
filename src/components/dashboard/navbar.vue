@@ -63,13 +63,11 @@
 
   const store = useStore();
   const user = store.state.user;
-  console.log(user);
 
   const showSidebar = computed(() => {
     return store.state.showSidebar;
   });
   const toggleSidebar = () => {
-    console.log(showSidebar.value);
     store.commit("toggleSidebar", !showSidebar.value);
   };
 </script>

@@ -72,6 +72,7 @@
 
 <script lang="ts" setup>
   import { onMounted, ref } from "vue";
+  import { useToast } from "vue-toast-notification";
   import { useStore } from "vuex";
 
   const store = useStore();
@@ -83,11 +84,17 @@
     store
       .dispatch("patch", {
         endpoint: "/organization/profile",
-        details: user.value,
+        details: {
+          ...user.value,
+          supermarket_id: user.value.supermarket_id._id,
+        },
       })
       .then((resp) => {
         loading.value = false;
-        console.log(resp);
+        useToast().success("Profile updated successfully");
+        window.setTimeout(() => {
+          window.location.reload();
+        }, 1500);
       });
   };
 

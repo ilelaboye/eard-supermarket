@@ -164,7 +164,6 @@
         `order/incoming?supermarket_id=${store.state.user.supermarket_id._id}&limit=10&search=${search.value}`
       )
       .then((resp) => {
-        // console.log(resp);
         loaded.value = true;
         orders.value = resp.data.data.data;
         store.commit("setLoader", false);
@@ -183,7 +182,6 @@
   };
 
   onMounted(() => {
-    console.log(store.state.user.supermarket_id._id);
     getOrders(true);
     // get fresh data every 60 seconds
     window.setInterval(() => {

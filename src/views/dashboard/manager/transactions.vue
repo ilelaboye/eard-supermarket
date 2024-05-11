@@ -212,6 +212,11 @@
     </div>
     <!--table starts-->
     <div class="bg-white p-3">
+      <div class="d-flex justify-content-end mb-2">
+        <button class="btn btn-primary" @click="exportTransactions()">
+          Export
+        </button>
+      </div>
       <div class="table-responsive">
         <table class="table">
           <thead>
@@ -316,6 +321,20 @@
       total += item.amount * item.qty;
     });
     return total;
+  };
+
+  const exportTransactions = () => {
+    // store.commit("setLoader", true);
+    // store
+    //   .dispatch(
+    //     "get",
+    //     `order/export/transactions/manager/${store.state.user.supermarket_id._id}`
+    //   )
+    //   .then((resp) => {
+    //     store.commit("setLoader", false);
+    //     console.log(resp);
+    //   });
+    window.location.href = `${process.env.VUE_APP_BASE_URL}order/export/transactions/manager/${store.state.user.supermarket_id._id}`;
   };
 
   const getOrders = () => {
