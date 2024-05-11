@@ -37,10 +37,12 @@
               <div class="d-grid mt-5">
                 <button
                   type="submit"
-                  class="btn btn-primary rounded-pill"
+                  class="btn btn-primary text-white rounded-pill"
                   style="height: 40px"
+                  :disabled="loading"
                 >
-                  Submit
+                  <span class="text-white" v-if="loading">Loading...</span>
+                  <span class="text-white" v-else>Submit</span>
                 </button>
               </div>
               <div class="mt-4 text-center">
@@ -70,6 +72,10 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
+import {useStore} from "vuex";
+
+const store = useStore();
+const loading =  ref(false);
 
 const email = ref("");
 const errors = ref({
@@ -94,7 +100,24 @@ const login = () => {
   } else {
     errors.value.email = false;
   }
+  loading. value = true;
+  store.dispatch("post", {
+    endpoint: "organization/forgotten-password",
+    details: {
+      email: email.value,
+    }
+  })
+  .then ((resp) => {
+    loading.value = false;
+    console.log(resp)
 
-  window.location.href = "/otp";
+    store.commit("setUser", resp.data);
+   
+     window.location.href = "/otp?email=${email.value}";
+  })
+.catch((err) => {
+  loading.value = false;
+});
+ 
 };
 </script>

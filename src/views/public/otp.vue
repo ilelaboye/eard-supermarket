@@ -27,55 +27,12 @@
               <div class="mb-3">
                 <label for="email" class="mb-2">Enter Code</label>
 
-                <div class="row text-center">
-                  <div class="col">
-                    <input
-                      type="tel"
-                      v-model="codes.box1"
-                      class="form-control box text-center"
-                      maxlength="1"
-                    />
-                  </div>
-                  <div class="col">
-                    <input
-                      v-model="codes.box2"
-                      type="tel"
-                      class="form-control box text-center"
-                      maxlength="1"
-                    />
-                  </div>
-                  <div class="col">
-                    <input
-                      v-model="codes.box3"
-                      type="tel"
-                      class="form-control box text-center"
-                      maxlength="1"
-                    />
-                  </div>
-                  <div class="col">
-                    <input
-                      v-model="codes.box4"
-                      type="tel"
-                      class="form-control box text-center"
-                      maxlength="1"
-                    />
-                  </div>
-                  <div class="col">
-                    <input
-                      v-model="codes.box5"
-                      type="tel"
-                      class="form-control box text-center"
-                      maxlength="1"
-                    />
-                  </div>
-                  <div class="col">
-                    <input
-                      v-model="codes.box6"
-                      type="tel"
-                      class="form-control box text-center"
-                      maxlength="1"
-                    />
-                  </div>
+                <div class="text-center">
+                  <input
+                    type="tel"
+                    v-model="box1"
+                    class="form-control box text-center"
+                  />
                 </div>
 
                 <div
@@ -116,16 +73,10 @@
 <style lang="scss"></style>
 
 <script setup lang="ts">
-import { ref, reactive } from "vue";
+import { ref,} from "vue";
 
-const codes = reactive({
-  box1: "",
-  box2: "",
-  box3: "",
-  box4: "",
-  box5: "",
-  box6: "",
-});
+
+const box1 = ref("");
 const errors = ref({
   code: false,
 });
@@ -134,42 +85,13 @@ const eMsg = ref({
 });
 
 const login = () => {
-  if (codes.box1 == "") {
+  if (box1.value == "") {
     errors.value.code = true;
     return;
   } else {
     errors.value.code = false;
   }
-  if (codes.box2 == "") {
-    errors.value.code = true;
-    return;
-  } else {
-    errors.value.code = false;
-  }
-  if (codes.box3 == "") {
-    errors.value.code = true;
-    return;
-  } else {
-    errors.value.code = false;
-  }
-  if (codes.box4 == "") {
-    errors.value.code = true;
-    return;
-  } else {
-    errors.value.code = false;
-  }
-  if (codes.box5 == "") {
-    errors.value.code = true;
-    return;
-  } else {
-    errors.value.code = false;
-  }
-  if (codes.box6 == "") {
-    errors.value.code = true;
-    return;
-  } else {
-    errors.value.code = false;
-  }
+
 
   //   } else if (
   //     !codes.box.match(
@@ -177,6 +99,6 @@ const login = () => {
   //     )
   //   ) {
 
-  window.location.href = "/reset";
+  // window.location.href = "/reset";
 };
 </script>

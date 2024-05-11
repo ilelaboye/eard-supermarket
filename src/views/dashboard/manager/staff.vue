@@ -68,7 +68,7 @@
       <!-- Modal -->
     </div>
 
-    <div class="table-responsive mt-3 text-nowrap" v-if="loaded">
+    <div class="table-responsive mt-3" v-if="loaded">
       <table class="table">
         <thead>
           <tr>
@@ -232,19 +232,21 @@
                   />
                 </div>
               </div>
-            </div>
-            <!-- <div class="col-12">
-              <div class="mb-4">
-                <label for="name" class="mb-2">Password</label>
-                <input
-                  type="password"
-                  class="form-control"
-                  style="height: 45px"
-                  placeholder="Enter password"
-                  v-model="staff.password"
-                />
+              <div class="col-sm-6">
+                <div class="mb-4">
+                  <label for="city" class="mb-2">State</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    style="height: 45px"
+                    id="city"
+                    placeholder="Enter state"
+                    v-model="staff.state"
+                  />
+                </div>
               </div>
-            </div> -->
+            </div>
+          
 
             <div class="my-5">
               <button
@@ -277,6 +279,7 @@
     pre_phone_number: 234,
     home_address: "",
     city: "",
+    state:"",
     password: "",
     supermarket_id: store.state.user.supermarket_id._id,
   });
@@ -296,7 +299,6 @@
         window.setTimeout(() => {
           window.location.reload();
         }, 1500);
-        console.log(resp);
       })
       .catch(() => {
         store.commit("setLoader", false);
