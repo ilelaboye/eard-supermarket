@@ -55,24 +55,27 @@
           <div class="staff-details p-3">
             <div class="row mb-3">
               <div class="col-lg-6 col-md-6 col-sm-12 gy-2">
+                <p class="mb-3 fw-lighter">Address</p>
+                <p class="mb-3 fw-600">{{ staff.home_address }}</p>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-12 gy-2">
                 <p class="mb-3 fw-lighter">CITY</p>
                 <p class="mb-3 fw-600">{{ staff.city }}</p>
               </div>
-              <div class="col-lg-6 col-md-6 col-sm-12 gy-2">
-                <p class="mb-3 fw-lighter">STATE</p>
-                <p class="mb-3 fw-600">{{ staff.state }}</p>
-              </div>
+
+              
             </div>
 
             <div class="row mb-4">
               <div class="col-lg-6 col-md-6 col-sm-12 gy-2">
+                <p class="mb-3 fw-lighter">STATE</p>
+                <p class="mb-3 fw-600">{{ staff.state }}</p>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-12 gy-2">
                 <p class="mb-3 fw-lighter">COUNTRY</p>
                 <p class="mb-3 fw-600">Nigeria</p>
               </div>
-              <div class="col-lg-6 col-md-6 col-sm-12 gy-2">
-                <p class="mb-3 fw-lighter">Address</p>
-                <p class="mb-3 fw-600">{{ staff.home_address }}</p>
-              </div>
+              
             </div>
           </div>
         </div>

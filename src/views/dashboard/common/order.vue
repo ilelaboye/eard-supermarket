@@ -177,7 +177,7 @@
               <div class="d-flex justify-content-between align-items-center">
                 <p>Status:</p>
                 <div class="status" v-if="order.status == 1">
-                  <div class="circle bg-primary"></div>
+                  <div class="circle bg-warning"></div>
                   <div class="text text-primary">Pending</div>
                 </div>
                 <div class="status" v-else>
@@ -305,6 +305,7 @@
   // const total = ref(0);
   const loading = ref(false);
   const pmethod: any = ref();
+
   const total = computed(() => {
     var vt = 0;
     order.value.order.forEach((item: any) => {
@@ -329,13 +330,12 @@
   };
 
   const updateQty = (id: string, status: string) => {
-    console.log(id);
     order.value.order.forEach((item: any, index: number) => {
       if (item._id == id) {
         if (status == "add") {
           item.qty = parseFloat(item.qty) + 1;
         } else {
-          if (item.qty > 1) {
+          if (status == "minus") {
             item.qty = parseFloat(item.qty) - 1;
           } else {
             removeProduct(id);
@@ -343,7 +343,6 @@
         }
       }
     });
-    console.log(order.value);
   };
 
   const removeProduct = (id: string) => {
@@ -352,12 +351,10 @@
         order.value.order.splice(index, 1);
       }
     });
-    console.log(order.value);
   };
 
   const confirmOrder = () => {
     loading.value = true;
-    console.log(pmethod.value);
     store
       .dispatch("patch", {
         endpoint: `order/payment`,
@@ -369,7 +366,6 @@
       })
       .then((resp) => {
         loading.value = false;
-        console.log(resp);
         useToast().success("Order confirmed successfully");
         window.setTimeout(() => {
           window.location.reload();
@@ -380,12 +376,10 @@
     store
       .dispatch("post", { endpoint: "order/update", details: order.value })
       .then((resp) => {
-        console.log(resp);
       });
   };
   onMounted(() => {
     getOrder();
-    console.log(store.state.user);
   });
 </script>
 
