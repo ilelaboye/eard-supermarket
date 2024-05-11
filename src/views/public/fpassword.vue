@@ -71,53 +71,50 @@
 <style lang="scss"></style>
 
 <script setup lang="ts">
-import { ref } from "vue";
-import {useStore} from "vuex";
+  import { ref } from "vue";
+  import { useStore } from "vuex";
 
-const store = useStore();
-const loading =  ref(false);
+  const store = useStore();
+  const loading = ref(false);
 
-const email = ref("");
-const errors = ref({
-  email: false,
-});
-const eMsg = ref({
-  email: "This field is required",
-});
+  const email = ref("");
+  const errors = ref({
+    email: false,
+  });
+  const eMsg = ref({
+    email: "This field is required",
+  });
 
-const login = () => {
-  if (email.value == "") {
-    errors.value.email = true;
-    return;
-  } else if (
-    !email.value.match(
-      /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
-    )
-  ) {
-    errors.value.email = true;
-    eMsg.value.email = "Invalid Email";
-    return;
-  } else {
-    errors.value.email = false;
-  }
-  loading. value = true;
-  store.dispatch("post", {
-    endpoint: "organization/forgotten-password",
-    details: {
-      email: email.value,
+  const login = () => {
+    if (email.value == "") {
+      errors.value.email = true;
+      return;
+    } else if (
+      !email.value.match(
+        /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+      )
+    ) {
+      errors.value.email = true;
+      eMsg.value.email = "Invalid Email";
+      return;
+    } else {
+      errors.value.email = false;
     }
-  })
-  .then ((resp) => {
-    loading.value = false;
-    console.log(resp)
-
-    store.commit("setUser", resp.data);
-   
-     window.location.href = "/otp?email=${email.value}";
-  })
-.catch((err) => {
-  loading.value = false;
-});
- 
-};
+    loading.value = true;
+    window.location.href = `/otp?email=${email.value}`;
+    // store
+    //   .dispatch("post", {
+    //     endpoint: "organization/forgotten-password",
+    //     details: {
+    //       email: email.value,
+    //     },
+    //   })
+    //   .then(() => {
+    //     loading.value = false;
+    //     window.location.href = `/otp?email=${email.value}`;
+    //   })
+    //   .catch(() => {
+    //     loading.value = false;
+    //   });
+  };
 </script>

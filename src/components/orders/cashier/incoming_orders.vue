@@ -183,7 +183,7 @@
 
   onMounted(() => {
     getOrders(true);
-    // get fresh data every 60 seconds
+    // get fresh data every 10 seconds
     window.setInterval(() => {
       getOrders();
     }, 10000);

@@ -31,7 +31,7 @@
               <p>Total Transactions in Value</p>
             </div>
           </div>
-          <p class="my-3 total-numb fs-4">NGN 5,609,190</p>
+          <p class="my-3 total-numb fs-4">NGN {{ kpi.value }}</p>
         </div>
       </div>
 
@@ -85,14 +85,90 @@
               <p>Total Transactions in Volume</p>
             </div>
           </div>
-          <p class="my-3 total-numb fs-4">50,678</p>
+          <p class="my-3 total-numb fs-4">{{ formatPrice(kpi.count) }}</p>
         </div>
       </div>
     </div>
   </div>
 
   <!--table starts-->
-  <Completed_table></Completed_table>
+  <div class="bg-white p-3">
+    <div class="table-responsive text-nowrap">
+      <table class="table">
+        <thead>
+          <tr>
+            <th class="thead text-primary bg-primary-light">DATE AND TIME</th>
+            <th class="thead text-primary bg-primary-light">CUSTOMER</th>
+            <th class="thead text-primary bg-primary-light">ITEM NUMBERS</th>
+            <th class="thead text-primary bg-primary-light">AMOUNT</th>
+            <th class="thead text-primary bg-primary-light">PAYMENT OPTION</th>
+            <th class="thead text-primary bg-primary-light">STATUS</th>
+            <th class="thead text-primary bg-primary-light">ACTION</th>
+          </tr>
+        </thead>
+        <tbody v-if="transactions.length > 0">
+          <tr v-for="(order, index) in transactions" :key="index">
+            <td>{{ formatDateTime(order.createdAt) }}</td>
+            <td>{{ order.user_id.fullname }}</td>
+            <td>{{ order.order.length }} Items</td>
+            <td>₦{{ formatPrice(calculateTotal(order.order)) }}</td>
+            <td>
+              <span v-if="order.payment == 1">Cash</span>
+              <span v-if="order.payment == 2">POS</span>
+              <span v-if="order.payment == 3">Transfer</span>
+            </td>
+            <td>
+              <div class="status" v-if="order.status == 1">
+                <div class="circle bg-danger"></div>
+                <div class="text text-danger">Pending</div>
+              </div>
+              <div class="status" v-else>
+                <div class="circle"></div>
+                <div class="text">Paid</div>
+              </div>
+            </td>
+            <td class="action-icon">
+              <router-link :to="`/order/${order._id}`">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M15.1614 12.0531C15.1614 13.7991 13.7454 15.2141 11.9994 15.2141C10.2534 15.2141 8.83838 13.7991 8.83838 12.0531C8.83838 10.3061 10.2534 8.89111 11.9994 8.89111C13.7454 8.89111 15.1614 10.3061 15.1614 12.0531Z"
+                    stroke="#343434"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M11.998 19.3549C15.806 19.3549 19.289 16.6169 21.25 12.0529C19.289 7.48885 15.806 4.75085 11.998 4.75085H12.002C8.194 4.75085 4.711 7.48885 2.75 12.0529C4.711 16.6169 8.194 19.3549 12.002 19.3549H11.998Z"
+                    stroke="#343434"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </router-link>
+            </td>
+          </tr>
+        </tbody>
+        <tbody v-else>
+          <tr>
+            <td colspan="7">
+              <p class="alert alert-primary">No transaction available</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
   <!--table ends-->
 </template>
 
@@ -102,20 +178,34 @@
   import { onMounted, ref } from "vue";
   import { useStore } from "vuex";
   import { useRoute } from "vue-router";
+  import { formatPrice, formatDateTime } from "@/core/utils/helpers";
 
   const store = useStore();
   const route = useRoute();
   const transactions: any = ref({});
   const loaded = ref(false);
+  const kpi = ref({
+    count: 0,
+    value: 0,
+  });
+
+  const calculateTotal = (order: any) => {
+    var total = 0;
+    order.forEach((item: any) => {
+      total += item.qty * item.amount;
+    });
+    return total;
+  };
 
   const getTransactions = () => {
     store.commit("setLoader", true);
     store
       .dispatch("get", `order/transactions/cashier/${route.params.id}`)
       .then((resp) => {
-        // console.log(resp);
+        console.log(resp);
         loaded.value = true;
         transactions.value = resp.data.data.data;
+        kpi.value.count = resp.data.data.count;
         store.commit("setLoader", false);
       })
       .catch(() => {

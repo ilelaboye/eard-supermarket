@@ -13,6 +13,9 @@
 .fs-15 {
   font-size: 15px;
 }
+.text-right {
+  text-align: right;
+}
 .btn {
   font-size: 14px;
 }
@@ -39,14 +42,12 @@
 .bg-success {
   background-color: #00b05b;
 }
-.text-gray{
-  color:#AAAAAA;
+.text-gray {
+  color: #aaaaaa;
 }
 .bg-gray {
-  background-color: #AAAAAA;
+  background-color: #aaaaaa;
 }
-
-
 
 .text-decoration-none {
   text-decoration: none;
@@ -490,7 +491,6 @@
 }
 
 @media only screen and (max-width: 776px) {
- 
   .col-1 {
     width: 100%;
     .form-page {

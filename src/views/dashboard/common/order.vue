@@ -38,12 +38,14 @@
               <thead>
                 <tr>
                   <th class="thead text-primary bg-primary-light">PRODUCTS</th>
-                  <th class="thead text-primary bg-primary-light">QTY</th>
-                  <th class="thead text-primary bg-primary-light">
+                  <th class="thead text-primary bg-primary-light text-center">
+                    QUANTITY
+                  </th>
+                  <th class="thead text-primary bg-primary-light text-center">
                     UNIT PRICE
                     <p class="text-center">(₦)</p>
                   </th>
-                  <th class="thead text-primary bg-primary-light">
+                  <th class="thead text-primary bg-primary-light text-center">
                     TOTAL PRICE
                     <p class="text-center">(₦)</p>
                   </th>
@@ -62,9 +64,11 @@
               <tbody v-if="order.order.length > 0">
                 <tr v-for="(prod, index) in order.order" :key="index">
                   <td>{{ prod.name }}</td>
-                  <td>{{ prod.qty }}</td>
-                  <td class="text-center">{{ formatPrice(prod.amount) }}</td>
-                  <td>{{ formatPrice(prod.qty * prod.amount) }}</td>
+                  <td class="text-right">{{ prod.qty }}</td>
+                  <td class="text-right">{{ formatPrice(prod.amount) }}</td>
+                  <td class="text-right">
+                    {{ formatPrice(prod.qty * prod.amount) }}
+                  </td>
                   <td v-if="order.status == 1">
                     <div class="counter">
                       <p
@@ -189,24 +193,28 @@
 
             <div class="payment-details p-3 border-bottom">
               <div class="d-flex justify-content-between align-items-center">
-                <p class="mb-3">subtotal ({{ order.order.length }} Items):</p>
-                <p class="mb-3">₦{{ formatPrice(total) }}</p>
+                <p class="mb-3"></p>
+                <p class="mb-3">₦</p>
+              </div>
+              <div class="d-flex justify-content-between align-items-center">
+                <p class="mb-3">Subtotal ({{ order.order.length }} Items):</p>
+                <p class="mb-3">{{ formatPrice(total) }}</p>
               </div>
 
               <div class="d-flex justify-content-between align-items-center">
                 <p class="mb-3">Discount:</p>
-                <p class="mb-3">₦0.00</p>
+                <p class="mb-3">0.00</p>
               </div>
 
               <div class="d-flex justify-content-between align-items-center">
                 <p class="mb-3">VAT:</p>
-                <p class="mb-3">₦0.00</p>
+                <p class="mb-3">0.00</p>
               </div>
 
               <div class="d-flex justify-content-between align-items-center">
                 <p class="mb-3">Estimated total:</p>
                 <p class="py-3 ps-5 mb-3 border-bottom border-top">
-                  ₦{{ formatPrice(total) }}
+                  {{ formatPrice(total) }}
                 </p>
               </div>
             </div>
@@ -375,8 +383,7 @@
   const updateOrder = () => {
     store
       .dispatch("post", { endpoint: "order/update", details: order.value })
-      .then((resp) => {
-      });
+      .then((resp) => {});
   };
   onMounted(() => {
     getOrder();

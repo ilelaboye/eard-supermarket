@@ -102,7 +102,6 @@
     store
       .dispatch("get", `organization/byId/${route.params.id}`)
       .then((resp) => {
-        console.log(resp);
         loaded.value = true;
         staff.value = resp.data.data.data;
         store.commit("setLoader", false);

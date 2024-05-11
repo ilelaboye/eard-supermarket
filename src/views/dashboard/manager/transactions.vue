@@ -163,9 +163,6 @@
             <p class="my-3 total-numb fs-4">{{ kpi.orders }}</p>
 
             <div class="update d-flex align-items-center">
-             
-             
-
               <span>Updated 30 seconds ago</span>
             </div>
           </div>
@@ -189,6 +186,7 @@
               </th>
               <th class="thead text-primary bg-primary-light">ITEM NUMBERS</th>
               <th class="thead text-primary bg-primary-light">AMOUNT</th>
+              <th class="thead text-primary bg-primary-light">CASHIER</th>
               <th class="thead text-primary bg-primary-light">
                 PAYMENT OPTION
               </th>
@@ -202,6 +200,9 @@
               <td>{{ order._id }}</td>
               <td>{{ order.order.length }}</td>
               <td>₦{{ formatPrice(calculateTotal(order.order)) }}</td>
+              <td>
+                {{ order.cashier.firstname }} {{ order.cashier.lastname }}
+              </td>
               <td>
                 <span v-if="order.payment == 1">Cash</span>
                 <span v-if="order.payment == 2">POS</span>
@@ -258,6 +259,42 @@
           </tbody>
         </table>
       </div>
+      <nav class="my-3">
+        <ul class="pagination justify-content-end">
+          <li class="page-item me-2">
+            <span class="page-link text-dark bg-primary-light" v-if="page > 1"
+              >Prev</span
+            >
+          </li>
+
+          <li class="page-item active me-2">
+            <span
+              class="page-link me-2"
+              :class="page == item ? 'bg-primary' : 'text-gray'"
+              v-for="(item, index) in pageCount"
+              :key="index"
+            >
+              {{ item }}
+              <!-- <span class="sr-only">(current)</span> -->
+            </span>
+          </li>
+          <!-- <li class="page-item me-2">
+            <a class="page-link text-gray" href="#">2</a>
+          </li>
+          <li class="page-item me-2">
+            <a class="page-link text-gray" href="#">3</a>
+          </li>
+          <li class="page-item me-2">
+            <a class="page-link text-gray" href="#">4</a>
+          </li>
+          <li class="page-item me-2">
+            <a class="page-link text-gray" href="#">5</a>
+          </li> -->
+          <li class="page-item me-2" v-if="pageCount > 1">
+            <a class="page-link text-white bg-primary" href="#">Next</a>
+          </li>
+        </ul>
+      </nav>
     </div>
   </div>
   <!--table ends-->
@@ -276,6 +313,8 @@
   const search: any = ref("");
   const loaded = ref(false);
   const kpi: any = ref({});
+  const pageCount = ref(1);
+  const page = ref(1);
 
   const calculateTotal = (order: any) => {
     var total = 0;
@@ -286,17 +325,8 @@
   };
 
   const exportTransactions = () => {
-    // store.commit("setLoader", true);
-    // store
-    //   .dispatch(
-    //     "get",
-    //     `order/export/transactions/manager/${store.state.user.supermarket_id._id}`
-    //   )
-    //   .then((resp) => {
-    //     store.commit("setLoader", false);
-    //     console.log(resp);
-    //   });
     window.location.href = `${process.env.VUE_APP_BASE_URL}order/export/transactions/manager/${store.state.user.supermarket_id._id}`;
+    store.commit("setLoader", false);
   };
 
   const getOrders = () => {
@@ -309,8 +339,9 @@
       )
       .then((resp) => {
         store.commit("setLoader", false);
+        console.log(resp);
         orders.value = resp.data.data.data;
-        
+        pageCount.value = resp.data.data.count;
         loaded.value = true;
       });
   };
@@ -320,7 +351,6 @@
       .dispatch("get", `supermarket/kpi/${store.state.user.supermarket_id._id}`)
       .then((resp) => {
         kpi.value = resp.data.data.data;
-        console.log(resp);
         loaded.value = true;
       });
   };

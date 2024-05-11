@@ -11,7 +11,7 @@ const publicRoutes: Array<RouteRecordRaw> = [
     component: Login,
   },
   {
-    path: "/f_password",
+    path: "/forget-password",
     name: "F_password",
     component: F_password,
   },
