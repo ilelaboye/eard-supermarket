@@ -88,9 +88,15 @@
         <thead>
           <tr>
             <th class="thead text-primary bg-primary-light">DATE AND TIME</th>
-            <th class="thead text-primary bg-primary-light">CUSTOMER</th>
-            <th class="thead text-primary bg-primary-light">ITEM NUMBERS</th>
-            <th class="thead text-primary bg-primary-light">AMOUNT</th>
+            <th class="thead text-primary bg-primary-light text-left">
+              CUSTOMER
+            </th>
+            <th class="thead text-primary bg-primary-light text-right">
+              NUMBER OF ITEMS
+            </th>
+            <th class="thead text-primary bg-primary-light text-center">
+              AMOUNT
+            </th>
             <!-- <th class="thead text-primary bg-primary-light">PAYMENT OPTION</th> -->
             <th class="thead text-primary bg-primary-light">ACTION</th>
           </tr>
@@ -100,7 +106,9 @@
             <td>{{ formatDateTime(order.createdAt) }}</td>
             <td>{{ order.user_id.fullname }}</td>
             <td>{{ order.order.length }}</td>
-            <td>₦{{ formatPrice(calculateTotal(order.order)) }}</td>
+            <td class="text-right">
+              ₦{{ formatPrice(calculateTotal(order.order)) }}
+            </td>
             <!-- <td>Bank Transfer</td> -->
             <td class="action-icon">
               <router-link :to="`/order/${order._id}`">

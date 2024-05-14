@@ -181,11 +181,14 @@
           <thead>
             <tr>
               <th class="thead text-primary bg-primary-light">DATE AND TIME</th>
+              <th class="thead text-primary bg-primary-light">ORDER NUMBER</th>
               <th class="thead text-primary bg-primary-light">
-                ORDER IN NUMBER
+                NUMBER OF ITEMS
               </th>
-              <th class="thead text-primary bg-primary-light">ITEM NUMBERS</th>
-              <th class="thead text-primary bg-primary-light">AMOUNT</th>
+              <th class="thead text-primary bg-primary-light text-center">
+                AMOUNT
+                <p class="mb-0 text-center">₦</p>
+              </th>
               <th class="thead text-primary bg-primary-light">CASHIER</th>
               <th class="thead text-primary bg-primary-light">
                 PAYMENT OPTION
@@ -199,7 +202,9 @@
               <td>{{ formatDateTime(order.createdAt) }}</td>
               <td>{{ order._id }}</td>
               <td>{{ order.order.length }}</td>
-              <td>₦{{ formatPrice(calculateTotal(order.order)) }}</td>
+              <td class="text-right">
+                {{ formatPrice(calculateTotal(order.order)) }}
+              </td>
               <td>
                 {{ order.cashier.firstname }} {{ order.cashier.lastname }}
               </td>
