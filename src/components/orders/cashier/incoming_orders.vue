@@ -91,11 +91,13 @@
             <th class="thead text-primary bg-primary-light text-left">
               CUSTOMER
             </th>
-            <th class="thead text-primary bg-primary-light text-right">
+            <th class="thead text-primary bg-primary-light text-center">
               NUMBER OF ITEMS
             </th>
             <th class="thead text-primary bg-primary-light text-center">
-              AMOUNT
+              <p class="text-primary">AMOUNT</p>
+              <span class="text-primary">(₦)</span>
+
             </th>
             <!-- <th class="thead text-primary bg-primary-light">PAYMENT OPTION</th> -->
             <th class="thead text-primary bg-primary-light">ACTION</th>
@@ -105,9 +107,9 @@
           <tr v-for="(order, index) in orders" :key="index">
             <td>{{ formatDateTime(order.createdAt) }}</td>
             <td>{{ order.user_id.fullname }}</td>
-            <td>{{ order.order.length }}</td>
+            <td class="text-center">{{ order.order.length }}</td>
             <td class="text-right">
-              ₦{{ formatPrice(calculateTotal(order.order)) }}
+              {{ formatPrice(calculateTotal(order.order)) }}
             </td>
             <!-- <td>Bank Transfer</td> -->
             <td class="action-icon">
