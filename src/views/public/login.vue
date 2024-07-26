@@ -71,7 +71,7 @@
                 <button
                   type="submit"
                   class="btn btn-primary rounded-pill"
-                  style="height: 40px;'"
+                  style="height: 40px;"
                   :disabled="loading"
                 >
                   <span v-if="loading">Loading...</span>

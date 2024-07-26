@@ -85,34 +85,34 @@
 </template>
 
 <script lang="ts" setup>
-  import staffDetails from "@/components/staff/staff-details.vue";
+import staffDetails from "@/components/staff/staff-details.vue";
 
-  import transactions from "@/components/staff/transactions.vue";
-  import { onMounted, ref } from "vue";
-  import { useStore } from "vuex";
-  import { useRoute } from "vue-router";
+import transactions from "@/components/staff/transactions.vue";
+import { onMounted, ref } from "vue";
+import { useStore } from "vuex";
+import { useRoute } from "vue-router";
 
-  const store = useStore();
-  const route = useRoute();
-  const staff: any = ref({});
-  const loaded = ref(false);
+const store = useStore();
+const route = useRoute();
+const staff: any = ref({});
+const loaded = ref(false);
 
-  const getStaff = () => {
-    store.commit("setLoader", true);
-    store
-      .dispatch("get", `organization/byId/${route.params.id}`)
-      .then((resp) => {
-        loaded.value = true;
-        staff.value = resp.data.data.data;
-        store.commit("setLoader", false);
-      })
-      .catch(() => {
-        store.commit("setLoader", false);
-      });
-  };
+const getStaff = () => {
+  store.commit("setLoader", true);
+  store
+    .dispatch("get", `organization/byId/${route.params.id}`)
+    .then((resp) => {
+      loaded.value = true;
+      staff.value = resp.data.data.data;
+      store.commit("setLoader", false);
+    })
+    .catch(() => {
+      store.commit("setLoader", false);
+    });
+};
 
-  onMounted(() => {
-    getStaff();
-  });
+onMounted(() => {
+  getStaff();
+});
 </script>
 <style lang="scss" scoped></style>

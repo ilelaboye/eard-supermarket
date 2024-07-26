@@ -47,7 +47,9 @@
           <th class="thead text-primary bg-primary-light">PRODUCT NAME</th>
 
           <th class="thead text-primary bg-primary-light">QUANTITY IN STOCK</th>
-          <th class="thead text-primary bg-primary-light">UNIT PRICE</th>
+          <th class="thead text-primary bg-primary-light text-center"><p class="text-primary">UNIT PRICE</p>
+          <span class="text-primary">(₦)</span>
+          </th>
         </tr>
       </thead>
       <tbody>
@@ -61,7 +63,7 @@
           <td>{{ prod.name }}</td>
 
           <td>{{ prod.qty }} Item{{ prod.qty > 1 ? "s" : "" }}</td>
-          <td>₦{{ formatPrice(prod.amount) }}</td>
+          <td class="text-right">{{ formatPrice(prod.amount) }}</td>
         </tr>
       </tbody>
     </table>
@@ -147,6 +149,8 @@
     </nav>
   </div> -->
 </template>
+
+
 <script setup lang="ts">
   import product_nav from "@/components/search-nav/product-nav.vue";
   import { onMounted, ref } from "vue";
@@ -174,6 +178,9 @@
     getProducts();
   });
 </script>
+
+
+
 <style scoped lang="scss">
   .prod-img {
     width: 40px;

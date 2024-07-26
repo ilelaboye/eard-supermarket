@@ -43,11 +43,11 @@
                   </th>
                   <th class="thead text-primary bg-primary-light text-center">
                     UNIT PRICE
-                    <p class="text-center">(₦)</p>
+                    <p class="text-center text-primary">(₦)</p>
                   </th>
                   <th class="thead text-primary bg-primary-light text-center">
                     TOTAL PRICE
-                    <p class="text-center">(₦)</p>
+                    <p class="text-center text-primary">(₦)</p>
                   </th>
                   <th
                     class="thead text-primary bg-primary-light text-center"
@@ -64,7 +64,7 @@
               <tbody v-if="order.order.length > 0">
                 <tr v-for="(prod, index) in order.order" :key="index">
                   <td>{{ prod.name }}</td>
-                  <td class="text-right">{{ prod.qty }}</td>
+                  <td class="text-center">{{ prod.qty }}</td>
                   <td class="text-right">{{ formatPrice(prod.amount) }}</td>
                   <td class="text-right">
                     {{ formatPrice(prod.qty * prod.amount) }}
@@ -170,14 +170,14 @@
                 <p>Customer:</p>
                 <p>{{ order.user_id.fullname }}</p>
               </div>
-              <!-- <div
+              <div
                 class="d-flex justify-content-between align-items-center mb-3"
               >
-                <p>Cashier:</p>
+                <!-- <p>Cashier:</p>
                 <p>
                   {{ order.cashier.firstname }} {{ order.cashier.lastname }}
-                </p>
-              </div> -->
+                </p> -->
+              </div>
               <div class="d-flex justify-content-between align-items-center">
                 <p>Status:</p>
                 <div class="status" v-if="order.status == 1">
