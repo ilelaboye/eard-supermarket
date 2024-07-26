@@ -272,12 +272,14 @@
             >
           </li>
 
-          <li class="page-item active me-2">
+          <li
+            class="page-item active me-2"
+            v-for="(item, index) in pageCount"
+            :key="index"
+          >
             <span
               class="page-link me-2"
               :class="page == item ? 'bg-primary' : 'text-gray'"
-              v-for="(item, index) in pageCount"
-              :key="index"
             >
               {{ item }}
               <!-- <span class="sr-only">(current)</span> -->

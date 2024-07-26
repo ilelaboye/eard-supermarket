@@ -38,12 +38,11 @@
         </div>
         <div class="each-field mb-3">
           <label class="mb-2" for="number">Phone number</label>
-          <img src="" alt="" />
-          <input
-            type="number"
-            v-model="user.phone_number"
-            class="form-control input-group"
-          />
+          <vue-tel-input
+            v-model="phone"
+            @country-changed="countryChanged"
+            mode="international"
+          ></vue-tel-input>
         </div>
         <div class="each-field mb-3">
           <label class="mb-2" for="address">Home Address</label>
@@ -74,38 +73,58 @@
   import { onMounted, ref } from "vue";
   import { useToast } from "vue-toast-notification";
   import { useStore } from "vuex";
+  import { VueTelInput } from "vue-tel-input";
+  import "vue-tel-input/vue-tel-input.css";
 
   const store = useStore();
   const user = ref(store.state.user);
   const loading = ref(false);
+  const phone = ref("");
+  const pre_phone_number = ref("");
+  const countryChanged = (phoneObject: any) => {
+    pre_phone_number.value = phoneObject.dialCode;
+  };
 
   const updateUser = () => {
+    var rep = phone.value.replace(`+${pre_phone_number.value}`, "");
+    rep = rep.replaceAll(" ", "");
     loading.value = true;
     store
       .dispatch("patch", {
         endpoint: "/organization/profile",
         details: {
           ...user.value,
+          pre_phone_number: pre_phone_number.value,
+          phone_number: rep,
           supermarket_id: user.value.supermarket_id._id,
         },
       })
       .then((resp) => {
         loading.value = false;
         useToast().success("Profile updated successfully");
-        window.setTimeout(() => {
-          window.location.reload();
-        }, 1500);
       });
   };
 
   const getUser = () => {
-    store.dispatch("get", "organization/profile").then((resp) => {
-      console.log(resp);
-    });
+    store.commit("setLoader", true);
+    store
+      .dispatch("get", "organization/profile")
+      .then((resp) => {
+        store.commit("setUser", {
+          profile: resp.data.data,
+          token: store.state.token,
+        });
+        store.commit("setLoader", false);
+      })
+      .catch(() => {
+        store.commit("setLoader", false);
+      });
   };
 
   onMounted(() => {
     getUser();
+    phone.value =
+      "+" + user.value.pre_phone_number + "" + user.value.phone_number;
   });
 </script>
 

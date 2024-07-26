@@ -91,11 +91,10 @@
             <th class="thead text-primary bg-primary-light text-left">
               CUSTOMER
             </th>
-            <th class="thead text-primary bg-primary-light text-right">
-              NUMBER OF ITEMS
-            </th>
+            <th class="thead text-primary bg-primary-light">NUMBER OF ITEMS</th>
             <th class="thead text-primary bg-primary-light text-center">
               AMOUNT
+              <p class="mb-0">₦</p>
             </th>
             <!-- <th class="thead text-primary bg-primary-light">PAYMENT OPTION</th> -->
             <th class="thead text-primary bg-primary-light">ACTION</th>
@@ -107,7 +106,7 @@
             <td>{{ order.user_id.fullname }}</td>
             <td>{{ order.order.length }}</td>
             <td class="text-right">
-              ₦{{ formatPrice(calculateTotal(order.order)) }}
+              {{ formatPrice(calculateTotal(order.order)) }}
             </td>
             <!-- <td>Bank Transfer</td> -->
             <td class="action-icon">

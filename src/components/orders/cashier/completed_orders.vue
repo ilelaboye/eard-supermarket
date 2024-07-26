@@ -90,8 +90,13 @@
             <tr>
               <th class="thead text-primary bg-primary-light">DATE AND TIME</th>
               <th class="thead text-primary bg-primary-light">CUSTOMER</th>
-              <th class="thead text-primary bg-primary-light">ITEM NUMBERS</th>
-              <th class="thead text-primary bg-primary-light">AMOUNT</th>
+              <th class="thead text-primary bg-primary-light">
+                NUMBER OF ITEMS
+              </th>
+              <th class="thead text-primary bg-primary-light text-center">
+                AMOUNT
+                <p class="mb-0">₦</p>
+              </th>
               <th class="thead text-primary bg-primary-light">
                 PAYMENT OPTION
               </th>
@@ -103,8 +108,10 @@
             <tr v-for="(order, index) in orders" :key="index">
               <td>{{ formatDateTime(order.createdAt) }}</td>
               <td>{{ order.user_id.fullname }}</td>
-              <td>{{ order.order.length }} Items</td>
-              <td>₦{{ formatPrice(calculateTotal(order.order)) }}</td>
+              <td>{{ order.order.length }}</td>
+              <td class="text-right">
+                {{ formatPrice(calculateTotal(order.order)) }}
+              </td>
               <td>
                 <span v-if="order.payment == 1">Cash</span>
                 <span v-if="order.payment == 2">POS</span>
@@ -182,10 +189,10 @@
 
   const getOrders = () => {
     store.commit("setLoader", true);
-    store
+    https: store
       .dispatch(
         "get",
-        `order/completed?supermarket_id=${store.state.user.supermarket_id._id}&limit=10&search=${search.value}`
+        `order/transactions/cashier/${store.state.user._id}?limit=10&search=${search.value}`
       )
       .then((resp) => {
         loaded.value = true;
